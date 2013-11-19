@@ -1,0 +1,66 @@
+%---------------------------------------
+% 17 grudnia 2010
+%---------------------------------------
+%
+%    ****************************************
+%    *     DATA OF AUTHOR AND THESIS        *
+%    ****************************************
+%
+\def\author#1{\def\auth@r{#1}}
+\def\title#1{\def\ti@tle{#1}}
+\def\school#1{\def\sch@ol{#1}}
+\def\graduationdate#1{\def\gr@duationdate{#1}}
+
+%  TITLEPAGE
+%
+\def\titlepage{\setcounter{page}{1}
+   \thispagestyle{empty}
+   \newsavebox{\logo}
+   \savebox{\logo}{\includegraphics[width=2.8cm]{LogoPolSl}}
+   %\vspace{20mm}
+   \begin{picture}(20,20)(-50,-30)
+   \put(110,-130){\usebox{\logo}}
+   \end{picture}   
+     \vspace*{130pt}
+     \begin{center}
+     {\large \textsf{\textbf{{\Large P}OLITECHNIKA {\Large Œ}L¥SKA}}\\
+     \vspace*{\baselineskip}
+     \textsf{\textbf{{\Large W}YDZIA£ {\Large A}UTOMATYKI, {\Large E}LEKTRONIKI I {\Large I}NFORMATYKI}}}
+     \end{center}
+       \vspace*{70pt}
+       \centerline{\Large \textsf{Projekt in¿ynierski}}
+        \vspace*{25pt}
+    \begin{center} \large\textsf{\ti@tle} \end{center}
+    \vspace*{15pt}
+\vfill
+{\large
+    \textsf{\large Autor: \auth@r} \\*[1.\baselineskip]
+    \textsf{\large Kieruj¹cy prac¹: Imiê i Nazwisko Promotora} 
+    \\*[1.\baselineskip]
+% \textsf{\large Konsultant: Imiê i Nazwisko Konsultanta}   %  < -- dla pracy bez konsultanta wykomentowaæ t¹ liniê
+}    
+%\vfill
+    \vspace*{4\baselineskip}
+    \begin{flushleft}
+       \vspace*{-10pt}
+       \textsf{\gr@duationdate}
+    \end{flushleft}
+%
+    \newpage\baselineskip=\normalbaselineskip}
+%---------
+\voffset 5mm %
+\addtolength{\topmargin}{-76pt}% <--- gorny margines 25mm    
+\textheight 250mm \textwidth 155mm
+\addtolength{\oddsidemargin}{1pt}% <--- lewy margines 30mm, prawy margines 25mm (nieparzyste strony)
+\addtolength{\evensidemargin}{-54pt}%<--- prawy margines 30mm, lewy margines 25mm (parzyste strony)
+%
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.05}
+%
+\renewcommand{\appendixname}{Dodatek}
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\bibname}{Literatura}
+\renewcommand{\tablename}{Tab.}
+\parindent=7.5mm%<--------------------------- wielkoœæ akapitu
+%-----------------------------------------------------------------------------------

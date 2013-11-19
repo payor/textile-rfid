@@ -1,0 +1,135 @@
+\chapter{Java 2 Micro Edition}
+\label{sec:Java Micro Edition}
+%
+\section{Wstêp}
+Na pocz¹tku lat dziewiêædziesi¹tych w firmie Sun Microsystems
+powsta³ nowy jêzyk programowania nazwany Oak. Stanowi³ on czeœæ
+projektu badawczego zajmuj¹cego siê urz¹dzeniami elektroniki
+u¿ytkowej intensywnie wykorzystuj¹cej oprogramowanie. Pierwszym prototypem wykorzystuj¹cym kod Oak, by³ kontroler Star7. by³o to
+niewielkie urz¹dzenie przenoœne wyposa¿one w ekran dotykowy LCD,
+wbudowany interfejs sieci bezprzewodowej oraz ³¹cze na podczerwieñ.
+Urz¹dzenie to spe³nia³o funkcje elektronicznego notesu, organizera,
+mog³o te¿ byæ wykorzystywane jako pilot do telewizora, magnetowidu
+itp. oprogramowanie tego typu urz¹dzeñ musi byæ bardzo niezawodne i
+nie powinno wymagaæ do pracy zbyt wiele pamiêci ini wydajnego
+procesora, czyli elementów które ze wzglêdu na rozmiary urz¹dzenia
+zwielokrotniaj¹ jego cenê. Oak powsta³ na bazie doœwiadczeñ
+programistów C++ i mia³ podobne mo¿liwoœci, jednak by³ o wiele
+bardziej wra¿liwy na b³êdy programistów. Z za³o¿enia jêzyk Oak mia³
+wyeliminowaæ ca³kowicie b³êdy w programach poprzez ograniczenie
+mo¿liwoœci ich pope³niania. Poniewa¿ Oak nie toleruje b³êdów, s¹ one
+wykrywane w procesie kompilacji, usuniêto równie¿ niektóre funkcje
+jak np wskaŸniki i zarz¹dzanie pamiêci¹. Niestety w latach kiedy
+powstawa³ Oak rynek urz¹dzeñ mobilnych praktycznie nie istnia³,
+równie¿ nie rozwin¹³ siê tak szybko jak przewidywali programiœci,
+dlatego te¿ nigdy nie sprzedano urz¹dzenia korzystaj¹cego z Oak.
+
+
+ Z pomoc¹ twórcom Oak przyszed³ Internet. gwa³townie rosn¹ca
+popularnoœæ internetu spowodowa³a zapotrzebowanie na oprogramowanie
+do przegl¹dania zasobów globalnej sieci. W odpowiedzi firma Sun
+zmieni³a nazwê Oak na Java i zaimplementowa³a "nowy" jêzyk w
+przegl¹darce o nazwie HotJava. Dodatkowo licencjê na jêzyk Java
+wykupi³a firma Netscape której przegl¹darka by³a w owym czasie
+niekwestionowanym liderem na rynku.
+
+
+Z biegiem czasu gwa³townie ros³y zasoby sprzêtowe. Aby sprostaæ
+wymaganiom programistów Windows tworz¹cych bardzo zaawansowane
+aplikacje, platforma Java stale siê rozszerza³a, pojawia³y siê nowe
+funkcje, programowanie rozproszone, lepsze mechanizmy
+bezpieczeñstwa.
+
+
+Podczas gdy coraz wiêkszym zainteresowaniem cieszy³a siê przenoœnoœæ
+czyli inaczej mobilnoœæ urz¹dzeñ, Java udostêpni³a now¹ rozszerzon¹
+platformê o nazwie Java 2. niezbêdne sta³o siê podzielenie platformy
+Java 2 na kilka czêœci. Postawowe funkcje uwa¿anie za niezbêdne
+minimum umieszczone zosta³y w jednym pakiecie i zyska³y nazwê Java
+2 Standard Edition (J2SE). Do J2SE dodano kilka funkcji na potrzeby
+okreœlonych zastosowañ korporacyjnych jak np. bezpieczna komunikacja
+sieciowa, handel elektroniczny i tak powsta³a Java 2 Enterprise
+Edition (J2EE).
+
+Ze wzglêdu na urz¹dzenia o ograniczonych mo¿liwoœciach, konieczne
+sta³o siê ograniczenie tej rozbudowanej platformy Java.
+Paradoksalnie Oak, prototyp jêzyka Java powsta³ w³aœnie na potrzeby
+urz¹dzeñ mobilnych. Podczas gdy zapotrzebowanie na tego typu
+platformê faktycznie zaistnia³o, platforma Java by³a ju¿ na tyle
+rozbudowana ¿e nie mog³a zostaæ zastosowana w urz¹dzeniach
+przenoœnych w takiej formie. Zatem programiœci Java korzystaj¹c z
+doœwiadczeñ z jêzykiem Oak stworzyli kilka platform o ograniczonych
+mo¿liwoœciach. Powrócono do platformy JDK 1.1 poprzednika Java 2 na
+których oparto min. Java 2 Micro Edition (J2ME)
+
+
+\section{Klasyfikacja CDC, CLDC i KVM}
+
+Ze wzglêdu na ró¿nice w zasobach urz¹dzeñ jak np. wydajnoœæ
+procesora, iloœæ pamiêci, sposób nawi¹zywania po³¹czeñ J2ME
+podzielona jest na dwie podstawowe konfiguracje CDC i CLDC.
+
+\subsection{CLDC}
+\emph{Connected Limited Device Configuration}
+
+Konfiguracja ta jest przeznaczona dla najprostszych urz¹dzeñ
+elektroniki u¿ytkowej. Typowa platforma CLDC to telefon komórkowy
+lub notes wyposa¿ony w oko³o 512kB pamiêci. Z tego powodu CLDC jest
+œciœle zwi¹zany ze specyfikacj¹ bezprzewodowej Javy, która umo¿liwia
+instalowanie niewielkich aplikacji zwanych MIDletami. Wiêkszoœæ firm
+produkuj¹cych telefony komórkowe podpisa³o porozumienie z firm¹ Java
+Microsystems które umo¿liwia im stosowanie tej technologii, przez co
+platforma Java mo¿e byæ z powodzeniem wykorzystywana przez prawie
+wszystkie dostêpne na rynku modele telefonów komórkowych i jej
+popularnoœæ stale roœnie.
+\subsection{CDC}
+\emph{Connected Device Configuration}
+
+ Konfiguracja ta jest adresowana do urz¹dzeñ znajduj¹cych siê
+ pomiêdzy urz¹dzeniami CLDC a normalnymi systemami, na których mo¿na
+ uruchomiæ J2SE (np. komputer klasy PC). Zwykle urz¹dzenia takie
+ maja wiêcej pamiêci (minimum 2MB) i nieco wydajniejszy procesor,
+ dziêki czemu mog¹ obs³ugiwaæ bardziej kompletne œrodowisko Java.
+ Konfiguracja CDC jest stosowana w bardziej zaawansowanych notesach
+ elektronicznych, smartfonach, telefonach sieciowych, urz¹dzeniach
+ sterowania oraz zestawach audio video.
+
+\section{Profil informacji o urz¹dzeniu przenoœnym, MIDP}
+
+bla bla bla
+
+\section{Struktura MIDletu}
+
+\section{Media API}
+
+
+    \subsection{Rejestrator}
+    \label{sec:Rejestrator}
+    \subsection{Kodowanie}
+    \label{sec:Kodowanie}
+    \subsection{Odtwarzanie}
+    \label{sec:Odtwarzanie}
+
+\section{Bluetooth API}
+\label{sec:Bluetooth API}
+
+    \subsection{Discovery Agent}
+    \subsection{Nawi¹zywanie po³¹czenia}
+    \subsection{Streaming}
+    \subsection{Przesy³anie danych}
+
+\section{Uruchamianie}
+\label{sec:Uruchamianie}
+
+  \subsection{Kompilacja}
+    \label{sec:Kompilacja}
+    \subsection{Symulacja}
+    \label{sec:Symulacja}
+
+\section{Bezpieczeñstwo}
+
+
+    \subsection{Autoryzacja}
+    \label{sec:Autoryzacja}
+    \subsection{Podpisywanie MIDletów}
+    \label{sec:Podpisywanie MIDletow}

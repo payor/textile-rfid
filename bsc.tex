@@ -1,0 +1,93 @@
+%##############################################################################
+% Preambu³a dokumentu
+% 17.12.2010
+%
+\documentclass[12pt,a4paper,twoside
+%,draft%<------------------- opcja "draft" tylko markuje rysunki w tekscie
+]{report}
+\usepackage[dvips]{graphicx}
+\usepackage[ps2pdf]{hyperref} 
+\usepackage{polski}
+\usepackage[cp1250]{inputenc}%<------------ strona kodowa dla MSWindows
+\usepackage{t1enc,amsmath}
+\usepackage{times,caption}
+\usepackage{bsc_pl}
+\usepackage{fancyhdr}%<-------------------- formatowanie nag³ówka i stopki
+\pagestyle{fancy}%<--------------- styl z fancyhdr.sty; definicje nag³ówka
+%-----------------------------------------------------------------------
+% Definicje nag³ówka dostêpne z pakietem fancy.sty
+\renewcommand{\headheight}{15pt}%<---------------- szerokoœæ nag³owka
+\renewcommand{\headrulewidth}{0.4pt}%<------------ gruboœæ linii w nag³ówku
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\footnotesize \slshape \rightmark}%  <- mniejsze litery w tytule sekcji
+\fancyhead[RE]{\footnotesize \slshape \leftmark}%   <-- i nag³ówka
+\cfoot{}%<---------------------------------- likwidacja numerów w stopce
+%-------------------------------------------------------------------------
+\newcommand*{\mbf}{\mathbf}
+\newcommand*{\bs}{\boldsymbol}
+%
+%\renewcommand*\captionlabeldelim{.}
+\renewcommand{\captionlabelfont}{\bfseries}
+\renewcommand{\captionsize}{\small}
+%
+% Koniec preambu³y
+%##############################################################################
+%
+% Pocz¹tek w³aœciwego dokumentu
+%
+\begin{document}
+%
+\bibliographystyle{unsrt} % <- Ustawienie stylu bibliografi (unsrt,abbrv)
+%<------------------------------------------ 
+% Dane do strony tytu³owej
+% Zmieniæ argumenty poleceñ: \author, \title i \graduationdate
+%
+\author{Imiê i Nazwisko} 
+\title{Tytu³ pracy}
+\graduationdate{Gliwice, styczeñ 2011}
+%<------------------------------------------
+% Tworzona strona tytu³owa 
+\titlepage 
+\thispagestyle{empty}%<--------------------- pusta strona na odwrocie tutu³owej
+\cleardoublepage%<-------------------------- dalej bêdzie od nieparzystej
+%<------------------------------------------
+% Tworzony spis treœci
+\renewcommand*{\baselinestretch}{0.8}
+\tableofcontents
+\newpage
+\thispagestyle{empty}
+\cleardoublepage
+\renewcommand*{\baselinestretch}{1.0}
+%-------------------------------------------------------------------------------
+% Wstawianie wykazu oznaczeñ
+\addcontentsline{toc}{chapter}{Wykaz wa¿niejszych oznaczeñ} % <-----  Je¿eli w 
+% dokumencie nie ma wykazu oznaczeñ, nale¿y wykomentowaæ t¹ liniê
+\input{./partials/0_Wykaz.tex}
+%-------------------------------------------------------------------------------
+% Wstawiane poszczególne rozdzia³y pracy
+%
+\input{./partials/1_Wstep.tex}
+%
+\input{./partials/2_Cel.tex}
+%
+\input{./partials/3_Bluetooth.tex}
+%
+\input{./partials/4_Java.tex}
+%
+\input{./partials/5_Aplikacja.tex}
+%
+\input{./partials/6_Podsumowanie.tex}
+%
+%------------------------------------------------------------------------------
+% <- Wykomentowaæ je¿eli praca nie ma dodatków
+\appendix
+\chapter{Wyznaczanie ca³ki Fresnela}
+%------------------------------------------------------------------------------
+% Dodanie literatury
+\newpage
+\thispagestyle{empty}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Literatura}
+\input{./partials/Bibliografia.tex}
+%--------------------------------------------------------------------------------------------
+\end{document}
