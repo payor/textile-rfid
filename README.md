@@ -1,4 +1,4 @@
-picknplay-doc
+textile-rfid
 =============
 
 To compile PDF into `/target` directory just use prepared script:
