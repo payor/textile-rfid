@@ -16,12 +16,14 @@
 \usepackage{bsc_pl}
 \usepackage{fancyhdr}%<-------------------- formatowanie nag³ówka i stopki
 \usepackage{float}
+\usepackage{indentfirst}
+\usepackage{setspace}
 
 % ustawienia obrazow %
 \graphicspath{ {./assets/} }
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
-\linespread{1.5}
+%\linespread{1.5}
 
 \pagestyle{fancy}%<--------------- styl z fancyhdr.sty; definicje nag³ówka
 %-----------------------------------------------------------------------
@@ -52,8 +54,8 @@
 % Dane do strony tytu³owej
 % Zmieniæ argumenty poleceñ: \author, \title i \graduationdate
 %
-\author{Imię i Nazwisko} 
-\title{Tytuł pracy}
+\author{Nikoleta Pajor} 
+\title{Projekt anteny tekstylnej RFID na pasmo ISM 2.4 GHz}
 \graduationdate{Gliwice, styczeń 2013}
 %<------------------------------------------
 % Tworzona strona tytu³owa 
@@ -68,6 +70,8 @@
 \thispagestyle{empty}
 \cleardoublepage
 \renewcommand*{\baselinestretch}{1.0}
+
+\setstretch{1.5}
 %-------------------------------------------------------------------------------
 % Wstawianie wykazu oznaczeñ
 \addcontentsline{toc}{chapter}{Wykaz ważniejszych oznaczeń} % <-----  Je¿eli w 
