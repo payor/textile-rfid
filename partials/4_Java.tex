@@ -1,100 +1,100 @@
 \chapter{Java 2 Micro Edition}
 \label{sec:Java Micro Edition}
 %
-\section{Wstêp}
-Na pocz¹tku lat dziewiêædziesi¹tych w firmie Sun Microsystems
-powsta³ nowy jêzyk programowania nazwany Oak. Stanowi³ on czeœæ
-projektu badawczego zajmuj¹cego siê urz¹dzeniami elektroniki
-u¿ytkowej intensywnie wykorzystuj¹cej oprogramowanie. Pierwszym prototypem wykorzystuj¹cym kod Oak, by³ kontroler Star7. by³o to
-niewielkie urz¹dzenie przenoœne wyposa¿one w ekran dotykowy LCD,
-wbudowany interfejs sieci bezprzewodowej oraz ³¹cze na podczerwieñ.
-Urz¹dzenie to spe³nia³o funkcje elektronicznego notesu, organizera,
-mog³o te¿ byæ wykorzystywane jako pilot do telewizora, magnetowidu
-itp. oprogramowanie tego typu urz¹dzeñ musi byæ bardzo niezawodne i
-nie powinno wymagaæ do pracy zbyt wiele pamiêci ini wydajnego
-procesora, czyli elementów które ze wzglêdu na rozmiary urz¹dzenia
-zwielokrotniaj¹ jego cenê. Oak powsta³ na bazie doœwiadczeñ
-programistów C++ i mia³ podobne mo¿liwoœci, jednak by³ o wiele
-bardziej wra¿liwy na b³êdy programistów. Z za³o¿enia jêzyk Oak mia³
-wyeliminowaæ ca³kowicie b³êdy w programach poprzez ograniczenie
-mo¿liwoœci ich pope³niania. Poniewa¿ Oak nie toleruje b³êdów, s¹ one
-wykrywane w procesie kompilacji, usuniêto równie¿ niektóre funkcje
-jak np wskaŸniki i zarz¹dzanie pamiêci¹. Niestety w latach kiedy
-powstawa³ Oak rynek urz¹dzeñ mobilnych praktycznie nie istnia³,
-równie¿ nie rozwin¹³ siê tak szybko jak przewidywali programiœci,
-dlatego te¿ nigdy nie sprzedano urz¹dzenia korzystaj¹cego z Oak.
+\section{WstÄ™p}
+Na poczÂ¹tku lat dziewiÃªÃ¦dziesiÂ¹tych w firmie Sun Microsystems
+powstaÂ³ nowy jÃªzyk programowania nazwany Oak. StanowiÂ³ on czeÅ“Ã¦
+projektu badawczego zajmujÂ¹cego siÃª urzÂ¹dzeniami elektroniki
+uÂ¿ytkowej intensywnie wykorzystujÂ¹cej oprogramowanie. Pierwszym prototypem wykorzystujÂ¹cym kod Oak, byÂ³ kontroler Star7. byÂ³o to
+niewielkie urzÂ¹dzenie przenoÅ“ne wyposaÂ¿one w ekran dotykowy LCD,
+wbudowany interfejs sieci bezprzewodowej oraz Â³Â¹cze na podczerwieÃ±.
+UrzÂ¹dzenie to speÂ³niaÂ³o funkcje elektronicznego notesu, organizera,
+mogÂ³o teÂ¿ byÃ¦ wykorzystywane jako pilot do telewizora, magnetowidu
+itp. oprogramowanie tego typu urzÂ¹dzeÃ± musi byÃ¦ bardzo niezawodne i
+nie powinno wymagaÃ¦ do pracy zbyt wiele pamiÃªci ini wydajnego
+procesora, czyli elementÃ³w ktÃ³re ze wzglÃªdu na rozmiary urzÂ¹dzenia
+zwielokrotniajÂ¹ jego cenÃª. Oak powstaÂ³ na bazie doÅ“wiadczeÃ±
+programistÃ³w C++ i miaÂ³ podobne moÂ¿liwoÅ“ci, jednak byÂ³ o wiele
+bardziej wraÂ¿liwy na bÂ³Ãªdy programistÃ³w. Z zaÂ³oÂ¿enia jÃªzyk Oak miaÂ³
+wyeliminowaÃ¦ caÂ³kowicie bÂ³Ãªdy w programach poprzez ograniczenie
+moÂ¿liwoÅ“ci ich popeÂ³niania. PoniewaÂ¿ Oak nie toleruje bÂ³ÃªdÃ³w, sÂ¹ one
+wykrywane w procesie kompilacji, usuniÃªto rÃ³wnieÂ¿ niektÃ³re funkcje
+jak np wskaÅ¸niki i zarzÂ¹dzanie pamiÃªciÂ¹. Niestety w latach kiedy
+powstawaÂ³ Oak rynek urzÂ¹dzeÃ± mobilnych praktycznie nie istniaÂ³,
+rÃ³wnieÂ¿ nie rozwinÂ¹Â³ siÃª tak szybko jak przewidywali programiÅ“ci,
+dlatego teÂ¿ nigdy nie sprzedano urzÂ¹dzenia korzystajÂ¹cego z Oak.
 
 
- Z pomoc¹ twórcom Oak przyszed³ Internet. gwa³townie rosn¹ca
-popularnoœæ internetu spowodowa³a zapotrzebowanie na oprogramowanie
-do przegl¹dania zasobów globalnej sieci. W odpowiedzi firma Sun
-zmieni³a nazwê Oak na Java i zaimplementowa³a "nowy" jêzyk w
-przegl¹darce o nazwie HotJava. Dodatkowo licencjê na jêzyk Java
-wykupi³a firma Netscape której przegl¹darka by³a w owym czasie
+ Z pomocÂ¹ twÃ³rcom Oak przyszedÂ³ Internet. gwaÂ³townie rosnÂ¹ca
+popularnoÅ“Ã¦ internetu spowodowaÂ³a zapotrzebowanie na oprogramowanie
+do przeglÂ¹dania zasobÃ³w globalnej sieci. W odpowiedzi firma Sun
+zmieniÂ³a nazwÃª Oak na Java i zaimplementowaÂ³a "nowy" jÃªzyk w
+przeglÂ¹darce o nazwie HotJava. Dodatkowo licencjÃª na jÃªzyk Java
+wykupiÂ³a firma Netscape ktÃ³rej przeglÂ¹darka byÂ³a w owym czasie
 niekwestionowanym liderem na rynku.
 
 
-Z biegiem czasu gwa³townie ros³y zasoby sprzêtowe. Aby sprostaæ
-wymaganiom programistów Windows tworz¹cych bardzo zaawansowane
-aplikacje, platforma Java stale siê rozszerza³a, pojawia³y siê nowe
+Z biegiem czasu gwaÂ³townie rosÂ³y zasoby sprzÃªtowe. Aby sprostaÃ¦
+wymaganiom programistÃ³w Windows tworzÂ¹cych bardzo zaawansowane
+aplikacje, platforma Java stale siÃª rozszerzaÂ³a, pojawiaÂ³y siÃª nowe
 funkcje, programowanie rozproszone, lepsze mechanizmy
-bezpieczeñstwa.
+bezpieczeÃ±stwa.
 
 
-Podczas gdy coraz wiêkszym zainteresowaniem cieszy³a siê przenoœnoœæ
-czyli inaczej mobilnoœæ urz¹dzeñ, Java udostêpni³a now¹ rozszerzon¹
-platformê o nazwie Java 2. niezbêdne sta³o siê podzielenie platformy
-Java 2 na kilka czêœci. Postawowe funkcje uwa¿anie za niezbêdne
-minimum umieszczone zosta³y w jednym pakiecie i zyska³y nazwê Java
+Podczas gdy coraz wiÃªkszym zainteresowaniem cieszyÂ³a siÃª przenoÅ“noÅ“Ã¦
+czyli inaczej mobilnoÅ“Ã¦ urzÂ¹dzeÃ±, Java udostÃªpniÂ³a nowÂ¹ rozszerzonÂ¹
+platformÃª o nazwie Java 2. niezbÃªdne staÂ³o siÃª podzielenie platformy
+Java 2 na kilka czÃªÅ“ci. Postawowe funkcje uwaÂ¿anie za niezbÃªdne
+minimum umieszczone zostaÂ³y w jednym pakiecie i zyskaÂ³y nazwÃª Java
 2 Standard Edition (J2SE). Do J2SE dodano kilka funkcji na potrzeby
-okreœlonych zastosowañ korporacyjnych jak np. bezpieczna komunikacja
-sieciowa, handel elektroniczny i tak powsta³a Java 2 Enterprise
+okreÅ“lonych zastosowaÃ± korporacyjnych jak np. bezpieczna komunikacja
+sieciowa, handel elektroniczny i tak powstaÂ³a Java 2 Enterprise
 Edition (J2EE).
 
-Ze wzglêdu na urz¹dzenia o ograniczonych mo¿liwoœciach, konieczne
-sta³o siê ograniczenie tej rozbudowanej platformy Java.
-Paradoksalnie Oak, prototyp jêzyka Java powsta³ w³aœnie na potrzeby
-urz¹dzeñ mobilnych. Podczas gdy zapotrzebowanie na tego typu
-platformê faktycznie zaistnia³o, platforma Java by³a ju¿ na tyle
-rozbudowana ¿e nie mog³a zostaæ zastosowana w urz¹dzeniach
-przenoœnych w takiej formie. Zatem programiœci Java korzystaj¹c z
-doœwiadczeñ z jêzykiem Oak stworzyli kilka platform o ograniczonych
-mo¿liwoœciach. Powrócono do platformy JDK 1.1 poprzednika Java 2 na
-których oparto min. Java 2 Micro Edition (J2ME)
+Ze wzglÃªdu na urzÂ¹dzenia o ograniczonych moÂ¿liwoÅ“ciach, konieczne
+staÂ³o siÃª ograniczenie tej rozbudowanej platformy Java.
+Paradoksalnie Oak, prototyp jÃªzyka Java powstaÂ³ wÂ³aÅ“nie na potrzeby
+urzÂ¹dzeÃ± mobilnych. Podczas gdy zapotrzebowanie na tego typu
+platformÃª faktycznie zaistniaÂ³o, platforma Java byÂ³a juÂ¿ na tyle
+rozbudowana Â¿e nie mogÂ³a zostaÃ¦ zastosowana w urzÂ¹dzeniach
+przenoÅ“nych w takiej formie. Zatem programiÅ“ci Java korzystajÂ¹c z
+doÅ“wiadczeÃ± z jÃªzykiem Oak stworzyli kilka platform o ograniczonych
+moÂ¿liwoÅ“ciach. PowrÃ³cono do platformy JDK 1.1 poprzednika Java 2 na
+ktÃ³rych oparto min. Java 2 Micro Edition (J2ME)
 
 
 \section{Klasyfikacja CDC, CLDC i KVM}
 
-Ze wzglêdu na ró¿nice w zasobach urz¹dzeñ jak np. wydajnoœæ
-procesora, iloœæ pamiêci, sposób nawi¹zywania po³¹czeñ J2ME
+Ze wzglÃªdu na rÃ³Â¿nice w zasobach urzÂ¹dzeÃ± jak np. wydajnoÅ“Ã¦
+procesora, iloÅ“Ã¦ pamiÃªci, sposÃ³b nawiÂ¹zywania poÂ³Â¹czeÃ± J2ME
 podzielona jest na dwie podstawowe konfiguracje CDC i CLDC.
 
 \subsection{CLDC}
 \emph{Connected Limited Device Configuration}
 
-Konfiguracja ta jest przeznaczona dla najprostszych urz¹dzeñ
-elektroniki u¿ytkowej. Typowa platforma CLDC to telefon komórkowy
-lub notes wyposa¿ony w oko³o 512kB pamiêci. Z tego powodu CLDC jest
-œciœle zwi¹zany ze specyfikacj¹ bezprzewodowej Javy, która umo¿liwia
-instalowanie niewielkich aplikacji zwanych MIDletami. Wiêkszoœæ firm
-produkuj¹cych telefony komórkowe podpisa³o porozumienie z firm¹ Java
-Microsystems które umo¿liwia im stosowanie tej technologii, przez co
-platforma Java mo¿e byæ z powodzeniem wykorzystywana przez prawie
-wszystkie dostêpne na rynku modele telefonów komórkowych i jej
-popularnoœæ stale roœnie.
+Konfiguracja ta jest przeznaczona dla najprostszych urzÂ¹dzeÃ±
+elektroniki uÂ¿ytkowej. Typowa platforma CLDC to telefon komÃ³rkowy
+lub notes wyposaÂ¿ony w okoÂ³o 512kB pamiÃªci. Z tego powodu CLDC jest
+Å“ciÅ“le zwiÂ¹zany ze specyfikacjÂ¹ bezprzewodowej Javy, ktÃ³ra umoÂ¿liwia
+instalowanie niewielkich aplikacji zwanych MIDletami. WiÃªkszoÅ“Ã¦ firm
+produkujÂ¹cych telefony komÃ³rkowe podpisaÂ³o porozumienie z firmÂ¹ Java
+Microsystems ktÃ³re umoÂ¿liwia im stosowanie tej technologii, przez co
+platforma Java moÂ¿e byÃ¦ z powodzeniem wykorzystywana przez prawie
+wszystkie dostÃªpne na rynku modele telefonÃ³w komÃ³rkowych i jej
+popularnoÅ“Ã¦ stale roÅ“nie.
 \subsection{CDC}
 \emph{Connected Device Configuration}
 
- Konfiguracja ta jest adresowana do urz¹dzeñ znajduj¹cych siê
- pomiêdzy urz¹dzeniami CLDC a normalnymi systemami, na których mo¿na
- uruchomiæ J2SE (np. komputer klasy PC). Zwykle urz¹dzenia takie
- maja wiêcej pamiêci (minimum 2MB) i nieco wydajniejszy procesor,
- dziêki czemu mog¹ obs³ugiwaæ bardziej kompletne œrodowisko Java.
+ Konfiguracja ta jest adresowana do urzÂ¹dzeÃ± znajdujÂ¹cych siÃª
+ pomiÃªdzy urzÂ¹dzeniami CLDC a normalnymi systemami, na ktÃ³rych moÂ¿na
+ uruchomiÃ¦ J2SE (np. komputer klasy PC). Zwykle urzÂ¹dzenia takie
+ maja wiÃªcej pamiÃªci (minimum 2MB) i nieco wydajniejszy procesor,
+ dziÃªki czemu mogÂ¹ obsÂ³ugiwaÃ¦ bardziej kompletne Å“rodowisko Java.
  Konfiguracja CDC jest stosowana w bardziej zaawansowanych notesach
- elektronicznych, smartfonach, telefonach sieciowych, urz¹dzeniach
+ elektronicznych, smartfonach, telefonach sieciowych, urzÂ¹dzeniach
  sterowania oraz zestawach audio video.
 
-\section{Profil informacji o urz¹dzeniu przenoœnym, MIDP}
+\section{Profil informacji o urzÂ¹dzeniu przenoÅ“nym, MIDP}
 
 bla bla bla
 
@@ -114,9 +114,9 @@ bla bla bla
 \label{sec:Bluetooth API}
 
     \subsection{Discovery Agent}
-    \subsection{Nawi¹zywanie po³¹czenia}
+    \subsection{NawiÂ¹zywanie poÂ³Â¹czenia}
     \subsection{Streaming}
-    \subsection{Przesy³anie danych}
+    \subsection{PrzesyÂ³anie danych}
 
 \section{Uruchamianie}
 \label{sec:Uruchamianie}
@@ -126,10 +126,10 @@ bla bla bla
     \subsection{Symulacja}
     \label{sec:Symulacja}
 
-\section{Bezpieczeñstwo}
+\section{BezpieczeÃ±stwo}
 
 
     \subsection{Autoryzacja}
     \label{sec:Autoryzacja}
-    \subsection{Podpisywanie MIDletów}
+    \subsection{Podpisywanie MIDletÃ³w}
     \label{sec:Podpisywanie MIDletow}

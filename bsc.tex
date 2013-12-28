@@ -1,27 +1,37 @@
 %##############################################################################
-% Preambu³a dokumentu
+% PreambuÂ³a dokumentu
 % 17.12.2010
 %
 \documentclass[12pt,a4paper,twoside
 %,draft%<------------------- opcja "draft" tylko markuje rysunki w tekscie
 ]{report}
-\usepackage[dvips]{graphicx}
-\usepackage[ps2pdf]{hyperref} 
+\usepackage{graphicx}
+\usepackage[pdftex]{hyperref}
+\usepackage{breakurl}
 \usepackage{polski}
-\usepackage[cp1250]{inputenc}%<------------ strona kodowa dla MSWindows
+\usepackage[utf8]{inputenc}
+%\usepackage[cp1250]{inputenc}%<------------ strona kodowa dla MSWindows
 \usepackage{t1enc,amsmath}
 \usepackage{times,caption}
 \usepackage{bsc_pl}
-\usepackage{fancyhdr}%<-------------------- formatowanie nag³ówka i stopki
-\pagestyle{fancy}%<--------------- styl z fancyhdr.sty; definicje nag³ówka
+\usepackage{fancyhdr}%<-------------------- formatowanie nagÂ³Ã³wka i stopki
+\usepackage{float}
+
+% ustawienia obrazow %
+\graphicspath{ {./assets/} }
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\linespread{1.5}
+
+\pagestyle{fancy}%<--------------- styl z fancyhdr.sty; definicje nagÂ³Ã³wka
 %-----------------------------------------------------------------------
-% Definicje nag³ówka dostêpne z pakietem fancy.sty
-\renewcommand{\headheight}{15pt}%<---------------- szerokoœæ nag³owka
-\renewcommand{\headrulewidth}{0.4pt}%<------------ gruboœæ linii w nag³ówku
+% Definicje nagÂ³Ã³wka dostÃªpne z pakietem fancy.sty
+\renewcommand{\headheight}{15pt}%<---------------- szerokoÅ“Ã¦ nagÂ³owka
+\renewcommand{\headrulewidth}{0.4pt}%<------------ gruboÅ“Ã¦ linii w nagÂ³Ã³wku
 \fancyhead[RO,LE]{\thepage}
 \fancyhead[LO]{\footnotesize \slshape \rightmark}%  <- mniejsze litery w tytule sekcji
-\fancyhead[RE]{\footnotesize \slshape \leftmark}%   <-- i nag³ówka
-\cfoot{}%<---------------------------------- likwidacja numerów w stopce
+\fancyhead[RE]{\footnotesize \slshape \leftmark}%   <-- i nagÂ³Ã³wka
+\cfoot{}%<---------------------------------- likwidacja numerÃ³w w stopce
 %-------------------------------------------------------------------------
 \newcommand*{\mbf}{\mathbf}
 \newcommand*{\bs}{\boldsymbol}
@@ -30,28 +40,28 @@
 \renewcommand{\captionlabelfont}{\bfseries}
 \renewcommand{\captionsize}{\small}
 %
-% Koniec preambu³y
+% Koniec preambuÂ³y
 %##############################################################################
 %
-% Pocz¹tek w³aœciwego dokumentu
+% PoczÂ¹tek wÂ³aÅ“ciwego dokumentu
 %
 \begin{document}
 %
 \bibliographystyle{unsrt} % <- Ustawienie stylu bibliografi (unsrt,abbrv)
 %<------------------------------------------ 
-% Dane do strony tytu³owej
-% Zmieniæ argumenty poleceñ: \author, \title i \graduationdate
+% Dane do strony tytuÂ³owej
+% ZmieniÃ¦ argumenty poleceÃ±: \author, \title i \graduationdate
 %
-\author{Imiê i Nazwisko} 
-\title{Tytu³ pracy}
-\graduationdate{Gliwice, styczeñ 2011}
+\author{ImiÄ™ i Nazwisko} 
+\title{TytuÅ‚ pracy}
+\graduationdate{Gliwice, styczeÅ„ 2013}
 %<------------------------------------------
-% Tworzona strona tytu³owa 
+% Tworzona strona tytuÂ³owa 
 \titlepage 
-\thispagestyle{empty}%<--------------------- pusta strona na odwrocie tutu³owej
-\cleardoublepage%<-------------------------- dalej bêdzie od nieparzystej
+\thispagestyle{empty}%<--------------------- pusta strona na odwrocie tutuÂ³owej
+\cleardoublepage%<-------------------------- dalej bÃªdzie od nieparzystej
 %<------------------------------------------
-% Tworzony spis treœci
+% Tworzony spis treÅ“ci
 \renewcommand*{\baselinestretch}{0.8}
 \tableofcontents
 \newpage
@@ -59,29 +69,29 @@
 \cleardoublepage
 \renewcommand*{\baselinestretch}{1.0}
 %-------------------------------------------------------------------------------
-% Wstawianie wykazu oznaczeñ
-\addcontentsline{toc}{chapter}{Wykaz wa¿niejszych oznaczeñ} % <-----  Je¿eli w 
-% dokumencie nie ma wykazu oznaczeñ, nale¿y wykomentowaæ t¹ liniê
-\input{./partials/0_Wykaz.tex}
+% Wstawianie wykazu oznaczeÃ±
+\addcontentsline{toc}{chapter}{Wykaz waÅ¼niejszych oznaczeÅ„} % <-----  JeÂ¿eli w 
+% dokumencie nie ma wykazu oznaczeÃ±, naleÂ¿y wykomentowaÃ¦ tÂ¹ liniÃª
+%\input{./partials/0_Wykaz.tex}
 %-------------------------------------------------------------------------------
-% Wstawiane poszczególne rozdzia³y pracy
+% Wstawiane poszczegÃ³lne rozdziaÂ³y pracy
 %
 \input{./partials/1_Wstep.tex}
 %
-\input{./partials/2_Cel.tex}
+%\input{./partials/2_Cel.tex}
 %
-\input{./partials/3_Bluetooth.tex}
+%\input{./partials/3_Bluetooth.tex}
 %
-\input{./partials/4_Java.tex}
+%\input{./partials/4_Java.tex}
 %
-\input{./partials/5_Aplikacja.tex}
+%\input{./partials/5_Aplikacja.tex}
 %
-\input{./partials/6_Podsumowanie.tex}
+%\input{./partials/6_Podsumowanie.tex}
 %
 %------------------------------------------------------------------------------
-% <- Wykomentowaæ je¿eli praca nie ma dodatków
+% <- WykomentowaÃ¦ jeÂ¿eli praca nie ma dodatkÃ³w
 \appendix
-\chapter{Wyznaczanie ca³ki Fresnela}
+
 %------------------------------------------------------------------------------
 % Dodanie literatury
 \newpage
