@@ -1,0 +1,73 @@
+[33mcommit 2c30ff7a83d0b8742565d54a47a11dec3758d690[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Tue Dec 31 20:48:18 2013 +0100
+
+    Czestotliwosc_a_k
+
+[33mcommit 4f58260501822e6e6b505346373eed8d2aa0d842[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Tue Dec 31 09:54:24 2013 +0100
+
+    Zastosowanie_anten
+
+[33mcommit 9f05d261d43177efa02e493a2646eadf63639c7d[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Tue Dec 31 09:28:43 2013 +0100
+
+    ,,Podrozdzial_3_1_
+    git log
+    git push
+    git status
+    . /bin/printpdf.sh
+    git  commit -m ,,Podrozdzial_3_1_
+
+[33mcommit 99adf5a97ecd697a4b4e065d86ad4bd21d0ce5f5[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Tue Dec 31 04:02:39 2013 +0100
+
+    anteny _konforemne
+
+[33mcommit 5018b63bcf1935d5fa6b2579c09736070dd1ab24[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Mon Dec 30 17:10:39 2013 +0100
+
+    ,,Bibliografia_ver1
+    git log
+    git push origin master
+    git commit -m ,,Bibliografia_ver1
+
+[33mcommit dcce06fa301530579b2db7531a81eb7197b8f839[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Sun Dec 29 23:43:11 2013 +0100
+
+    Bibliography fixed.
+
+[33mcommit d66d7cfbd61f6eefc83fa2856f3430795a56b7c9[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Sun Dec 29 11:52:17 2013 +0100
+
+    Poprawiony wstep
+
+[33mcommit 4cf95ba945f0a39a49417a18a018156ca631cda3[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Sat Dec 28 21:46:03 2013 +0100
+
+    rozdzial 2
+
+[33mcommit 0a4b2969b1e9767e55a691125ccc2a6bbb0635e5[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Sat Dec 28 03:26:53 2013 +0100
+
+    Rozdzial 1
+
+[33mcommit 716a50ca60bce2ca2c59d4e9df82b34b225a4eae[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Tue Nov 19 19:35:58 2013 +0100
+
+    readme updated
+
+[33mcommit 25d7e00c32f2baefd25ebf9d9beb77b44961585b[m
+Author: payor <nikoleta.pajor@gmail.com>
+Date:   Tue Nov 19 19:22:46 2013 +0100
+
+    init commit.
