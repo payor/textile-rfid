@@ -238,6 +238,7 @@ Zalety technologii \emph{RFID}:
 
 Wady technologii \emph{RFID}:
 
+
 \begin{itemize}\setlength{\itemsep}{0pt}
 
 	\item brak jednolitego standardu dla protokołu RFID,
@@ -247,7 +248,6 @@ Wady technologii \emph{RFID}:
  	\item większy koszt pojedynczego znacznika, w porównaniu z kodem paskowym, zwłaszcza w przypadku znaczników o większej funkcjonalności 
 
 \end{itemize}
-
 
 
 
@@ -265,7 +265,7 @@ Możliwości zastosowania tego typu anten jest wiele. Dziedziny zastosowań wzaj
 
 \begin{itemize}\setlength{\itemsep}{0pt}
 	
-	\item zastosowania medyczne - radary przenzaczone do mocowania na skórze: sportowców, ratowników medycznych, strażaków, żołnierzy. Czujniki służą do monitorowanie aktywności (rytmu serca, oddechu) i stanu fizjologicznego człowieka (poziomu wydzielanego potu, stężenie tlenu i dwutlenku węgla we krwi, stanu odwodnienia, poziomu elektrolitów).Przekazywanie informacji o parametrach życiowych (np.temperaturze ciała). Wykrywanie zewnętrznych zagrożeń np. chemicznych (toksycznych gazów i oparów). Możliwość zaastosowana do wykrywania komórek nowotworowych,  
+	\item zastosowania medyczne - radary przenzaczone do mocowania na skórze: sportowców, ratowników medycznych, strażaków, żołnierzy. Czujniki służą do monitorowanie aktywności (rytmu serca, oddechu) i stanu fizjologicznego człowieka (poziomu wydzielanego potu, stężenie tlenu i dwutlenku węgla we krwi, stanu odwodnienia, poziomu elektrolitów).Przekazywanie informacji o parametrach życiowych (np.temperaturze ciała). Wykrywanie zewnętrznych zagrożeń np. stężenie niebezpiecznych substancji chemicznych, gazów, oparów. Możliwość zaastosowana do wykrywania komórek nowotworowych,  
 
 \begin{figure}[h!]
 \centering
@@ -299,12 +299,38 @@ Pasma pracy:
 
 \end{itemize}
 
+\section{Anteny tekstylne}
+
+Tekstronika jest nową gałęzią nauki, zajmującą się projektowaniem i budową inteligentnej odzieży. Jest wynkiem połączenia kilku dziedzin nauki m.in. nauki o materiałach, włókiennictwa, elektroniki, radiokumunikacji, kompatybilności elektromagnetycznej jak również informatyki. Tekstronika stwarza możliwość wykorzystania różnych metod transmisji sygnałów (rys.2.2) w układach antenowych. W swojej pracy skoncentruję się na transmisji bezprzewodowej w paśmie nielicencjonowanym 2.4 GHz - 2,4835 GHz.  
+Anteny do zastosowań tekstronicznych, czyli implementowane w odzieży, dzięki eleastycznej i giętkiej konstrukcji są łatwe do scalenia z materiałami. 
+Wymagania stawiane antenem tekstylnym to m.in: 
+
+\begin{itemize}\setlength{\itemsep}{0pt}
+
+	\item pasmo pracy - czyli zakres częstotliwości, dla których projektowana antena spełnia założone wcześniej kryteria. Pasmo pracy anteny powinno być możliwie szerokie - dla anten RFID nie powinno jednak przekraczać 30 MHz. 
+
+	\item ipedancja wejściowa - 
+
+, kołowa (eliptyczna) polaryzacja, niski profil, mała waga, wymiary i objętość. 
+
+\end{itemize}
+
+Są to anteny pracujące w pobliżu ciała ludzkiego, a co za tym idzie patrząc od strony technologicznej - w pobliżu dielektrycznego, dyspersyjnego ośrodka startnego. Fale o takiej samej częstotliwośći (w ośrodku dyspersyjnym), rozchodzą się różną prędkością. 
+Ponaddto tkanka ludzka jest ośrodkiem stratnym o skończonej konduktywności.
+
+	\begin{figure}[h!]
+	\centering
+	    \includegraphics[width=15.5cm]{diagram.jpg}
+	    \caption{Podział tekstronicznych systemów transmisji}
+	\end{figure}
 
 
+\section{Ciało ludzkie jako ośrodek stratny}
+Kolejnym problemem koniecznym do rozwiązania przez badaczy jest uzyskanie impedancji charakterystycznej linii równej 50 \(\Omega\). Wartość ta jest standardową, szeroko stosowaną wartością impedancji linii transmisyjnych w różnego rodzaju układach elektronicznych. Jest ona kompromisem między wartością impedancji, przy której można uzyskać maksymalną moc sygnału przesyłanego linią (wyznaczonej dla linii powietrznej współosiowej), a wartością, przy której można uzyskać minimum strat w linii.
 
 
+%antena bedzie wykonana w technologi mikropaskowej
 
-%Ludzka tkanka - ośrodek stratny o skończonej konduktywność oraz stratach.
 
 
 
@@ -333,11 +359,8 @@ W trakcie realizacji założeń projektu pracowałam wykorzystując środowisko 
 
 
 
-
-
 \chapter {Projekt anteny}
 
-\section{Ważniejsze wymagania stawiane antenom ISM}
 
 %W poniżsyzm rozdziale 
 
