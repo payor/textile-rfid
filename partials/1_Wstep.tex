@@ -303,15 +303,20 @@ Pasma pracy:
 
 Tekstronika jest nową gałęzią nauki, zajmującą się projektowaniem i budową inteligentnej odzieży. Jest wynkiem połączenia kilku dziedzin nauki m.in. nauki o materiałach, włókiennictwa, elektroniki, radiokumunikacji, kompatybilności elektromagnetycznej jak również informatyki. Tekstronika stwarza możliwość wykorzystania różnych metod transmisji sygnałów (rys.2.2) w układach antenowych. W swojej pracy skoncentruję się na transmisji bezprzewodowej w paśmie nielicencjonowanym 2.4 GHz - 2,4835 GHz.  
 Anteny do zastosowań tekstronicznych, czyli implementowane w odzieży, dzięki eleastycznej i giętkiej konstrukcji są łatwe do scalenia z materiałami. 
-Wymagania stawiane antenem tekstylnym to m.in: 
+Ważniejsze parametry anten istotne w procesie projektowania: 
 
 \begin{itemize}\setlength{\itemsep}{0pt}
 
 	\item pasmo pracy - czyli zakres częstotliwości, dla których projektowana antena spełnia założone wcześniej kryteria. Pasmo pracy anteny powinno być możliwie szerokie - dla anten RFID nie powinno jednak przekraczać 30 MHz. 
 
-	\item ipedancja wejściowa - 
+	\item ipedancja wejściowa - jest to stosunek napięcia do natężenia prądu na zaciskach wejściowych anteny.W przypadku gdy mamy do czynienia z dostrojeniem rezonansowym do częstotliwości pracy, to impedancja wejściowa jest czystą rezystancją - w innych wypadkach pojawia się także reaktancja.
+	standardowa impedancja linii transmisyjnych wynosi 50\(\Omega\). Wartość ta pozwala uzyskać maksymalną mocy sygnału, przy minimalnych stratach w linii.
 
-, kołowa (eliptyczna) polaryzacja, niski profil, mała waga, wymiary i objętość. 
+	\item zysk energetyczny - defionowany jako zysk kierunkowy zględem anteny wzorcowej (anteny izotropowej).
+	Jest to stosunek gęstości mocy promieniowania w danym kierunku do średniej gęstości mocy wypromieniowanej przez antenę w pełnym kącie bryłowym. Podawany zazwyczaj dla kierunku, w którym promieniwanie anteny jest najsilniejsze.  
+
+	\item charakterystyka promieniowania - jest to zobrazowana w sposób graficzny na wykresie przestrzennym (zazwyczaj trójwymiarowym), zdolność promieniowania energii przez antenę w różnych kiedunkach.
+
 
 \end{itemize}
 
@@ -326,7 +331,8 @@ Ponaddto tkanka ludzka jest ośrodkiem stratnym o skończonej konduktywności.
 
 
 \section{Ciało ludzkie jako ośrodek stratny}
-Kolejnym problemem koniecznym do rozwiązania przez badaczy jest uzyskanie impedancji charakterystycznej linii równej 50 \(\Omega\). Wartość ta jest standardową, szeroko stosowaną wartością impedancji linii transmisyjnych w różnego rodzaju układach elektronicznych. Jest ona kompromisem między wartością impedancji, przy której można uzyskać maksymalną moc sygnału przesyłanego linią (wyznaczonej dla linii powietrznej współosiowej), a wartością, przy której można uzyskać minimum strat w linii.
+
+
 
 
 %antena bedzie wykonana w technologi mikropaskowej
