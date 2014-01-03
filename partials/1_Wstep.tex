@@ -21,7 +21,7 @@ Systemy automatycznej identyfikacji obejmują:
 \end{itemize}
 
 Za protoplastę systemów automatycznej identyfikacji zwykło się uważać systemy kodów kreskowych, wprowadzone do powszechnego użytkuw latach 60-tych XX wieku.
-Kod kreskowy nazywany często potocznie kodem paskowym (ang. \emph{bar code}) stanowi szereg ciemnych i jasnych pasków o zróżnicowanej szerokości, wykorzystywanych do zakodowania danych cyfrowych. Wykorzystując własności statyczne nośnika informacji, w tym przypadku białej i czarnej farby tworzącej pasek kodu kreskowego, jesteśmy w stanie szybko i w sposób jednoznaczny dokonać identyfikacyji skanowanego obiektu. Emitowane przez czytnik światło zostaje odbite od jasnych pasków, a pochłonięte przez paski czarne. Dekodowanie informacji cyfrowej zapisanej w kodzie kreskowym sprowadza sie do porównania, mierzonego w luksach natężenia światła emitowanego przez czytnik z natężeniem światłaodbitym przez kod kreskowy. Zastosowanie odpowiedniego fotodetektora pozwala tą różnicę w poziomie natężenia światła przekształcić w ciąg impulsów elektrycznych, które są następnie przesyłane do komputera. W komputerze impulsy te są przetwarzane na ciąg odpowiednich znaków alfanumerycznych zapisywanych w bazie danych. 
+Kod kreskowy nazywany często potocznie kodem paskowym (ang. \emph{bar code}) stanowi szereg ciemnych i jasnych pasków o zróżnicowanej szerokości, wykorzystywanych do zakodowania danych cyfrowych. Wykorzystując własności statyczne nośnika informacji, w tym przypadku białej i czarnej farby tworzącej pasek kodu kreskowego, jesteśmy w stanie szybko i w sposób jednoznaczny dokonać identyfikacyji skanowanego obiektu. Emitowane przez czytnik światło zostaje odbite od jasnych pasków, a pochłonięte przez paski czarne. Dekodowanie informacji cyfrowej zapisanej w kodzie kreskowym sprowadza sie do porównania, mierzonego w luksach natężenia światła emitowanego przez czytnik z natężeniem światłao dbitym przez kod kreskowy. Zastosowanie odpowiedniego fotodetektora pozwala tą różnicę w poziomie natężenia światła przekształcić w ciąg impulsów elektrycznych, które są następnie przesyłane do komputera. W komputerze impulsy te są przetwarzane na ciąg odpowiednich znaków alfanumerycznych zapisywanych w bazie danych. 
 Kody kreskowe są powszechnym i tanim sposobem etykietowania produktów. Zaletą tego systemu jest powszechna unifikacja sposobu kodowania. Wadami  natomiast możliwość zapisu małej ilości danych. kodów kreskowych oraz częsty problem z odczytem danych (dane trzeba wprowadzać ręcznie). Duży problem w wielu sytuacjach stanowi również niewielka dopuszczalna odległość kodu od czytnika. 
 Technologia kodów kreskowych jest obecnie najpowszechniejszą i najtańszą technologią znakowania produktów, jednak osiągnęła już swoje granice możliwości – w pewnych zastosowaniach jest już niewystarczająca.
 Coraz większą popularność zyskuje technika identyfikacji radiowej – \emph{RFID}. System jest bardzo prosty dzięki temu zyskuje na popularności zarówno przy dużych i kosztownych projektach jak również  niewielkich przedsięwzięciach.
@@ -39,15 +39,35 @@ W skład typowego systemu \emph{RFID} wchodzą następujące podzespoły:
 \begin{itemize}\setlength{\itemsep}{0pt}
 	\item znacznik  (etykieta, transponder, tag) –zbudowany z układu elektronicznego najczęściej microchipa z pamięcią, w którym dane są  kodowane i zapisywane w pamięci podręcznej oraz transmitowane za pomocą anteny nadawczo odbiorczej (często napylanej na warstwie izolatora). Układ identyfikatora wykonany jest zazwyczaj na podłożu z papieru lub plastiku. 
 
-	Znaczniki \emph{RFID} mogą zawierać zarówno informacje zapisane w formie elektronicznej (pod postacią danych) jak również naniesiony tekst lub kod kreskowy. 
+	Etykiety \emph{RFID} mogą zawierać zarówno informacje zapisane w formie elektronicznej (pod postacią danych) jak również naniesiony tekst lub kod kreskowy. 
 
-	Identyfikatory możemy sklasyfikować na dwa sposoby . W zależności od sposobu zasilania oraz od konfiguracji w jakiej występują.
+	Identyfikatory możemy sklasyfikować na dwa sposoby. W zależności od sposobu zasilania i sposobu zapisu danych. 
 
-	Pod względem zasilania transpondery dzielimy na: pasywne  (ang. \emph{passive}) (bez wewnętrznego zasilania) do zasilania  wykorzystują energie pola elektromagnetycznego, która wytwarzana jest przez czytnik oraz aktywne (ang. \emph{active}) (z własnym źródłem zasilania np. baterią) oraz półaktywne lub półpasywne (ang. \emph{semi-active, ang. semi-passive}) łączą cech zarówno transponderów aktywnych jak i pasywnych. Transpondery te wyposażone są w baterię zapewniającą zasilanie obwodom elektronicznym, natomiast nie posiadają nadajnika. Zasięg odczytu sięga 100 m, w dużym stopniu jednak zależy od czułości odbiornika w czytniku.  
+	Ze względu na sposób zasilania znaczniki dzielimy na: 
 
-	Znaczniki aktywne osiągają większą moc sygnału transmitowanego z identyfikatora, ponadto transmisja trwa krócej. Stosuje się je przede wszystkim do identyfikacji pojazdów. Najczęściej używane są znaczniki pasywne. Charakteryzują się brakiem własnego zasilania. Energię czerpią z fal radiowych celem odczytu i transmisji danych.  Konfiguracje w jakich może występować pamięć etykiety \emph{RFID} to: \emph{RO} (ang.\emph{read only}) - tylko odczyt – są programowane podczas produkcji i zawierają numer seryjny (mogą zawierać również inne dane , których nie można modyfikować), \emph{RW} (ang.\emph{read write}) - odczyt i zapis – dane mogą być wielokrotnie modyfikowane (pamięć może być podzielona na dwie części: część tylko do odczytu i część w której użytkownik może modyfikować zapisane dane) oraz \emph{WORM} (ang.\emph{write once read many}) -jednokrotny zapis i wielokrotny odczyt, część danych zapisana jest trwale, a część może być zmieniona przez użytkownika.
+	\begin{itemize}\setlength{\itemsep}{0pt}
+
+	\item pasywne  (ang. \emph{passive}) (bez wewnętrznego zasilania) do zasilania  wykorzystują energie pola elektromagnetycznego, która wytwarzana jest przez czytnik
 	
-	\item czytnik  - zbudowany z mikrokomputera, który weryfikuje poprawność otrzymanych informacji, modułu transmisji radiowej czyli nadajnika i odbiornika  odpowiedzialnych za odczyt i zapis danych w identyfikatorze oraz antenę lub cewkę. Niektóre czytniki posiadają dodatkowo interfejs łączący z komputerem \emph{PC} (pozwalający na transmisję danych pomiędzy czytnikiem a komputerem).
+	\item aktywne (ang. \emph{active}) (z własnym źródłem zasilania np. baterią) oraz 
+
+	\item pół-pasywne (ang. \emph{semi-passive}) łączą cechy zarówno transponderów aktywnych jak i pasywnych. Transpondery te wyposażone są w baterię, która zasila obwód elektroniczny. Zasięg odczytu sięga 100 m, w dużym stopniu jednak za leży od czułości odbiornika w czytniku.  
+
+	Znaczniki aktywne emitują większą moc sygnału transmitowanego z identyfikatora, ponadto transmisja trwa krócej. Stosuje się je przede wszystkim do identyfikacji pojazdów.
+
+	Najczęściej używane są znaczniki pasywne. Charakteryzują się brakiem własnego zasilania. Energię pozyskują z fal radiowych celem odczytu i transmisji danych.  
+	
+	Ze względu na sposób zapisu danych znaczniki dzielimy na:
+
+	\begin{itemize}\setlength{\itemsep}{0pt}
+
+	\item znaczniki typu \emph{RO} (ang.\emph{read only}) - tylko odczyt – są programowane podczas produkcji i zawierają numer seryjny (mogą zawierać również inne dane, których nie można modyfikować), 
+
+	\item znaczniki typu \emph{RW} (ang.\emph{read write}) - odczyt i zapis – dane mogą być wielokrotnie modyfikowane (pamięć może być podzielona na dwie części: część tylko do odczytu i część w której użytkownik może modyfikować zapisane dane),
+
+	\item znaczniki typu\emph{WORM} (ang.\emph{write once read many}) - jednokrotny zapis i wielokrotny odczyt, część danych zapisana jest trwale, a część może być zmieniona przez użytkownika.
+	
+	\item czytnik - zbudowany z mikrokomputera, który weryfikuje poprawność otrzymanych informacji, modułu transmisji radiowej czyli nadajnika i odbiornika  odpowiedzialnych za odczyt i zapis danych w identyfikatorze oraz antenę lub cewkę. Niektóre czytniki posiadają dodatkowo interfejs łączący z komputerem \emph{PC} (pozwalający na transmisję danych pomiędzy czytnikiem a komputerem).
 	
 	Oprogramowanie czytnika składa się z warstwy komunikacyjnej i użytkowej. Warstwa komunikacyjna odpowiedzialna jest za techniczną stronę transmisji danych, a warstwa użytkowa jest odpowiada za poprawne działanie aplikacji czyli wymianę, gromadzenia i przetwarzanie informacji. W zależności od budowy układ pracuje na komputerze i/lub na serwerze.Im większy czytnik tym większy jego zakres odczytu.
 	
