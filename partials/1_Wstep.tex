@@ -21,25 +21,23 @@ Systemy automatycznej identyfikacji obejmują:
 \end{itemize}
 
 Za protoplastę systemów automatycznej identyfikacji zwykło się uważać systemy kodów kreskowych, wprowadzone do powszechnego użytkuw latach 60-tych XX wieku.
-Kod kreskowy inaczej określany jako kod paskowy (ang. \emph{bar code}) jest graficzną formą zapisu znaków, pod postacią ciemnych i jasnych pasków o zróżnicowanej szerokości, według przyjętej symboliki  (przyjętych reguł budowy danego kodu). Skanowanie kodu odbywa się z użyciem czytnika elektronicznego, który emituje cienką wiązkę światła.
-Przesuwając się wzdłuż kodu wiązka lasera jest  pochłaniana przez ciemne paski kodu natomiast odbijana przez jasne fragmenty kodu i odbierana przez fotodiodę.
-Siła sygnału, który powstaje w czytniku zależy od tego czy światło jest pochłaniane czy odbijane przez paski kodu, natomiast długość trwania sygnału zleży od grubości pasków. W rezultacie otrzymujemy jest ciąg sygnałów elektrycznych o różnej długości i natężeniu. Impulsy elektryczne tłumaczone są przez dekoder czytnika na cyfry, litery lub inne znaki, i przesyłane do komputera. 
-Kody kreskowe są powszechnym i tanim sposób etykietowania produktów. Zaletą tego systemu jest powszechna unifikacja sposobu kodowania. Wadami  natomiast mała pojemność pamięci kodów kreskowych oraz częsty problem z odczytem danych (dane trzeba wprowadzać ręcznie). Duży problem w wielu sytuacjach stanowi również niewielka dopuszczalna odległość kodu od czytnika. 
+Kod kreskowy nazywany często potocznie kodem paskowym (ang. \emph{bar code}) stanowi szereg ciemnych i jasnych pasków o zróżnicowanej szerokości, wykorzystywanych do zakodowania danych cyfrowych. Wykorzystując własności statyczne nośnika informacji, w tym przypadku białej i czarnej farby tworzącej pasek kodu kreskowego, jesteśmy w stanie szybko i w sposób jednoznaczny dokonać identyfikacyji skanowanego obiektu. Emitowane przez czytnik światło zostaje odbite od jasnych pasków, a pochłonięte przez paski czarne. Dekodowanie informacji cyfrowej zapisanej w kodzie kreskowym sprowadza sie do porównania, mierzonego w luksach natężenia światła emitowanego przez czytnik z natężeniem światłaodbitym przez kod kreskowy. Zastosowanie odpowiedniego fotodetektora pozwala tą różnicę w poziomie natężenia światła przekształcić w ciąg impulsów elektrycznych, które są następnie przesyłane do komputera. W komputerze impulsy te są przetwarzane na ciąg odpowiednich znaków alfanumerycznych zapisywanych w bazie danych. 
+Kody kreskowe są powszechnym i tanim sposobem etykietowania produktów. Zaletą tego systemu jest powszechna unifikacja sposobu kodowania. Wadami  natomiast możliwość zapisu małej ilości danych. kodów kreskowych oraz częsty problem z odczytem danych (dane trzeba wprowadzać ręcznie). Duży problem w wielu sytuacjach stanowi również niewielka dopuszczalna odległość kodu od czytnika. 
 Technologia kodów kreskowych jest obecnie najpowszechniejszą i najtańszą technologią znakowania produktów, jednak osiągnęła już swoje granice możliwości – w pewnych zastosowaniach jest już niewystarczająca.
-Coraz większą popularność zyskuje technika radiowej identyfikacji – \emph{RFID}. System jest bardzo prosty dzięki temu zyskuje na popularności zarówno przy dużych i kosztownych projektach jak również  niewielkich przedsięwzięciach.
+Coraz większą popularność zyskuje technika identyfikacji radiowej – \emph{RFID}. System jest bardzo prosty dzięki temu zyskuje na popularności zarówno przy dużych i kosztownych projektach jak również  niewielkich przedsięwzięciach.
 
 \newpage
 
 \section{Struktura systemu \emph{RFID}}
 
-RFID (ang.\emph {Radio Frequency  Identyfication}) to jedna z najszybciej rozwijających  się automatycznych technologii bezprzewodowej  identyfikacji radiowej. Jest to system tani, wszechstronny i niezawodny. Technologia \emph{RFID} wykorzystuje sygnał radiowy niskiej mocy do bezprzewodowej transmisji danych pomiędzy czytnikiem lub dekoderem  (ang.\emph{reader, interrogator}), a znacznikiem, inaczej zwanym transponderem lub identyfikatorem (ang. \emph{transponder, tag}). Dlatego też nie ma konieczności bezpośredniego kontaktu między etykietą, a czytnikiem.
+RFID (ang.\emph {Radio Frequency  Identyfication}) to jedna z najszybciej rozwijających  się automatycznych technologii bezprzewodowej  identyfikacji. Technologia ta umożliwia zdalne przechowywanie i odczytywanie danych z układów nazywanych znacznikami (ang. \emph{tag}) za pośrednictwiem fal radiowych. 
 
 \subsection{Budowa poszczególnych podzespołów systemu}
 
 W skład typowego systemu \emph{RFID} wchodzą następujące podzespoły:
 
 \begin{itemize}\setlength{\itemsep}{0pt}
-	\item znacznik  (etykieta, transponder, identyfikator, tag, chip, metka) –zbudowany z układu elektronicznego lub microchipa z pamięcią, w którym dane są  kodowane i zapisywane w pamięci podręcznej oraz transmitowane za pomocą anteny nadawczo odbiorczej (często napylanej na warstwie izolatora). Cały układ identyfikatora przytwierdzony jest na nośnika np. papieru, plastiku. 
+	\item znacznik  (etykieta, transponder, tag) –zbudowany z układu elektronicznego najczęściej microchipa z pamięcią, w którym dane są  kodowane i zapisywane w pamięci podręcznej oraz transmitowane za pomocą anteny nadawczo odbiorczej (często napylanej na warstwie izolatora). Układ identyfikatora wykonany jest zazwyczaj na podłożu z papieru lub plastiku. 
 
 	Znaczniki \emph{RFID} mogą zawierać zarówno informacje zapisane w formie elektronicznej (pod postacią danych) jak również naniesiony tekst lub kod kreskowy. 
 
