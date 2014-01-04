@@ -78,26 +78,16 @@ W skład typowego systemu \emph{RFID} wchodzą następujące podzespoły:
 
 Technologia \emph{RFID} w ostatnim dziesięcioleciu zyskała miano jednego z najbardziej obiecujących i najprężniej rozwijających się systemów identyfikacji. System \emph{RFID} pozwala na dużą automatyzację pracy zarówno podczas zapisu jak i odczytu danych. W przeciwieństwie do kodów kreskowych technologia ta nie wymaga bezpośredniej ,"widoczności" pomiędzy etykietą, a czytnikiem oraz daje możliwość odczytu i przetwarzania wielu etykiet równocześnie.
 
-\section{Organizacja systemu \emph{RFID}}
-
-Zasada działania systemu opiera się na systemie komputerowym z bazą danych (w którym przechowywane  są wszystkie dane o ,,zametkowanym” produkcie)  oraz dwóch modułach identyfikacji radiowej: identyfikatorze i czytniku. Identyfikator – mały układ scalony z umieszczoną wewnątrz anteną w zależności od potrzeb i przeznaczenia zatopiony w plastiku, żywicy lub w formie etykiety samoprzylepnej na opakowaniu czy urządzeniu Każda etykieta posiada swój indywidualny niepowtarzalny numer identyfikacyjny \emph{ID}, który odnosi się do konkretnej bazy danych. W celu odczytania danych z tagu, nadajnik czytnika \emph{RFID} emituje pole elektromagnetyczne o częstotliwości rezonansowej układu odbiorczego. Antena dipolowa transpondera na  swoich końcach w skutek wywołanej różnicy  potencjałów indukuje prąd i magazynuje energię w kondensatorze.  Zgromadzona energia pobudza identyfikator do wysyłania odpowiedzi zawierającej kod znacznika. 
-Czytnik wyposażony w antenę odbiorcza o dużej czułości, wykrywa, filtruje, demoduluję i dekoduje odebrane fale, tak aby odczytać odpowiedzi z transponderów.
-Istnieje możliwość czytania i przetwarzania wielu etykiet (znajdujących się w zasięgu czytnika) równocześnie.Dane zapisane na etykiecie można odczytać w dowolnym momencie. 
-
-Znaczniki, które nie  mają własnego zasilania (znaczniki pasywne), zasilane poprzez pole elekromagnetyczne magazynują energię w kondensatorze, która następnie zasila poszczególne obwody transpondera. Stosunkowo małe wymiary i niski koszt  produkcji transponderów pasywnych pozwala na masowe zastosowanie w wielu sektorach gospodarki. Natomiast transpondery aktywne, znajdując się w polu działania czytnika, pobierają energię ze swojej baterii, aby wysłać przechowywane dane, a co za tym idzie zapewniają większy zasięg nawet do kilkuset metrów, jednak są większe i znacznie droższe niż znaczniki pasywne.
-
-\newpage
+%\newpage
 
 \section{Zakresy częstotliwości}
 
-Systemy \emph{RFID} są jednym z wielu systemów radiowych, dlatego aby zapewnić bezkolizyjność pracy i zniwelować zakłócenia pomiędzy poszczególnymi systemami wprowadzono podział na zakresy częstotliwości.  Dozwolone dla systemów RFID przedziały częstotliwości zawarte są w pasmie radiowym ustandaryzowanym na całym świecie pod nazwą \emph{ISM} (ang. \emph{Industrial, Scientific, Miedical}). Jest to pasmo nielicencjonowane w zamyśle przeznaczone do zastosowań przemysłowych, badawczych i medycznych. Po za pasmem \emph{ISM} dostępne są dodatkowo niskie częstotliwości poniżej 135 kHZ.
-
-Wyróżnić można kilka najpopularniejszych zakresów częstotliwości wykorzystywanych przez identyfikatory RFID:
+Obecnie wdrażane systemy \emph{RFID} pracują na różnych zakresach częstotliwosći, które można podzielić na następujące pasma:
 
 \begin{itemize}\setlength{\itemsep}{0pt}
-	\item pasmo niskich częstotliwości (ang. \emph {LF – Low Frequency}) – systemy \emph{RFID} działają zazwyczaj na częstotliwościach: 125 kHz i 134.2 kHz.
-Transpondery \emph{LF} to zazwyczaj tagi pasywne, które odróżnią się od  transponderów pozostałych pasm częstotliwości małą wrażliwością na występowanie w pobliżu elementów metalowych, substancji płynnych oraz innych elementów wykonanych z dobrych przewodników. Dlatego świetnie sprawdzają się jako identyfikatory narzędzi, podzespołów maszyn, pojazdów czy metalowych kontenerów. Znalazły również zastosowanie w dziedzinie rolnictwa do znakowania zwierząt, leków oraz produktów spożywczych, gdyż pole niskich częstotliwości przenika przez tkanki ciała i płyny.
-Wygląd i budowa transpondera \emph{LF} zależy ściśle od jego przeznaczenia. Transpondery używane jako immobilizery (czyli elektroniczne zabezpieczenia przed niepowołanym uruchomieniem pojazdu) zazwyczaj wbudowane są w kluczyk natomiast cewka anteny czytnika \emph{RFID} umieszczona współosiowo w stacyjce samochodu.
+	\item pasmo niskich częstotliwości \emph {LF} (125-134.2 kHz)
+Znaczniki \emph{LF} to zazwyczaj tagi pasywne, które wyróżniają się, małą wrażliwością na obecność w pobliżu: elementów metalowych, substancji płynnych oraz innych elementów wykonanych z dobrych przewodników. Dlatego świetnie sprawdzają się jako identyfikatory narzędzi, podzespołów maszyn, pojazdów czy metalowych kontenerów. Znalazły również zastosowanie w rolnictwie do oznakowania zwierząt, leków oraz produktów spożywczych, gdyż pole o niskiej częstotliwości przenika przez tkanki ciała i płyny.
+Wygląd i budowa znaczników \emph{LF} zależy ściśle od ichprzeznaczenia. Znaczniki używane jako immobilizery (czyli elektroniczne zabezpieczenia przed niepowołanym uruchomieniem pojazdu) zazwyczaj wbudowane są w kluczyk natomiast cewka /  antena czytnika \emph{RFID} umieszczona jest współosiowo w stacyjce samochodu.
    
 	\begin{figure}[h!]
 	\centering
