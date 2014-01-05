@@ -392,7 +392,35 @@ W trakcie realizacji założeń projektu pracowałam wykorzystując środowisko 
 
 \section{Struktura}
 
-Do realizacji projektu anteny tekstylnej RFID wykorzystano środowisko \emph{CST Microwave Studio}. Inspiracją do stworzenia struktury wyjściowej był artykuł z 6th European Conference on Antennas and Propagation \cite{Artykul}. Strukturę bazową poddano modyfikacji celem dostosowania jej do założeń projektu. Podłoże wykonano z papieru (celem bezproblemowego przymocowania anteny do ramienia). Celem optymalizacji parametrów symulacji, przeprowadzono operację \emph{adaptive mesh refinement}, która ma na celu dostosowanie rozmiaru siatki, dzięki czemu otrzymane wyniki są dokładniejsze. Przeprowadzono parametryzację struktury, aby uzyskać określone parametry anteny. Stopień dyskretyzacji został ustalony po 6 iteracjach. Proces doboru wymiarów struktury pozwolił na obserwację zmian symulacji na wykresach.  Tworzeni emodelu symulacyjnego  Modelowanie      
+Do realizacji projektu anteny tekstylnej RFID wykorzystano środowisko \emph{CST Microwave Studio}. Inspiracją do stworzenia struktury wyjściowej był artykuł z 6th European Conference on Antennas and Propagation \cite{Artykul}. Strukturę bazową poddano modyfikacji celem dostosowania jej do założeń projektu. Podłoże wykonano z papieru (celem bezproblemowego przymocowania anteny do ramienia). Optymalizację parametrów symulacji, przeprowadzono poleceniem \emph{adaptive mesh refinement}, które ma na celu dostosowanie rozmiaru siatki, dzięki czemu otrzymane wyniki są dokładniejsze. Przeprowadzono parametryzację struktury, aby uzyskać założone parametry anteny. Stopień dyskretyzacji został ustalony po 6 iteracjach. Rezultaty procesu doboru wymiarów anteny, można było obserwować na wykresach. Najlepsze wyniki posłużyły do ustalenia rozmiaru projektowanej anteny. 
+
+
+
+
+
+
+%\begin{center}
+%   \begin{tabular}{ | l | p{4cm} | p{3cm} |}
+%    \hline
+%       PARAMETR & DŁUGOŚĆ[mm]  \\ \hline 
+%		L & 130  \\ \hline    
+%		L1 & 55.5  \\ \hline 
+%		L2 & 59 \\ \hline
+%       H & 30   \\ \hline
+%       H2 & 22  \\ \hline
+%       D & 5  \\ \hline
+%       D2 & 2   \\ \hline 
+%		W & 3  \\ \hline
+%       W2 & 17 \\ \hline
+%      	długość podłoża & 15.5 \\ \hline
+%       szerokość podłoża & 7,5 \\ \hline
+%    \hline
+%    \end{tabular}
+%\end{center}
+
+
+
+%Tworzenie modelu symulacyjnego  Modelowanie      
 
  Zmianie uległy również wymiary, które szczegółowo podano na rys???.
 \chapter {Wyniki pomiarów}
