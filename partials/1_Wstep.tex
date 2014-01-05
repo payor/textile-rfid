@@ -376,58 +376,150 @@ W trakcie realizacji założeń projektu pracowałam wykorzystując środowisko 
 
 \begin{itemize}\setlength{\itemsep}{0pt}
 
-	\item pasmo pracy - czyli zakres częstotliwości, dla których projektowana antena spełnia założone wcześniej kryteria. Pasmo pracy anteny powinno być możliwie szerokie - dla anten RFID nie powinno jednak przekraczać 30 MHz. 
+	\item pasmo pracy - czyli zakres częstotliwości, dla których projektowana antena spełnia założone wcześniej kryteria. Pasmo pracy anteny powinno być możliwie szerokie - dla anten RFID nie powinno jednak przekraczać 30 MHz,
 
 	\item ipedancja wejściowa - jest to stosunek napięcia do natężenia prądu na zaciskach wejściowych anteny.W przypadku gdy mamy do czynienia z dostrojeniem rezonansowym do częstotliwości pracy, to impedancja wejściowa jest czystą rezystancją - w innych wypadkach pojawia się także reaktancja.
-	standardowa impedancja linii transmisyjnych wynosi 50\(\Omega\). Wartość ta pozwala uzyskać maksymalną mocy sygnału, przy minimalnych stratach w linii.
+	standardowa impedancja linii transmisyjnych wynosi 50\(\Omega\). Wartość ta pozwala uzyskać maksymalną mocy sygnału, przy minimalnych stratach w linii,
 
 	\item zysk energetyczny - defionowany jako zysk kierunkowy zględem anteny wzorcowej (anteny izotropowej).
-	Jest to stosunek gęstości mocy promieniowania w danym kierunku do średniej gęstości mocy wypromieniowanej przez antenę w pełnym kącie bryłowym. Podawany zazwyczaj dla kierunku, w którym promieniwanie anteny jest najsilniejsze.  
+	Jest to stosunek gęstości mocy promieniowania w danym kierunku do średniej gęstości mocy wypromieniowanej przez antenę w pełnym kącie bryłowym. Podawany zazwyczaj dla kierunku, w którym promieniwanie anteny jest najsilniejsze, 
 
-	\item charakterystyka promieniowania - pokazuje w jaki sposób antena promieniuje energię w różnych kierunkach. Obrazuje unormowany rozkład pola elektrycznego. Charakterystyka może być wyznaczona w dwóch płaszczyznach lub mieć postać trójwymiarową.
+	\item charakterystyka promieniowania - pokazuje w jaki sposób antena promieniuje energię w różnych kierunkach. Obrazuje unormowany rozkład pola elektrycznego. Charakterystyka może być wyznaczona w dwóch płaszczyznach lub mieć postać trójwymiarową,
+
+	\item polaryzacja anteny - określa ją polaryzacja wytwarzanej przez nią fali elektromagnetcznej 
+	Wyróżniamy polaryzację liniową (pionową, poziomą, nachyloną pod kątem), eliptyczną lub kołową ( lewoskrętną, prawoskrętną),
+
+	\item sprawność - to storunek mocy wypromieniowanej przez antenę do mocy dostarczonej do anteny,
 
 	\item dopasowasowanie - linia transmisyjna jest dopasowana gdy impedancja charakterystyczna linii jest taka sama jak anteny. 
 
 \end{itemize}
 
+\newpage
 \section{Struktura}
 
-Do realizacji projektu anteny tekstylnej RFID wykorzystano środowisko \emph{CST Microwave Studio}. Inspiracją do stworzenia struktury wyjściowej był artykuł z 6th European Conference on Antennas and Propagation \cite{Artykul}. Strukturę bazową poddano modyfikacji celem dostosowania jej do założeń projektu. Podłoże wykonano z papieru (celem bezproblemowego przymocowania anteny do ramienia). Optymalizację parametrów symulacji, przeprowadzono poleceniem \emph{adaptive mesh refinement}, które ma na celu dostosowanie rozmiaru siatki, dzięki czemu otrzymane wyniki są dokładniejsze. Przeprowadzono parametryzację struktury, aby uzyskać założone parametry anteny. Stopień dyskretyzacji został ustalony po 6 iteracjach. Rezultaty procesu doboru wymiarów anteny, można było obserwować na wykresach. Najlepsze wyniki posłużyły do ustalenia rozmiaru projektowanej anteny. 
+Do realizacji projektu anteny tekstylnej RFID wykorzystano środowisko \emph{CST Microwave Studio}. Inspiracją do stworzenia struktury wyjściowej był artykuł z 6th European Conference on Antennas and Propagation \cite{Artykul}. Strukturę bazową poddano modyfikacji celem dostosowania jej do założeń projektu. Podłoże wykonano z papieru (celem bezproblemowego przymocowania anteny do ramienia). Optymalizację parametrów symulacji, przeprowadzono poleceniem \emph{adaptive mesh refinement}, które ma na celu dostosowanie rozmiaru siatki, dzięki czemu otrzymane wyniki są dokładniejsze. 
+
+
+\begin{figure}[h!]
+	\centering
+	    \includegraphics[width=15.5cm]{struktura.jpg}
+	    \caption{Model struktury anteny}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	    \includegraphics[width=15.5cm]{fizyczna_antena.jpg}
+	    \caption{Prototyp anteny}
+\end{figure}
+
+
+\begin{table}[t]
+\caption{Wymiary anteny}
+\begin{center}
+ \begin{tabular}{|c|c|p{4cm} | p{3cm} |} 
+  \hline
+		PARAMETR & WARTOŚĆ [mm]  \\ \hline 
+		L & 130  \\ \hline    
+		L1 & 55.5  \\ \hline 
+		L2 & 59 \\ \hline
+     	H & 30   \\ \hline
+      	H2 & 22  \\ \hline
+     	D & 5  \\ \hline
+       	D2 & 2   \\ \hline 
+		W & 3  \\ \hline
+      	W2 & 17 \\ \hline
+        długość podłoża & 15.5 \\ \hline
+       szerokość podłoża & 7.5 \\ \hline
+    \hline
+   \end{tabular}
+ \end{center}
+\end{table}
+
+
+Przeprowadzono parametryzację struktury, aby uzyskać założone parametry anteny. Stopień dyskretyzacji został ustalony po 6 iteracjach. Rezultaty procesu doboru wymiarów anteny, można było obserwować na wykresach. Najlepsze wyniki posłużyły do ustalenia rozmiaru projektowanej anten, a pózniej wykonania prototypu. Schemat struktury i prototyp widoczny jest na Rys.4.1 i Rys. 4.2. Natomiast wymiary zestawiono w Tab. 4.1. 
+\newline
+\noindent
+Wykonana antena ma strukturę dipola o polaryzacji poziomej. 
+W skład układu antenowego wchodzi część promieniująca zwana promiennikiem lub też radiatorem oraz część zasilająca. Promiennik ma za zadanie wypromieniować w przestrzeń energię dostarczoną przez kabel zasilający.
+
+
+
+%Zmieniająć długość L - (długość ramion promiennika) możem
+%Impedancja wejściowa symulowanej anteny równa jest 38 \(\Omega\). 
+
+%W trakcie pomarów Na kabel zasilający antenę zostały nałożone koraliki ferrytowe, aby zmniejszyć do minimum promieniowanie kabla i ewentualne zakłócenia z tym związane. 
+
+
+%Aby uzyskać pracę w rezonansie należy wówczas odpowiednio skrócić długość anteny. 
+
+
+
+%Zadaniem części promieniującej, zwanej promiennikiem lub radiatorem, jest wypromieniowanie w przestrzeń dostarczonej do niego energii w.cz. Promiennik charakteryzuje się zakresem częstotliwości, impedancją wejściową, polaryzacją, współczynnikiem kierunkowości, zyskiem oraz wymiarami.
+% Na kabel zasilający antenę zostały nałożone koraliki ferrytowe, aby zmniejszyć do minimum promieniowanie kabla i ewentualne zakłócenia z tym związane. 
+%Wraz ze zmnianą długości ramion promiennika dobrana została częstotliwość na poziomie 2.4 GHz.      
 
 
 
 
 
+%Wpływ człowieka na charakterystykę promieniowania
 
-%\begin{center}
-%   \begin{tabular}{ | l | p{4cm} | p{3cm} |}
-%    \hline
-%       PARAMETR & DŁUGOŚĆ[mm]  \\ \hline 
-%		L & 130  \\ \hline    
-%		L1 & 55.5  \\ \hline 
-%		L2 & 59 \\ \hline
-%       H & 30   \\ \hline
-%       H2 & 22  \\ \hline
-%       D & 5  \\ \hline
-%       D2 & 2   \\ \hline 
-%		W & 3  \\ \hline
-%       W2 & 17 \\ \hline
-%      	długość podłoża & 15.5 \\ \hline
-%       szerokość podłoża & 7,5 \\ \hline
-%    \hline
-%    \end{tabular}
-%\end{center}
+ 
 
 
 
+%Obecność człowieka pogarsza charakterystykę promieniowania anteny. Zjawisko to spowodowane jest przewodzącymi właściwościami ciała człowieka, co powoduje tłumienie składowej elektrycznej pola. Na zakłócenia tego typu bardziej odporne są anteny pętlowe. Z tego powodu częściej znajdują one zastosowanie w urządzeniach przenośnych (np. pilotach zdalnego sterowania), na które mogłaby wpływać bezpośrednia bliskość człowieka.
+
+ 
 %Tworzenie modelu symulacyjnego  Modelowanie      
 
- Zmianie uległy również wymiary, które szczegółowo podano na rys???.
 \chapter {Wyniki pomiarów}
 
 
 \chapter {Podsumowanie}
 
+
+
+\begin{table}[t]
+\caption{Wymiary anteny}
+\begin{center}
+ \begin{tabular}{|c|c|p{4cm} | p{3cm} |} 
+  \hline
+		RODZAJ ANTENY  & CZĘSTOTLIWOŚĆ [MHz] & POZIOM MOCY SYGNAŁU [dBM]  \\ \hline 
+		WZORCOWA  & 130  \\ \hline    
+		MIERZONA TEKSTYLNA & 55.5  \\ \hline 
+		WZORCOWA & 59 \\ \hline
+     	MIERZONA TEKSTYLNA & 30   \\ \hline
+      	H2 & 22  \\ \hline
+     	D & 5  \\ \hline
+       	D2 & 2   \\ \hline 
+		W & 3  \\ \hline
+      	W2 & 17 \\ \hline
+        długość podłoża & 15.5 \\ \hline
+       szerokość podłoża & 7.5 \\ \hline
+    \hline
+   \end{tabular}
+ \end{center}
+\end{table}
+
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{polski}
+\usepackage[cp1250]{inputenc}
+\usepackage{enumerate}
+\begin{document}
+
+\begin{tabular}{c r @{,} l}
+Wyrażenie &
+\multicolumn{2}{c}{Wartość}\\ \hline
+$\pi$ & 3&1416 \\
+$\pi^{\pi}$ & 36&46 \\
+$(\pi^{\pi})^{\pi}$ & 80662&7 \\
+\end{tabular}
+
+\end{document}
 
 
 %Anteny tekstylne to anteny pracujące w pobliżu ciała ludzkiego, a co za tym idzie patrząc od strony technologicznej - w pobliżu dielektrycznego, dyspersyjnego ośrodka startnego. Fale o takiej samej częstotliwośći (w ośrodku dyspersyjnym), rozchodzą się różną prędkością. 
