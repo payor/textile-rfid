@@ -485,9 +485,10 @@ W skład układu antenowego wchodzi część promieniująca zwana promiennikiem 
 \begin{table}[t]
 \caption{Wymiary anteny}
 \begin{center}
- \begin{tabular}{|c|c|p{4cm} | p{3cm} |} 
+ \begin{tabular}{|c|c| p{4cm} | p{1.5cm} | p{1.5cm} |} 
   \hline
-		RODZAJ ANTENY  & CZĘSTOTLIWOŚĆ [MHz] & POZIOM MOCY SYGNAŁU [dBM]  \\ \hline 
+		RODZAJ ANTENY  & CZĘSTOTLIWOŚĆ [MHz]  POZIOM MOCY SYGNAŁU [dBM] \\ \hline 
+		 POLARYZACJA POZIOMA  \\ \hline
 		WZORCOWA  & 130  \\ \hline    
 		MIERZONA TEKSTYLNA & 55.5  \\ \hline 
 		WZORCOWA & 59 \\ \hline
@@ -505,23 +506,16 @@ W skład układu antenowego wchodzi część promieniująca zwana promiennikiem 
 \end{table}
 
 
-\documentclass[a4paper,11pt]{article}
-\usepackage{polski}
-\usepackage[cp1250]{inputenc}
-\usepackage{enumerate}
-\begin{document}
-
-\begin{tabular}{c r @{,} l}
-Wyrażenie &
-\multicolumn{2}{c}{Wartość}\\ \hline
-$\pi$ & 3&1416 \\
-$\pi^{\pi}$ & 36&46 \\
-$(\pi^{\pi})^{\pi}$ & 80662&7 \\
-\end{tabular}
-
-\end{document}
-
-
+\begin{table}
+    \begin{tabular}{c|cc}
+    RODZAJ POLARYZACJI  & ANTENA WZORCOWA & ANTENA MIERZONA TEKSTYLNA \\ \hline
+    ~                   & ~               & ~                         \\
+    POLARYZACJA POZIOMA & -34.5 dBm       & -39,2 dBm                 \\
+    ~                   & ~               & ~                         \\
+    POLARYZACJA PIONOWA & -59.7 dBm       & -59.9 dBm                 \\
+    ~                   & ~               & ~                         \\
+    \end{tabular}
+\end{table}
 %Anteny tekstylne to anteny pracujące w pobliżu ciała ludzkiego, a co za tym idzie patrząc od strony technologicznej - w pobliżu dielektrycznego, dyspersyjnego ośrodka startnego. Fale o takiej samej częstotliwośći (w ośrodku dyspersyjnym), rozchodzą się różną prędkością. 
 %Ponaddto tkanka ludzka jest ośrodkiem stratnym o skończonej konduktywności.
 
