@@ -414,13 +414,6 @@ Do realizacji projektu anteny tekstylnej RFID wykorzystano środowisko \emph{CST
 	    \caption{Prototyp anteny}
 \end{figure}
 
-\begin{figure}[h!]
-	\centering
-	    \includegraphics[width=15.5cm]{struktura_plaska.jpg}
-	    \caption{Model struktury anteny z programu \emph{CST Microwave Studio}}
-\end{figure}
-
-
 \begin{table}[h]
 \begin{center}
     \begin{tabular}{|c|c|}
@@ -467,13 +460,23 @@ Do realizacji projektu anteny tekstylnej RFID wykorzystano środowisko \emph{CST
 \end{table}
 
 
+
+\begin{figure}[h!]
+	\centering
+	    \includegraphics[width=15.5cm]{struktura_plaska.jpg}
+	    \caption{Model struktury anteny z programu \emph{CST Microwave Studio}}
+\end{figure}
+
+
 Celem uzyskania w trakcie symulacji parametrów zbliżonych do założeń projektu przeprowadzono parametryzację struktury. Stopień dyskretyzacji został ustalony po 6 iteracjach. Rezultaty procesu doboru wymiarów anteny, można było obserwować na wykresach. Najlepsze wyniki posłużyły do ustalenia rozmiaru projektowanej anten, a pózniej wykonania prototypu. Impedancja wejściowa symulowanej anteny ustalona została na 38 \(\Omega\). Schemat struktury po parametryzacji i prototyp widoczny jest na Rys.4.1 i Rys. 4.2. Natomiast wymiary zestawiono w Tab. 4.1. 
-Wykonana antena ma strukturę dipola o polaryzacji poziomej. 
+\noindent 
+\newline Wykonana antena ma strukturę dipola o polaryzacji poziomej. 
 W skład układu antenowego wchodzi część promieniująca zwana promiennikiem lub też radiatorem oraz część zasilająca. Promiennik ma za zadanie wypromieniować w przestrzeń energię dostarczoną przez kabel zasilający.
 Podłoże wykonano z papieru (celem bezproblemowego umieszczenia anteny do ramienia). Przenikalność elektryczną podłoża przyjęto jak dla papieru $\epsilon_{r}$ = 2.31.
 
 \section {Struktura anteny tekstylnej}
 
+W programie \emph{CST Microwave Studio} umieszczono prototyp anteny na zamodelowanym ramieniu. Do celów symulacji dla modelu ramienia przyjęto $\frac{2}{3}\epsilon_{r}$ i $\frac{2}{3}\sigma$ dla mięśni czyli w tym wypadku $\epsilon_{r}$ = 35,193$\frac{F}{m}$  i $\sigma$ = 1,14.
 
 \begin{figure}[h!]
 	\centering
@@ -482,13 +485,9 @@ Podłoże wykonano z papieru (celem bezproblemowego umieszczenia anteny do ramie
 \end{figure}
 
 
-
-
-
-
 \chapter {Wyniki pomiarów}
 
-\section{Wykonanie anteny}
+\section{Pomiar parametru $s_{11}$}
 
 
 
@@ -550,6 +549,14 @@ Podłoże wykonano z papieru (celem bezproblemowego umieszczenia anteny do ramie
 \end{figure}
 
 
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=15cm]{AN_RAM_SYM_RAM.jpg}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny umieszczonej na ramieniu, porównany z wynikami anteny umieszczonej na ramieniu w symulacji}
+\end{figure}
+
+
+\chapter{Podsumowanie}
 %Badania
 %Zmieniająć długość L - (długość ramion promiennika) możemy regulować częstotliwość pracy anteny.
 %Celem zmniejszenia impedancji skracaliśmy wartość L2.
