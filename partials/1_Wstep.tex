@@ -396,9 +396,9 @@ W trakcie realizacji założeń projektu pracowałam wykorzystując środowisko 
 \end{itemize}
 
 \newpage
-\section{Struktura}
+\section{Struktura prototypu anteny}
 
-Do realizacji projektu anteny tekstylnej RFID wykorzystano środowisko \emph{CST Microwave Studio}. Inspiracją do stworzenia struktury wyjściowej był artykuł z 6th European Conference on Antennas and Propagation \cite{Artykul}. Strukturę bazową poddano modyfikacji celem dostosowania jej do założeń projektu. Podłoże wykonano z papieru (celem bezproblemowego przymocowania anteny do ramienia). Optymalizację parametrów symulacji, przeprowadzono poleceniem \emph{adaptive mesh refinement}, które ma na celu dostosowanie rozmiaru siatki, dzięki czemu otrzymane wyniki są dokładniejsze. 
+Do realizacji projektu anteny tekstylnej RFID wykorzystano środowisko \emph{CST Microwave Studio}. Inspiracją do stworzenia struktury wyjściowej był artykuł z 6th European Conference on Antennas and Propagation \cite{Artykul}. Strukturę bazową poddano modyfikacji celem dostosowania jej do założeń projektu.  Optymalizację parametrów symulacji, przeprowadzono poleceniem \emph{adaptive mesh refinement}, które ma na celu dostosowanie rozmiaru siatki, dzięki czemu otrzymane wyniki są dokładniejsze. 
 
 
 \begin{figure}[h!]
@@ -414,48 +414,149 @@ Do realizacji projektu anteny tekstylnej RFID wykorzystano środowisko \emph{CST
 	    \caption{Prototyp anteny}
 \end{figure}
 
+\begin{figure}[h!]
+	\centering
+	    \includegraphics[width=15.5cm]{struktura płaska.jpg}
+	    \caption{Podział tekstronicznych systemów transmisji}
+\end{figure}
+
+
 \begin{table}[h]
 \begin{center}
-    \begin{tabular}{cccc}
-    PARAMETR           & WARTOŚĆ \\ \hline
-    ~                  & ~       \\
-    L                  & 130 mm  \\
-    ~                  & ~       \\
-    L1                 & 55.5 mm \\
-    ~                  & ~       \\
-    L2                 & 59 mm   \\
-    ~                  & ~       \\
-    H                  & 30 mm   \\
-    ~                  & ~       \\
-    H2                 & 22 mm   \\
-    ~                  & ~       \\
-    D                  & 5 mm    \\
-    ~                  & ~       \\
-    D2                 & 2 mm    \\
-    ~                  & ~       \\
-    W                  & 3 mm    \\
-    ~                  & ~       \\
-    W2                 & 17 mm   \\
-    ~                  & ~       \\
-    DLUGOSC PODLOZA    & 15.5 mm \\
-    ~                  & ~       \\
-    SZEROKOSC PODLOZA  & 7.5 mm  \\
-    ~                  & ~       \\
+    \begin{tabular}{|c|c|}
+    \hline
+    ~                 & ~       \\
+    PARAMETR          & WARTOŚĆ \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    L                 & 130 mm  \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    L1                & 55.5 mm \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    L2                & 59 mm   \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    H                 & 30 mm   \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    H2                & 22 mm   \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    D                 & 5 mm    \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    D2                & 2 mm    \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    W                 & 3 mm    \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    W2                & 17 mm   \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    DLUGOŚĆ PODŁOŻA   & 15.5 mm \\
+    ~                 & ~       \\ \hline
+    ~                 & ~       \\
+    SZEROKOŚĆ PODŁOŻA & 7.5 mm  \\
+    ~                 & ~       \\ \hline
     \end{tabular}
- \end{center}
+	\caption{Wymiary struktury anteny}
+\end{center}
 \end{table}
 
 
-Przeprowadzono parametryzację struktury, aby uzyskać założone parametry anteny. Stopień dyskretyzacji został ustalony po 6 iteracjach. Rezultaty procesu doboru wymiarów anteny, można było obserwować na wykresach. Najlepsze wyniki posłużyły do ustalenia rozmiaru projektowanej anten, a pózniej wykonania prototypu. Schemat struktury i prototyp widoczny jest na Rys.4.1 i Rys. 4.2. Natomiast wymiary zestawiono w Tab. 4.1. 
+Przeprowadzono parametryzację struktury, aby uzyskać założone parametry anteny. Stopień dyskretyzacji został ustalony po 6 iteracjach. Rezultaty procesu doboru wymiarów anteny, można było obserwować na wykresach. Najlepsze wyniki posłużyły do ustalenia rozmiaru projektowanej anten, a pózniej wykonania prototypu. Impedancja wejściowa symulowanej anteny ustalona została na 38 \(\Omega\). Schemat struktury po parametryzacji i prototyp widoczny jest na Rys.4.1 i Rys. 4.2. Natomiast wymiary zestawiono w Tab. 4.1. 
+
+\section {Struktura anteny tekstylnej}
+
+
+\begin{figure}[h!]
+	\centering
+	    \includegraphics[width=15.5cm]{diagram.jpg}
+	    \caption{Podział tekstronicznych systemów transmisji}
+\end{figure}
+
+
+
+
+
 \newline
 \noindent
 Wykonana antena ma strukturę dipola o polaryzacji poziomej. 
 W skład układu antenowego wchodzi część promieniująca zwana promiennikiem lub też radiatorem oraz część zasilająca. Promiennik ma za zadanie wypromieniować w przestrzeń energię dostarczoną przez kabel zasilający.
 
+Podłoże wykonano z papieru (celem bezproblemowego przymocowania anteny do ramienia).
+
+\chapter {Wyniki pomiarów}
+
+\section{Wykonanie anteny}
 
 
-%Zmieniająć długość L - (długość ramion promiennika) możem
-%Impedancja wejściowa symulowanej anteny równa jest 38 \(\Omega\). 
+
+\begin{table}[h]
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    ~                     & ~               & ~                         \\
+     RODZAJ POLARYZACJI    & ANTENA WZORCOWA & ANTENA MIERZONA TEKSTYLNA \\
+    ~                     & ~               & ~                         \\ \hline
+    ~                     & ~               & ~                         \\
+     POLARYZACJA POZIOMA  & -34.5 dBm       & -39,2 dBm                 \\
+    ~                     & ~               & ~                         \\ \hline
+    ~                     & ~               & ~                         \\
+     POLARYZACJA PIONOWA  & -59.7 dBm       & -59.9 dBm                 \\
+    ~                     & ~               & ~                         \\ \hline
+    \end{tabular}
+    \caption{Poziom mocy sygnału}
+\end{center}
+\end{table}
+
+
+
+
+\begin{table}[h]
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    ~               & \multicolumn{3}{c|}{~}     \\
+    ~               & \multicolumn{3}{c|}{ANTENA MIERZONA TEKSTYLNA } \\
+    ~               & \multicolumn{3}{c|}{~}     \\ \hline
+    ~               & \multicolumn{2}{c|}{~}     & ~                                  \\
+    ANTENA WZORCOWA & \multicolumn{2}{c|}{BEZ OBECNOŚCI CZLOWIEKA} & W OBECNOŚCI CZLOWIEKA              \\
+    ~               & \multicolumn{2}{c|}{~}     & ~                                  \\ \hline
+    ~               & ~                          & ~                                  & ~                                  \\
+    ~               & POŁOŻENIE ----             & POŁOŻENIE [     ]                  & POŁOŻENIE [    ]                   \\
+    ~               & ~                          & ~                                  & ~                                  \\ \hline
+    ~               & ~                          & ~                                  & ~                                  \\
+    -10.24 dB       & -38.25 dB                  & -46.05 dB                          & -49.04 dB                          \\
+    ~               & ~                          & ~                                  & ~                                  \\ \hline
+    \end{tabular}
+    \caption{Zysk energetyczny badanych anten}
+\end{center}
+\end{table}
+
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=15cm]{AN_Prz_P_SYM_Prz.jpg}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny przed korektą, porównany z wynikami symulacji}
+\end{figure}
+
+
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=15cm]{AN_Prz_P_AN_Po.jpg}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny przed korektą, porównany z wynikami anteny po korekcie}
+\end{figure}
+
+
+%Badania
+%Zmieniająć długość L - (długość ramion promiennika) możemy regulować częstotliwość pracy anteny.
+%Celem zmniejszenia impedancji skracaliśmy wartość L2.
+%
 
 %W trakcie pomarów Na kabel zasilający antenę zostały nałożone koraliki ferrytowe, aby zmniejszyć do minimum promieniowanie kabla i ewentualne zakłócenia z tym związane. 
 
@@ -463,10 +564,8 @@ W skład układu antenowego wchodzi część promieniująca zwana promiennikiem 
 %Aby uzyskać pracę w rezonansie należy wówczas odpowiednio skrócić długość anteny. 
 
 
-
-%Zadaniem części promieniującej, zwanej promiennikiem lub radiatorem, jest wypromieniowanie w przestrzeń dostarczonej do niego energii w.cz. Promiennik charakteryzuje się zakresem częstotliwości, impedancją wejściową, polaryzacją, współczynnikiem kierunkowości, zyskiem oraz wymiarami.
 % Na kabel zasilający antenę zostały nałożone koraliki ferrytowe, aby zmniejszyć do minimum promieniowanie kabla i ewentualne zakłócenia z tym związane. 
-%Wraz ze zmnianą długości ramion promiennika dobrana została częstotliwość na poziomie 2.4 GHz.      
+   
 
 
 
@@ -482,46 +581,6 @@ W skład układu antenowego wchodzi część promieniująca zwana promiennikiem 
 
  
 %Tworzenie modelu symulacyjnego  Modelowanie      
-
-\chapter {Wyniki pomiarów}
-
-\begin{table} [h]
-\begin{center}
-    \begin{tabular}{c|cc}
-    RODZAJ POLARYZACJI  & ANTENA WZORCOWA & ANTENA MIERZONA TEKSTYLNA \\ \hline
-    ~                   & ~               & ~                         \\
-    POLARYZACJA POZIOMA & -34.5 dBm       & -39,2 dBm                 \\
-    ~                   & ~               & ~                         \\
-    POLARYZACJA PIONOWA & -59.7 dBm       & -59.9 dBm                 \\
-    ~                   & ~               & ~                         \\
-    \end{tabular}
- \end{center}
-\end{table}
-
-
-
-
-
-
-\begin{table}[h]
-\begin{center}
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-    ~               & \multicolumn{3}{c|}{~}     \\
-    ~               & \multicolumn{3}{c|}{ANTENA MIERZONA TEKSTYLNA } \\
-    ~               & \multicolumn{3}{c|}{~}     \\ \hline
-    ~               & \multicolumn{2}{c|}{~}     & ~                                  \\
-    ANTENA WZORCOWA & \multicolumn{2}{c|}{BEZ OBECNOSCI CZLOWIEKA} & W OBECNOSCI CZLOWIEKA              \\
-    ~               & \multicolumn{2}{c|}{~}     & ~                                  \\ \hline
-    ~               & ~                          & ~                                  & ~                                  \\
-    ~               & POLOZENIE ----             & POLOZENIE [     ]                  & POLOZENIE [    ]                   \\
-    ~               & ~                          & ~                                  & ~                                  \\ \hline
-    ~               & ~                          & ~                                  & ~                                  \\
-    -10.24 dB       & -38.25 dB                  & -46.05 dB                          & -49.04 dB                          \\
-    ~               & ~                          & ~                                  & ~                                  \\ \hline
-    \end{tabular}
-\end{center}
-\end{table}
 
 
 
