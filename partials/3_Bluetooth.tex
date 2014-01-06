@@ -1,0 +1,564 @@
+\chapter{Bluetooth}
+\label{sec:Bluetooth}
+%
+\section{Wstêp}
+\label{sec:Wstep}
+%
+ Technologia Bluetooth jest standardem umo¿liwiaj¹cym bezprzewodow¹ komunikacjê
+pomiêdzy ró¿nymi urz¹dzeniami elektronicznymi, takimi jak
+klawiatura, komputer, laptop, palmtop, telefon komórkowy czy
+urz¹dzenia audio. Interfejs Bluetooth pracuje w nielicencjonowanym
+paœmie ISM (Industrial Scientific Medicine). W wiêkszoœci krajów
+jest to zakres 2400 - 2483,5 MHz (wyj¹tkiem jest np. Francja i
+Hiszpania, gdzie pasmo to ma zakres 2446,5 - 2483,5 MHz). Okreœlone
+pasmo jest podzielone na 79 (Francja, Hiszpania: 23) kana³ów o
+szerokoœci 1 MHz, które s¹ wykorzystywane w technice frequency
+hopping. Polega ona na okresowej zmianie kana³u transmisyjnego w
+celu unikniêcia zak³óceñ. W standardzie zmiana kana³u nastêpuje 1600
+razy na sekundê , a urz¹dzenia maj¹ do wyboru 5 ró¿nych sekwencji
+zmiany kana³ów tzw. hopping sequence, zgodnie z którymi dokonywane
+s¹ zmiany czêstotliwoœci. Frequency hopping pozwala zmniejszyæ
+zak³ócenia transmisji wyp³ywaj¹ce z pracy takich urz¹dzeñ jak
+kuchenki mikrofalowe czy modu³y 802.11, pracuj¹ce w tym samym
+zakresie czêstotliwoœci. Urz¹dzenia Bluetooth pozwalaj¹ na pracê w
+zakresie mocy od 1 do 100 mW, co umo¿liwia transmisjê na odleg³oœci
+od 10 do 100 m. Wiêkszoœæ urz¹dzeñ Bluetooth ogranicza jednak pobór
+mocy do minimum i pozwala na pracê w odleg³oœciach do 10 m,
+zmniejsza to tak¿e koszty produkcji uk³adu, gdy¿ nie musi on byæ
+wyposa¿ony w modu³ kontroli mocy.
+
+Zasiêg Bluetooth zale¿y od klasy mocy:
+
+\begin{itemize}
+    \item klasa 1 (100 mW) ma najwiêkszy zasiêg, do 100 m,
+    \item klasa 2 (2,5 mW) jest najpowszechniejsza w u¿yciu, zasiêg do 10 m
+    \item klasa 3 (1 mW) rzadko u¿ywana, zasiêg do 1 m.
+\end{itemize}
+
+ Transfer maksymalny okreœla edycja protoko³u
+\begin{itemize}
+    \item Bluetooth 1.0 - 721 kb/s
+    \item Bluetooth 1.1 - 721 kb/s
+    \item Bluetooth 1.2 - 721 kb/s
+    \item Bluetooth 2.0 - transfer maksymalny przesy³ania danych na poziomie 2.1~Mb/s, Enhanced Data Rate - transfer do 3.0 Mb/s
+\end{itemize}
+
+Protokó³ Bluetooth nie jest jednak doskona³y. Zawiera w sobie luki,
+które umo¿liwiaj¹ dostêp  z zewn¹trz do przesy³anych danych. Pakiety
+Bluetooth mo¿na stosunkowo ³atwo przechwyciæ przy pomocy
+specjalnych programów tzw. snifferów. Ponadto niektóre urz¹dzenia
+wyposa¿one w Bluetooth, g³ównie ze wzglêdu na prostotê obs³ugi,
+umo¿liwiaj¹ nawi¹zanie z nimi po³¹czenia bez jakiejkolwiek wiedzy
+ich w³aœciciela. Istnieje jednak mo¿liwoœæ u¿ytkowania protoko³u
+Bluetooth w taki sposób, ¿e ewentualne przechwycenie danych nie
+stanowi ¿adnego zagro¿enia dla przesy³anych danych. Wystarczy
+opakowaæ wysy³ane dane u¿ywaj¹c odpowiednich technik w warstwie
+aplikacji. Wówczas pods³uchane dane po stronie ,,sniffera'' to
+zaledwie ciąg bezu¿ytecznych bajtów.
+%
+\subsection{Topologia}
+\label{sec:Mozliwosci} Komunikacja w technologii Bluetooth odbywa
+siê na zasadzie master-slave. Po nawi¹zaniu po³¹czenia jedno z
+urz¹dzeñ (inicjator po³¹czenia) staje siê masterem, drugie slavem
+(przy czym urz¹dzenia Bluetooth s¹ pod tym wzglêdem nierozró¿nialne,
+ka¿de mo¿e pe³niæ obie funkcje). Standard definiuje pojêcie piconetu
+tj. sieci sk³adaj¹cej siê z jednego mastera i od jednego do siedmiu
+aktywnych slave'ów, przy czym komunikacja zawsze odbywa siê poprzez
+mastera. Nie ma wiêc mo¿liwoœci bezpoœredniej komunikacji pomiêdzy
+slave'ami w ramach piconetu. Wiele piconetów tworzy poprzez
+wspó³dzielenie wêz³ów wiêksz¹ sieæ tzw. scatternet. jak pokazano na
+rysunku poni¿ej wêze³ po³¹czony z wiêcej ni¿ jednym piconetem mo¿e
+byæ slavem we wszystkich z nich, lub masterem w jednym piconecie i
+slave'm we wszystkich pozosta³ych.
+
+\begin{figure}[b]
+\centering
+    \includegraphics[width=50mm]{kot_d.jpg}
+     \caption{Ka¿dy rysunek musi mieæ swój podpis!!}\label{F_cube}
+\end{figure}
+
+
+W zwi¹zku z tym, ¿e sieci Bluetooth tworzone s¹ ad-hoc a technologia
+przeznaczona jest g³ównie dla urz¹dzeñ o charakterze przenoœnym
+(mobilnym), elementy pico-sieci mog¹ czêsto ,,wychodziæ'' z zasiêgu
+innych urz¹dzeñ lub siê w nim niespodziewanie ,,pojawiaæ''. Topologia
+sieci i urz¹dzenia, które j¹ tworz¹, ulegaj¹ wiêc ci¹g³ym zmianom.
+Protokó³ Bluetooth musi zawieraæ zatem kontroler  który ³¹czy
+wykorzystuj¹c informacje wysy³ane przez ka¿de urz¹dzenie Bluetooth w
+zasiêgu, zarz¹dza procesami wykrywania i kojarzenia urz¹dzeñ.
+%
+\section{Stos protoko³ów}\label{sec:stos}
+Protokó³ Bluetooth jest wykorzystywany w urz¹dzeniach które mog¹ siê
+ró¿nic technologicznie w zale¿noœci od zastosowania lub producenta.
+Stos protoko³ów Bluetooth nie odpowiada ¿adnemu znanemu modelowi
+(OSI, TCP/IP, 802) ale w przeciwieñstwie do wiêkszoœci protoko³ów
+sieciowych, które okreœlaj¹ tylko kana³y pomiêdzy komunikuj¹cymi
+siê jednostkami, stos protoko³ów Bluetooth w wersji 1.1 okreœla 13
+specjalnych aplikacji, zwanych profilami systemu Bluetooth, w
+których system mo¿e byæ u¿ywany.
+%
+\subsection{Warstwa Fizyczna}
+\label{sec:Warstwa Fizyczna}
+
+Warstwê fizyczn¹ Bluetooth stanowi interfejs radiowy o stosunkowo
+niewielkim poborze mocy, dzia³aj¹cy na w zale¿noœci od klasy w
+zasiêgu 1 - 100m. Warstwa radiowa Bluetooth operuje w paœmie ISM
+2,4 GHz. Pasmo to jest podzielone na 79 kana³ów, po 1MHz ka¿dy.
+System wykorzystuje modulacje FSK (Frequency Shift Keying) dziêki
+której uzyskujemy prêdkoœci transmisji do 1 Mbit/s. Skakanie po
+czêstotliwoœci odbywa siê z czêstoœci¹ 1600 skoków na sekundê.
+Sekwencjê skoków dyktowane s¹ przez wêze³ master.
+%
+\subsection{Warstwa Baseband}
+\label{sec:Warstwa Baseband} Warstwa baseband jest zbli¿ona do
+podwarstwy MAC modelu OSI. Upakowuje ona luŸne bity w ramki. Master
+w ka¿dej pikosieci definiuje sloty czasowe o d³ugoœci $625 \mu s$.
+Transmisja mastera zaczyna siê od slotów parzystych natomiast
+transmisja slave od slotów nieparzystych (multipleksacja w
+dziedzinie czasu dziedzinie czasu - TDM). Ramki mog¹ mieæ d³ugoœæ
+jednego, trzech lub piêciu slotów czasowych. Skakanie czêstotliwoœci
+pozwala ustawiæ czas $250 - 260 \mu s$ na skok, aby umo¿liwiæ
+stabilizacjê uk³adów radiowych. Ka¿da ramka jest transmitowana
+przez kana³ logiczny, nazywany z angielskiego ,,link'', pomiêdzy
+masterem i urz¹dzeniem slave. Istniej¹ dwa rodzaje kana³ów
+logicznych. Pierwszy nazywa siê ACL (Asynchronous Connection-Less),
+u¿ywany w po³¹czeniu z komutacj¹ pakietów, gdzie dane s¹ dostêpne w
+nieregularnych odstêpach czasu. Dane te pochodz¹ od warstwy L2CAP po
+stronie nadawczej i s¹ dostarczane do warstwy L2CAP po stronie
+odbiorczej. W tej wersji kana³u logicznego nie ma ¿adnych gwarancji,
+ze ramka dotrze do celu. Ramki mog¹ zostaæ utracone i wymagaæ
+retransmisji. Urz¹dzenie slave mo¿e mieæ tylko jeden kana³ typu ACL
+z urz¹dzeniem master. Drugi typ kana³u logicznego to SCO
+(Synchronous Connection Oriented) i jest u¿ywany do transmisji w
+czasie rzeczywistym, np. rozmowy telefonicznej z u¿yciem zestawu
+s³uchawkowego. Ramki transmitowane w tego typu kanale, nie mog¹ byæ
+retransmitowane. Zamiast tego mo¿na stosowaæ korektê b³êdów, aby
+zapewniæ mo¿liwie wysok¹ niezawodnoœæ. Urz¹dzenie slave mo¿e
+korzystaæ z maksymalnie trzech kana³ów typu SCO w kierunku mastera.
+Ka¿de  SCO mo¿e transmitowaæ jeden kana³ telefoniczny (PCM,
+64kbit/s).
+%
+\subsection{Protokó³ Voice}
+\label{sec:Protokol Voice}
+
+Protokó³ Bluetooth umo¿liwia przesy³anie sygna³ów wymagaj¹cych
+transmisji synchronicznej, takich jak sygna³ mowy, a tak¿e sygna³ów,
+które wymagaj¹ wiêkszych prêdkoœci transmisji, ale mog¹ byæ
+przesy³ane asynchronicznie, czyli transmisji danych. Zdefiniowane s¹
+dwa typy ³¹cz:
+\begin{itemize}
+\item  ³¹cza synchroniczne (SCO, Synchronous Connection Oriented),
+\item  ³¹cza asynchroniczne (ACL, Asynchronous Connectionless).
+\end{itemize}
+Dostêpne s¹ pakiety ACL dwóch typów: DM (Data Medium) i DH (Data
+High). Pakiety DH zawieraj¹ mniej informacji zwi¹zanych z korekcj¹
+b³êdów, dziêki czemu umo¿liwiaj¹ wiêksz¹ prêdkoœæ transmisji.
+Najszybsza transmisje umo¿liwiaj¹ pakiety DH5, które zajmuj¹ piêæ
+szczelin czasowych. Pakiet taki mo¿e przenieœæ 339 bajtów (2712
+bitów) danych, a wiec, aby przes³aæ 2712 bitów informacji, trzeba
+przes³aæ 2854 bitów). W odpowiedzi na pakiet DH5, który zajmuje 5
+szczelin, musi zostaæ przes³any pakiet o d³ugoœci co najmniej jednej
+szczeliny. Daje to maksymalna przepustowoœæ w jednym kierunku równa
+723,2 kb/s. W kierunku zwrotnym pakiety o d³ugoœci jednej szczeliny
+przenios¹ 57,6 kb/s. Jeœli pakiety DH5 bêd¹ przesy³ane w obu
+kierunkach, uzyskana przepustowoœæ w jednym kierunku bêdzie wynosi³a
+433,9 kb/s. Ze wzglêdu na to, ze wy¿sze warstwy protoko³u Bluetooth
+wymagaj¹ przesy³ania danych steruj¹cych, maksymalna przepustowoœæ na
+poziomie aplikacji wynosi oko³o 650 kb/s. Koszty ponoszone na
+kodowanie danych i skoki czêstotliwoœci s¹ niezbêdne, aby utworzone
+³¹cze by³o niezawodne, poniewa¿ wykorzystywane pasmo ISM jest
+wspó³u¿ytkowane przez wiele ró¿nego rodzaju urz¹dzeñ. Ograniczenia
+s¹ tak¿e wymuszane przez lokalne przepisy, które ograniczaj¹ moc
+promieniowana w jednostce czasu w pasmie ISM. Dziêki skokom
+czêstotliwoœci transmisja jest rozpraszana w czêstotliwoœci i w
+czasie. £¹cza SCO dzia³aj¹ z przepustowoœci¹ 64 kb/s. W jednym
+czasie mo¿na korzystaæ z trzech ³¹czy g³osowych. Mo¿na tak¿e mieszaæ
+w jednym ³¹czu dane g³osowe przesy³ane synchronicznie i dane
+przesy³ane asynchronicznie. £¹cza SCO stanowi¹ symetryczne ³¹cza
+miêdzy urz¹dzeniem nadrzêdnym i podrzêdnym o zarezerwowanej
+przepustowoœci i zapewniaj¹ regularn¹, w okreœlonych odstêpach
+czasu, wymianê danych w zarezerwowanych szczelinach czasowych. S¹ to
+wiec ³¹cza umo¿liwiaj¹ce przekazywanie danych, dla których istotny
+jest czas, a wiec na przyk³ad sygna³ów audio. Urz¹dzenie nadrzêdne
+mo¿e obs³ugiwaæ do trzech ³¹czy z tym samym lub ró¿nymi urz¹dzeniami
+podrzêdnymi, a urz¹dzenie podrzêdne mo¿e obs³ugiwaæ do trzech ³¹czy
+z urz¹dzeniem nadrzêdnym. Pakiety SCO nie s¹ nigdy retransmitowane.
+Protokó³ ten nie jest umieszczony w zestawie klas J2ME i nie mo¿e
+byæ wykorzystany w aplikacjach mobilnych.
+
+%
+\subsection{HCI}
+\label{sec:Warstwa HCI}
+
+\textbf{Host Controller Transport} pozwala na transparentn¹ wymianê
+informacji takich jak komendy HCI, dane ACL i SCO, dostarczenie
+komend kontroluj¹cych pracê warstwy baseband i Link Manager. G³ównym
+zadaniem HCI jest dostarczenie metod umo¿liwiaj¹cych korzystanie z
+zasobów warstwy baseband protoko³u Bluetooth.
+
+\subsection{LMP}
+\label{sec:Warstwa LMP} \textbf{Link Manager Protocol} ustala
+parametry ³¹cza, umo¿liwia nas³uchiwanie i wykrywanie urz¹dzeñ w
+pobli¿u. LMP sk³ada siê z kilku PDU (protocol Data Units) które s¹ wysy³ane z
+jednego urz¹dzenia do innego znajduj¹cego siê w zasiêgu w procesie
+nawi¹zywania po³¹czenia. PDU s¹ wysy³ane jako single-slot z
+jednobajtowym nag³ówkiem.
+%
+\subsection{Warstwa L2CAP}
+\label{sec:Warstwa L2CAP}
+
+Logical Link Control and Adaptation Layer Protocol jest warstw¹
+maj¹c¹ za zadanie transmisjê danych do warstw wy¿szych zarówno w
+sposób zorientowany po³¹czeniowo jak np. port szeregowy RFCOMM, jak
+równie¿ bez po³¹czeniowo. Warstwa ta zawiera równie¿ zestaw metod do
+multipleksowania i segmentacji danych oraz operacji odwrotnych
+potrzebnych do przesy³ania danych pomiêdzy warstw¹ baseband a
+warstwami wy¿szymi.
+
+ Warstwa L2CAP spe³nia trzy g³ówne funkcje:
+\begin{itemize}
+  \item przyjmuje pakiety o maksymalnym rozmiarze do 64 KB od wy¿szych warstw i dzieli je na ramki w celu transmisji.
+   Na koñcu ramki s¹ ponownie sk³adane w ca³oœæ.
+  \item zajmuje siê multipleksacj¹ i demultipleksacj¹ z³o¿onych pakietów. Gdy pakiet jest sk³adany w ca³oœæ, warstwa L2CAP okreœla, któremu protoko³owi warstwy wy¿szej go przekazaæ, np. do RFcomm lub telephony.
+  \item zajmuje siê wymaganiami na jakoœæ us³ugi, zarówno podczas zestawiania po³¹czenia oraz podczas realizacji us³ugi.
+\end{itemize}
+
+\emph{Segmentacja}
+
+W porównaniu do innych mediów fizycznych, pakiety danych
+zdefiniowane przez warstwê baseband maj¹ ograniczony rozmiar.
+Wysy³anie maksymalnej iloœci danych zdefiniowane jest przez MTU
+(maximum transmission unit) i przy maksymalnym wykorzystaniu pasma
+wynosi 341 bajtów na pakiet DH5. Wy¿sze warstwy z regu³y
+przystosowane s¹ do obs³ugi znacznie wiêkszych "porcji" danych,
+dlatego du¿e pakiety L2CAP musz¹ byæ podzielone na segmenty tak aby
+ich przesy³ drog¹ radiow¹ by³ mo¿liwy przy okreœlonych parametrach
+³¹cza. W podobny sposób segmenty odbierane z warstwy baseband musz¹
+byæ ponownie posk³adane w jeden du¿y pakiet warstwy L2CAP. Dane
+które z regu³y przesy³amy za pomoc¹ Bluetooth wykorzystuj¹ protoko³y
+których pakiety s¹ znacznie wiêksze ni¿ wielkoœæ segmentów w
+warstwie baseband. Dlatego segmentacja i sk³adanie pakietów SAR
+(Segmentation and Reassembly) jest absolutnie niezbêdne.
+
+\emph{Quality of Service}
+
+Protokó³ L2CAP podczas nawi¹zywania po³¹czenia negocjuje dostêpne
+serwisy: QoS (Quality of Service). Ka¿da implementacja warstwy L2CAP
+musi udostêpniaæ informacje na temat serwisów które mog¹ zostaæ
+wykorzystane podczas transmisji i byæ w stanie wys³aæ potwierdzenie
+do urz¹dzenia wysy³aj¹cego ¿¹danie. Dziêki temu modu³y bluetooth
+mog¹ siê ze sob¹ komunikowaæ niezale¿nie od implementacji i
+konfiguracji sprzêtowej.
+
+
+ \emph{Identyfikator kana³u}
+
+Identyfikatory kana³ów CIDs (Channel IDentifiers) to nazwy lokalne
+reprezentuj¹ce kana³ logiczny punktu koñcowego danego urz¹dzenia.
+Implementacja L2CAP mo¿e dowolnie zarz¹dzaæ CID pod warunkiem ¿e
+nazwa ta pozostanie unikalna, tzn nie zostanie u¿yta jako punkt
+koñcowy w innym po³¹czeniu w przypadku wielokana³owego po³¹czenia
+L2CAP.
+
+Przypisywanie CID jest zale¿ne od danego urz¹dzenia i mo¿e byæ
+przydzielone niezale¿nie od innych urz¹dzeñ (z wyj¹tkiem kana³ów
+zarezerwowanych jak np. kana³ sygnalizacyjny). jednak¿e nawet jeœli
+w zasiêgu znajd¹ siê wiele urz¹dzeñ o takiej samej wartoœci CID,
+ka¿de z tych urz¹dzeñ mo¿e siê bez trudu po³¹czyæ z dowolnym innym o
+unikalnej nazwie CID.
+
+Kana³y przesy³u danych zorientowane po³¹czeniowo, reprezentuj¹
+po³¹czenie dwóch urz¹dzeñ fizycznych, gdzie CID s¹ identyfikatorami
+ka¿dego z wêz³ów koñcowych danego kana³u. kana³y bezpo³¹czeniowe
+pozwalaj¹ na transmisjê danych tylko w jednym kierunku i s¹ u¿ywane
+do po³¹czeñ grupowych. Wówczas CID po stronie Ÿród³a reprezentuje
+jedno lub wiele urz¹dzeñ do których wysy³ane s¹ dane. Istnieje tak¿e
+kilka kana³ów specjalnych jak np kana³ sygnalizacyjny który
+umo¿liwia negocjacjê w fazie nawi¹zywania po³¹czenia dlatego ka¿da
+implementacja L2CAP musi koniecznie obs³ugiwaæ ten kana³. Pozosta³e
+kana³y specjalne to kana³y zarezerwowane na wszystkie mo¿liwe dane
+przychodz¹ce, przesy³ane w sposób bezpo³¹czeniowy.
+
+ \emph{Sygnalizacja}
+
+Warstwy L2CAP dwóch urz¹dzeñ wysy³aj¹ komendy sygnalizacyjne
+u¿ywaj¹c kana³u o CID 0x0001 (kana³ sygnalizacyjny). Ka¿da
+implementacja L2CAP musi umieæ wyodrêbniæ adres Bluetooth (BD ADDR)
+urz¹dzenia nadaj¹cego komendê sygnalizacyjn¹. pakiety mog¹ sk³adaæ
+siê z kilku komend i byæ wys³ane w ten sam sposób na ten sam adres
+kana³owy CID. Jako komendy sygna³owe wysy³ane s¹ tak¿e komendy MTU
+które wymagaj¹ potwierdzenia ze strony odbiorcy. Warstwa L2CAP
+dostarcza nastêpuj¹ce serwisy
+
+\begin{itemize}
+  \item Po³¹czenie: \emph{setup , configure , disconnect}
+  \item Dane: \emph{read  , write}
+  \item Grupy: \emph{create, close, add member, remove member , get membership}
+  \item Informacje: \emph{ping, get info, request a call-back at the occurrence of an event}
+  \item Transmisja bezpo³¹czeniowa: \emph{enable, disable}
+\end{itemize}
+
+%
+\subsection{£¹cze szeregowe RFCOMM}
+\label{sec:Lacze szeregowe RFCOMM}
+RFCOMM (Radio Frequency Communication) jest prostym protoko³em transportowym dostarczaj¹cym emulacjê portu szeregowego RS232 przy wspó³pracy z protoko³em L2CAP. Protokó³ ten jest oparty o standard ETSI TS 07.10. protokó³ RFCOMM
+umo¿liwia nawi¹zanie do 60 po³¹czeñ jednoczeœnie.
+
+Urz¹dzenia bluetooth u¿ywaj¹ protoko³u RFCOMM jako emulacjê
+wielokrotnego portu szeregowego. protokó³ ten umo¿liwia otwarcie do
+60 emulowanych portów jednoczeœnie. Do kontroli po³¹czeñ pomiêdzy
+aplikacjami serwera i klienta s³u¿y Data Link Connection Identifier
+(DLCI) DLCI to 6 bitowy numer reprezentuj¹cy wartoœci od 1 do 61 i
+stanowi unikalny adres ka¿dej otwartej sesji RFCOMM pomiêdzy dwoma
+urz¹dzeniami.
+
+ Analogicznie do portu szeregowego RS232 gdzie funkcje
+steruj¹ce przep³ywem s¹ realizowane przy pomocy ramek RTS/CTS, port
+RFCOMM równie¿ posiada kontrolê przep³ywu która jest realizowana
+przez warstwê L2CAP. Kontrola przep³ywu danych mo¿e siê ró¿niæ w
+zale¿noœci od implementacji warstwy L2CAP. RFCOMM u¿ywa protoko³ów w
+warstwie L2CAP do skojarzenia kana³ów tej warstwy potrzebnych do
+nawi¹zania po³¹czenia z portem RFCOMM zdalnego urz¹dzenia. Po
+otwarciu odpowiedniego kana³u warstwy L2CAP na potrzeby komunikacji
+szeregowej RFCOMM rozpoczyna komunikacjê na zasadzie sesji
+multipleksowanej RFCOMM/TS 07.10.
+
+Poniewa¿ komunikacja RFCOMM w ca³oœci opiera siê o serwisy
+dostarczane przez warstwê L2CAP, protoko³y w tej warstwie musz¹
+dzia³aæ niezawodnie aby wszystkie pakiety RFCOMM dotar³y we
+w³aœciwej kolejnoœci i bez powtórzeñ. Jeœli w kanale L2CAP nast¹pi
+b³¹d, warstwa RFCOMM odbiera informacjê o utracie ³¹cza.
+
+Protokó³\textbf{ RFCOMM}oraz serwisy warstwy\textbf{L2CAP} s¹ bardzo
+dobrze zaimplementowane w platformie J2ME. Ich funkcje i zalety
+zosta³y szerzej opisane w rozdziale \ref{sec:Java Micro Edition}.
+
+\section{Adres i transmisja Bluetooth}\label{sec:Adres Bluetooth}
+%Ka¿de urz¹dzenie posiada 48 bitowy adres
+IEEE MAC (Bluetooth Device Address, BD-ADDR). Jest on u¿ywany do
+inicjowania pewnych operacji oraz obliczania kodu dostêpu. Adres MAC
+jest podzielony na trzy czêœci:
+\begin{itemize}
+\item  Non-significant Address Part (NAP)
+BD-ADDR [47:32]. NAP [15:0] która jest u¿ywana do inicjowania
+szyfrowania.
+\item  Upper Address Part (UAP)
+BD-ADDR [31:24]. UAP [7:0] która jest u¿ywana do inicjowania
+obliczeñ HEC (Header Error Check) i CRC oraz skoków czêstotliwoœci.
+\item Lower Address Part
+BD-ADDR [23:0]. LAP [23:0] która jest u¿ywana do generowania s³owa
+synchronizuj¹cego i skoków czêstotliwoœci.
+\end{itemize}
+
+System Bluetooth jest systemem typu TDM (Time Division Multiplexed),
+czyli takim, który dzia³a w oparciu o multipleksowanie w dziedzinie
+czasu. Podstawow¹ jednostk¹ jest szczelina czasowa o d³ugoœci $625
+\mu s$. Podczas przesy³ania danych wszystkie operacje s¹ realizowane
+w ci¹gu 1, 3, 5 szczelin czasowych, które tworz¹ pakiet. W przypadku
+operacji poprzedzaj¹cych transmisjê (zapytania, wywo³ania,
+skanowanie) mog¹ byæ u¿ywane szczeliny czasowe o d³ugoœci po³owy
+normalnych szczelin. Pakiety tworz¹ pary nadawczo-odbiorcze. Podczas
+po³¹czenia taka para mo¿e siê sk³adaæ z 2, 4, 6, 8, 10 szczelin.
+Ka¿de urz¹dzenie Bluetooth mo¿e w danej chwili w jednej pikosieci
+pe³niæ rolê urz¹dzenia nadrzêdnego (Master) albo podrzêdnego
+(Slave). Nie mo¿e jednak pe³niæ obu tych ról jednoczeœnie.
+Urz¹dzenie nadrzêdne (Master) inicjuje przesy³anie danych, a
+urz¹dzenie podrzêdne (Slave) odpowiada na sygna³y urz¹dzenia Master.
+Urz¹dzenie podrzêdne musi byæ zsynchronizowane z urz¹dzeniem
+nadrzêdnym w czasie i czêstotliwoœci. Transmisja przebiega w sposób
+nastêpuj¹cy: urz¹dzenie M transmituje do urz¹dzenia S na kanale
+K(n), $625 \mu s$ póŸniej oba urz¹dzenia przestrajaj¹ radia na
+czêstotliwoœæ K(n+1), a nastêpnie urz¹dzenie S musi odpowiedzieæ na
+poprzedni pakiet urz¹dzenia M, urz¹dzenie S nas³uchuje pakietu od M,
+który mo¿e zostaæ wys³any lub nie, ale nie bêdzie transmitowaæ,
+dopóki pakiet taki nie zostanie odebrany. Ka¿de urz¹dzenie realizuje
+skok czêstotliwoœci raz na pakiet. Zapewnia to:
+\begin{itemize}
+\item Bezpieczeñstwo - poniewa¿ skoki s¹ zdefiniowane na podstawie pseudoprzypadkowej sekwencji obliczonej na podstawie adresu urz¹dzenia M,
+\item Niezawodnoœæ - pakiet utracony w kanale K(n) zostanie najprawdopodobniej prawid³owo przes³any w kanale
+K(n+k), poniewa¿ oba kana³y s¹ oddalone od siebie o znacz¹c¹
+odleg³oœæ.
+\end{itemize}
+W specyfikacji Bluetooth zdefiniowane pakiety maj¹ d³ugoœci 1, 3, 5
+szczelin. U¿ycie d³u¿szego pakietu zapewnia szybsza transmisje, ale
+mniejsza niezawodnoœæ. Zak³ócenie powoduj¹ce wykluczenie pakietu
+wyst¹pi raczej w przypadku pojedynczego d³ugiego pakietu w jednym
+kanale ni¿ w kilku kolejnych kana³ach wystêpuj¹cych w sekwencji
+skoków czêstotliwoœci. Wszystkie pakiety zawieraj¹ te sam¹ iloœæ
+danych steruj¹cych i w nag³ówku, wiêc u¿ycie d³u¿szego pakietu jest
+bardziej efektywne pod wzglêdem liczby przesy³anych danych.
+
+\section{Nawi¹zywanie po³¹czenia}
+\label{sec:Nawiazywanie polaczenia}
+
+Urz¹dzenie które rozpoczyna proces wykrywania, wysy³a pakiety ID
+zawieraj¹ce kod rozpoznawczy kod IAC (Inquiry Access Code). Zwykle
+u¿ywany jest kod GIAC (General IAC), którego format jest zrozumia³y
+dla wszystkich urz¹dzeñ. Z powodu ograniczonych zasobów
+energetycznych jakim charakteryzuj¹ siê urz¹dzenia przenoœne,
+wykrywanie nie jest realizowane periodycznie jak w wiêkszoœci sieci
+z wykrywaniem stanu ³¹cza, lecz tylko wtedy, gdy zostanie ono
+zainicjowane przez wy¿sze warstwy protoko³u. Stan oczekiwania na
+wykrycie (inquiry scan) jest wykorzystywany okresowo w stosunkowo
+krótkim oknie czasowym.
+
+Gdy urz¹dzenie oczekuj¹ce na wykrycie (nas³uchuj¹ce) odbierze sygna³
+wykrywaj¹cy, mo¿e odpowiedzieæ natychmiast. Takie dzia³anie mog³oby
+jednak spowodowaæ, ¿e kilka urz¹dzeñ odpowie równoczeœnie, co
+mog³oby spowodowaæ kolizjê i uniemo¿liwiæ odebranie odpowiedzi. Aby
+tego unikn¹æ, stosowane jest losowe opóŸnienie. Gdy urz¹dzenie
+odbierze sygna³ wykrywaj¹cy, losuje kolejne opóŸnienie,
+ a nastêpnie ponownie wchodzi w stan oczekiwania na
+wykrycie, i gdy odbierze nastêpny pakiet ID, odpowiada pakietem FHS.
+Dziêki temu odpowiedzi ro¿nych urz¹dzeñ s¹ losowo rozrzucone w
+czasie i nie zak³ócaj¹ siê wzajemnie. Niestety wi¹¿e siê to z
+wyd³u¿eniem czasu pracy urz¹dzenia wykrywaj¹cego.
+
+Urz¹dzenie wykrywaj¹ce transmituje dwa pakiety ID w jednej
+szczelinie czasowej, próbuj¹c ,,trafiæ'' na urz¹dzenie oczekuj¹ce na
+wykrycie. Urz¹dzenie które oczekuje na wykrycie, nas³uchuje
+wykonuj¹c skoki co 2048 szczelin (co 1,28 s). Urz¹dzenie wykrywaj¹ce
+transmituje pakiety ID, u¿ywaj¹c wykrywaj¹cej sekwencji skoków, i
+nas³uchuje odpowiedzi pasuj¹cej do tej sekwencji skoków. Po
+odebraniu pakietu ID urz¹dzenie oczekuj¹ce na wykrycie czeka przez
+losow¹ liczbê szczelin czasowych, a nastêpnie ponownie przechodzi w
+stan oczekiwana na wykrycie. Tym razem po odebraniu pakietu ID
+odpowiada po up³yniêciu $625 \mu s$ pakietem FHS (Frequency Hopping
+Sequence). Poniewa¿ urz¹dzenie wykrywaj¹ce nas³uchuje na kanale
+odpowiedzi, który jest œciœle zwi¹zany z poprzednim kana³em
+transmisji pakietu ID, mo¿e w ka¿dej chwili mo¿e odebraæ
+potwierdzenie od urz¹dzenia wykrywanego i wys³aæ do niego pakiet
+FHS. W najgorszym wypadku czas wykrywania urz¹dzenia mo¿e trwaæ 10 s
+dla pojedynczego ³¹cza. Gdy urz¹dzenie obs³uguje ju¿ inne ³¹cza, na
+przyk³ad SCO, czas ten mo¿e byæ odpowiednio wiêkszy.
+
+ Podobnie jak w przypadku urz¹dzeñ znajduj¹cych siê w sieci
+AppleTalk, sprzêt Bluetooth ci¹gle nas³uchuje zapytañ ze strony
+innych urz¹dzeñ. Po otrzymaniu zapytania wysy³ana jest odpowiedŸ.
+Urz¹dzenie wykrywaj¹ce otrzymuje status nadrzêdny (master),
+natomiast wykryte ma status podrzêdny (slave). Te role s¹ niezbêdne
+do synchronizacji obu urz¹dzeñ. Po nawi¹zaniu po³¹czenia wymieniane
+s¹ unikalne identyfikatory oraz nazwy (je¿eli s¹ dostêpne). Zwykle
+master zapytuje nastêpnie urz¹dzenie podrzêdne o listê us³ug (tzw
+service discovery). Odkrywanie dostêpnych serwisów jest zale¿ne od
+implementacji i mo¿liwoœci danego urz¹dzenia. W przypadku telefonu
+komórkowego mo¿e to byæ mo¿liwoœæ nawi¹zywania po³¹czeñ g³osowych i
+przesy³ania okreœlonych typów danych. proces ten znalaz³ obszern¹
+implementacjê w J2ME pod nazw¹ Service Discovery która zosta³a
+opisana szerzej w rozdziale Java 2 Micro Edition.
+%
+%
+
+Aby mo¿na by³o nawi¹zaæ po³¹czenie, urz¹dzenie inicjuj¹ce musi
+skierowaæ bezpoœrednie ¿¹danie do innego urz¹dzenia. W tym samym
+czasie wywo³ywane urz¹dzenie musi nas³uchiwaæ wywo³añ (page scan).
+Po zakoñczeniu procesu wywo³ywania urz¹dzenie wywo³uj¹ce staje siê
+urz¹dzeniem nadrzêdnym a urz¹dzenie wywo³ywane urz¹dzeniem
+podrzêdnym. Mo¿e to ulec zmianie w wyniku prze³¹czenia ról urz¹dzeñ.
+Polecenie utworzenia po³¹czenia powoduje przejœcie urz¹dzenia w tryb
+wywo³ywania (paging), w którym wysy³a ono serie pakietów
+wywo³uj¹cych (pakietów ID opartych na adresie urz¹dzenia
+wywo³ywanego). Urz¹dzenie wywo³ywane musi byæ skonfigurowane do
+oczekiwania na wywo³anie o okreœlonym czasie trwania i okreœlonych
+odstêpach. Gdy urz¹dzenie wywo³ywane odbierze pakiet ID ze swoim
+adresem, odpowiada pakietem ID równie¿ ze swoim adresem. Poniewa¿
+adresy te s¹ unikalne dla ka¿dego urz¹dzenia, nie ma
+niebezpieczeñstwa, ¿e na wywo³anie odpowie kilka urz¹dzeñ na raz.
+Urz¹dzenie wywo³uj¹ce po odebraniu potwierdzenia w postaci pakietu
+ID wysy³a pakiet FHS. Urz¹dzenie wywo³ywane potwierdza odebranie
+tego pakietu ponownie pakietem ID po czym jest w stanie, na
+podstawie informacji zawartych w pakiecie FHS, obliczyæ sekwencjê
+skoków czêstotliwoœciowych urz¹dzenia wywo³uj¹cego. Urz¹dzenie mo¿e
+tak¿e przestaæ korzystaæ z sekwencji wywo³ywania i przejœæ na now¹
+sekwencjê zwi¹zan¹ z urz¹dzeniem nadrzêdnym. Po nawi¹zaniu
+po³¹czenia urz¹dzenie wywo³uj¹ce staje siê urz¹dzeniem nadrzêdnym, a
+urz¹dzenie wywo³ywanie urz¹dzeniem podrzêdnym. Po przejœciu do nowej
+sekwencji skoków urz¹dzenie nadrzêdne wysy³a pakiet POLL, aby
+sprawdziæ, ¿e prze³¹czenie na now¹ sekwencjê skoków czêstotliwoœci
+zosta³o wykonane poprawnie. Urz¹dzenie podrzêdne musi wtedy
+odpowiedzieæ dowolnym pakietem ACL. Zwykle jest to pakiet NULL.
+
+\section{Stany ³¹czy}
+ \emph{Standby} W tym stanie urz¹dzenie jest
+nieaktywne, ¿adne dane nie s¹ przesy³ane i radio jest wy³¹czone.
+Urz¹dzenie nie wykrywa transmitowanych pakietów. Stan ten jest
+g³ównie u¿ywany podczas pracy w trybie niskiego zasilania.
+
+\emph{Inquiry} (wykrywanie dostêpnych urz¹dzeñ) Inquiry jest to
+proces, w którym urz¹dzenie wykrywa wszystkie urz¹dzenia Bluetooth
+znajduj¹ce siê w zasiêgu. W tym czasie przy u¿yciu protoko³u SDP
+tworzona jest lista urz¹dzeñ, z którymi mo¿na nawi¹zaæ po³¹czenie.
+Podczas tej procedury wykrywane urz¹dzenia przekazuj¹ urz¹dzeniu
+wykrywaj¹cemu pakiety FHS. Umo¿liwia to utworzenie tablicy
+zawieraj¹cej informacje niezbêdne do nawi¹zania po³¹czenia z danym
+urz¹dzeniem, czyli wartoœæ CLKN i adres \textbf{BD ADDR}. Inquiry
+Scan (oczekiwanie na wykrycie).
+
+\emph{Stan Inquiry Scan} stanowi druga stronê procedury wykrywania.
+Urz¹dzenia okresowo przechodz¹ w ten stan, aby umo¿liwiæ dostêp do
+siebie urz¹dzeniom, które s¹ w stanie Inquiry. Nas³uchuj¹ one przez
+pewien d³u¿szy czas (poniewa¿ nie maj¹ informacji umo¿liwiaj¹cych
+synchronizacjê w czasie i czêstotliwoœci) na nadejœcie pakietów z
+kodem GIAC lub DIAC. Po odebraniu poprawnej wiadomoœci przechodz¹ w
+stan \emph{Inquiry Response} (odpowiedzi na wykrycie) i wysy³aj¹
+pakiet FHS. W stanach tych jest wykorzystywana specjalna sekwencja
+skoków czêstotliwoœciowych (szybka dla urz¹dzeñ wykrywaj¹cych, a
+wolna dla urz¹dzeñ wykrywanych), która zosta³a tak zaprojektowana
+aby skróciæ czas potrzebny na dopasowanie czêstotliwoœci.
+
+\emph{Page} (wywo³ywanie) Aby nawi¹zaæ po³¹czenie, urz¹dzenie, które
+ma byæ urz¹dzeniem nadrzêdnym, musi wykonaæ procedurê wywo³ywania. W
+pierwszej kolejnoœci przechodzi ono w stan wywo³ywania, w którym
+wysy³a komunikaty wywo³uj¹ce skierowane do okreœlonego urz¹dzenia
+podrzêdnego. Wykorzystywane s¹ informacje zebrane podczas procedury
+wykrywania. Rz¹dzenie podrzêdne potwierdza komunikaty wywo³uj¹ce i
+urz¹dzenie nadrzêdne przechodzi w stan Master response (odpowiedzi
+urz¹dzenia nadrzêdnego) i odpowiada przy u¿yciu pakietu FHS.
+
+\emph{PageScan} (oczekiwanie na wywo³anie) Podobnie jak w stanie
+oczekiwania na wykrycie urz¹dzenie przechodzi w ten stan okresowo,
+aby umo¿liwiæ innym urz¹dzeniom nawi¹zanie po³¹czenia. Po pomyœlnym
+odebraniu pakietu wywo³uj¹cego, urz¹dzenie przechodzi w stan Slave
+response (odpowiedzi urz¹dzenia podrzêdnego), w którym potwierdza
+odebranie pakietu i oczekuje pakietu FHS. Po odebraniu pakietu FHS
+synchronizuje swój zegar CLK i ustawia kod dostêpu, aby przejœæ w
+stan po³¹czenia. W procedurze wywo³ywania wykorzystywana jest
+specjalna sekwencja skoków czêstotliwoœciowych. Procedurê
+wywo³ywania mo¿na przeprowadziæ bez uprzedniego wykrywania, gdy
+adres urz¹dzenia jest znany. Mo¿e tak byæ w przypadku dwóch
+urz¹dzeñ, które s¹ specjalnie zaprojektowane do wspólnej pracy.
+Procedura taka mo¿e jednak trwaæ trochê d³u¿ej (w teorii 10 s.)
+poniewa¿ urz¹dzenie nadrzêdne nie bêdzie dysponowa³o estymata zegara
+urz¹dzenia podrzêdnego. Po³¹czenie – Active (aktywne) Przy przejœciu
+w stan po³¹czenia urz¹dzenie podrzêdne prze³¹cza siê na zegar CLK
+urz¹dzenia nadrzêdnego, dodaj¹c offset do w³asnego zegara CLKN i tym
+samym zaczyna u¿ywaæ sekwencji skoków czêstotliwoœciowych urz¹dzenia
+nadrzêdnego. Rz¹dzenie nadrzêdne przesy³a pakiet POLL, aby
+sprawdziæ poprawnoœæ utworzonego ³¹cza. Urz¹dzenie podrzêdne musi
+wtedy odpowiedzieæ, zwykle pakietem NULL. Jeœli nie, nawi¹zanie
+po³¹czenia nie powiedzie siê, po up³yniêciu okreœlonych limitów
+czasu nast¹pi powrót do stanu wywo³ywania i ca³y proces wywo³ywania
+zostanie powtórzony.
+
+\emph{Po³¹czenie–Hold}(wstrzymane) W trybie Hold urz¹dzenie
+przestaje obs³ugiwaæ transmisje ACL przez zdefiniowany okres, aby
+zwolniæ pasmo dla innych operacji, takich jak wykrywanie,
+wywo³ywanie itd. Po up³yniêciu okresu wstrzymania dzia³ania
+urz¹dzenie synchronizuje siê z kodem CAC i ponownie rozpoczyna
+pracê.
+
+\emph{Po³¹czenie – Sniff} (okresowe nas³uchiwanie) W tym trybie
+urz¹dzeniu podrzêdnemu jest przypisywane pewne szczeliny czasowe, w
+których nas³uchuje transmisji. Urz¹dzenie nas³uchuje od szczeliny o
+numerze Dsniff co Tsniff szczelin przez pewien czas równy Nsniff.
+Jeœli w wyznaczonych szczelinach odebrany zostanie pakiet kierowany
+do tego urz¹dzenia, odbiera ono wszystkie pakiety z w³asnym adresem
+AM, a nastêpnie czeka do nastêpnego okresu nas³uchiwania.
+
+\emph{Po ³¹cznie – Park} (uœpienie) W tym trybie urz¹dzenie oddaje
+swój adres AM i nas³uchuje transmisji tylko od czasu do czasu. Mo¿e
+przejœæ w tryb niskiego zasilania. Musi siê tylko uaktywniæ co
+pewien czas, aby zsynchronizowaæ siê z kodem CAC, a nastêpnie
+powróciæ do trybu niskiego zasilania. Dziêki temu mo¿e byæ
+zsynchronizowane z urz¹dzeniem nadrzêdnym, nawet jeœli korzysta z
+mniej dok³adnego zegara LPO (Low Power Oscillator).
