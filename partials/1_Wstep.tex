@@ -432,7 +432,7 @@ Prototyp anteny tekstylnej RFID przesymulowano w środowisku \emph{CST Microwave
 \end{figure}
 
 \newpage
- Celem uzyskania w trakcie symulacji parametrów zbliżonych do założeń projektu przeprowadzono parametryzację struktury. Stopień dyskretyzacji został ustalony po 6 iteracjach. Rezultaty procesu doboru wymiarów anteny, można było obserwować na wykresach. Najlepsze wyniki posłużyły do ustalenia rozmiaru projektowanej anten, a pózniej wykonania prototypu. W rezultacie impedancja wejściowa symulowanej anteny wynosi 38 \(\Omega\). Schemat struktury po parametryzacji i prototyp pokazano na Rys.4.2 i Rys. 4.3. Wymiary zaprojektowanej anteny przestawiono w Tab. 4.1. 
+ Celem uzyskania w trakcie symulacji parametrów zbliżonych do założeń projektu przeprowadzono parametryzację struktury. Stopień dyskretyzacji został ustalony po 6 iteracjach. Rezultaty procesu doboru wymiarów anteny, można było obserwować na wykresach. Najlepsze wyniki posłużyły do ustalenia rozmiaru projektowanej anten, a pózniej wykonania prototypu. Schemat struktury po parametryzacji i prototyp pokazano na Rys.4.2 i Rys. 4.3. Wymiary zaprojektowanej anteny przestawiono w Tab. 4.1. 
 
 \begin{figure}[h!]
 	\centering
@@ -553,54 +553,11 @@ Tkanka ludzka jest dielektrycznym, dyspersyjnym ośrodkiem stratnym o skończone
 \section{Zysk energetyczny}
 
 
-
-
-
-
-
-
-
-
-
-
-\section{Charakterystyka promieniowania}
-Poniższe wykresy przedstawiają 
-
-Wykres przedstawiający trójwymiarową charakterystkę kierunkowości zamodelowanej anteny RFID dal częstotliwości 2.4 GHz.
-
-
-
-\begin{figure}[h!]
-\centering
-	\includegraphics[width=15cm]{Gain_Abs_90.jpg}
-	\caption{Przebieg charakterystyki promieniowania anteny w płaszczyźnie $\phi = 90^{0}$}
-\end{figure}
-
-
-\begin{figure}[h!]
-\centering
-	\includegraphics[width=15cm]{Gain_Theta_90.jpg}
-	\caption{Przebieg charakterystyki promieniowania anteny w płaszczyźnie $\phi = 90^{0}$}
-\end{figure}
-
-
-\begin{figure}[h!]
-\centering
-	\includegraphics[width=16cm]{Abs.jpg}
-	\caption{Charakterystyka 3D promieniowania anteny dla częstotliwości 2,4 GHz}
-\end{figure}
-
-
-\section{Impedancja}
-
-
-
-%Wpływ człowieka na charakterystykę promieniowania
-
-%Obecność człowieka pogarsza charakterystykę promieniowania anteny. Zjawisko to spowodowane jest przewodzącymi właściwościami ciała człowieka, co powoduje tłumienie składowej elektrycznej pola. Na zakłócenia tego typu bardziej odporne są anteny pętlowe. Z tego powodu częściej znajdują one zastosowanie w urządzeniach przenośnych (np. pilotach zdalnego sterowania), na które mogłaby wpływać bezpośrednia bliskość człowieka.
-
-
-\newpage 
+\begin{align}
+a^2&=b^2+c^2
+\quad
+\end{align}
+ 
 \begin{table}[h!]
 \begin{center}
     \begin{tabular}{|c|c|c|}
@@ -618,8 +575,6 @@ Wykres przedstawiający trójwymiarową charakterystkę kierunkowości zamodelow
     \caption{Poziom mocy sygnału}
 \end{center}
 \end{table}
-
-
 
 
 \begin{table}[h!]
@@ -642,6 +597,75 @@ Wykres przedstawiający trójwymiarową charakterystkę kierunkowości zamodelow
     \caption{Zysk energetyczny badanych anten}
 \end{center}
 \end{table}
+
+
+
+
+\newpage
+\section{Charakterystyka promieniowania}
+Wykresy Rys. 5.5 i Rys. 5.6 przedstawiają charakterystyki promieniowania anteny na płaszczyźnie $\phi = 90^{0}$ natomiast wykres na Rys. 5.7 pokazuje trójwymiarową charakterystkę kierunkowości zamodelowanej anteny RFID dla częstotliwości 2.4 GHz.
+
+
+
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=15cm]{Gain_Abs_90.jpg}
+	\caption{Przebieg charakterystyki promieniowania anteny w płaszczyźnie $\phi = 90^{0}$}
+\end{figure}
+
+\noindent
+\newline
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=15cm]{Gain_Theta_90.jpg}
+	\caption{Przebieg charakterystyki promieniowania anteny w płaszczyźnie $\phi = 90^{0}$}
+\end{figure}
+
+\noindent
+\newline
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=16cm]{Abs.jpg}
+	\caption{Charakterystyka 3D promieniowania anteny dla częstotliwości 2,4 GHz}
+\end{figure}
+
+
+
+\noindent
+\newline
+\newpage
+
+\section{Impedancja}
+Wykresy przedstawiają zależność impedancji od częstotliwości. 
+\newline Impedancja wejściowa zamodelowanej w programie anteny wynosi 38 \(\Omega\).
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=16cm]{Impedancja_Z.jpg}
+	\caption{Wykres zależności części rzeczywistej impedancji anteny od częstotliwości}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=16cm]{Impedancja_Y.jpg}
+	\caption{Wykres zależności cześci urojonej impedancji anteny od częstotliwości}
+\end{figure}
+
+
+
+%Wpływ człowieka na charakterystykę promieniowania
+
+%Obecność człowieka pogarsza charakterystykę promieniowania anteny. Zjawisko to spowodowane jest przewodzącymi właściwościami ciała człowieka, co powoduje tłumienie składowej elektrycznej pola. Na zakłócenia tego typu bardziej odporne są anteny pętlowe. Z tego powodu częściej znajdują one zastosowanie w urządzeniach przenośnych (np. pilotach zdalnego sterowania), na które mogłaby wpływać bezpośrednia bliskość człowieka.
+
+
+
+
+
+
 
 
 
