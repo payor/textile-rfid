@@ -482,7 +482,7 @@ Celem uzyskania w trakcie symulacji parametrów zbliżonych do założeń projek
 \newline Wykonana antena ma strukturę dipola o polaryzacji poziomej z układem dopasowującym. 
 Podłoże wykonano z papieru (aby struktura anteny była elastyczna i giętka, a co za tym idzie możliwy był jej pomiar na ramieniu cżłowieka).Przenikalność elektryczną podłoża przyjęto jak dla papieru $\epsilon_{r}$ = 2.31.
 
-\section {Struktura anteny tekstylnej}
+\section{Struktura anteny tekstylnej}
 
 W programie \emph{CST Microwave Studio} zaprojektowano  model anteny tekstylnej naramiennej. Do celów symulacji dla modelu ramienia przyjęto $\frac{2}{3}\epsilon_{r}$ i $\frac{2}{3}\sigma$ dla mięśni czyli w tym wypadku $\epsilon_{r}$ = 35,193 i $\sigma$ = 1,14.
 
@@ -493,12 +493,41 @@ W programie \emph{CST Microwave Studio} zaprojektowano  model anteny tekstylnej 
 \end{figure}
 
 
-\chapter {Wyniki pomiarów}
+\chapter{Wyniki pomiarów}
 
-\section{Pomiar parametru $s_{11}$}
+\section{Pomiar i porównanie parametru $s_{11}$ }
 
-Pomiar parametru rozproszenia $s_{11}$ został przeprowadzony analizatorem widma firmy Agilent typu N5230A. 
+Pomiar parametru rozproszenia $s_{11}$ został przeprowadzony analizatorem widma firmy Agilent typu N5230A. Następnie otrzymane wyniki zostały porównane z wynikami uzyskanymi na podstawie symulacji w programie \emph{CST Microwave Studio}. Jak widać na Rys. 5.1 uzyskany przebieg symulacji różnił się od pomiarów przeprowadzonych na fizycznej antenie. W trakcie pomarów na kabel zasilający antenę zostały nałożone koraliki ferrytowe, aby zmniejszyć do minimum promieniowanie kabla i ewentualne zakłócenia z tym związane. Dla celów symulacji pryzjęto przenikalność elektryczną podłoża jak dla papieru $\epsilon_{r}$ = 2.31. Celem poprawy częstotliwości pracy wykonanej anteny konieczne okazały się modyfikacje struktury. Wprowadozne zmiany polegały na skróceniu odpowiednio długości anteny, aby mogła ona pracować na częstotliwośći rezonansowej. Długość \emph{L1} jednego ramienia skrócono o 7 mm a długość drugiego ramienia o 4 mm. Zauwążyć można, żę dla wykonanej anteny częstotliwość rezonansowa nieco spadła w porównaniu z symulacją. Jednak przeprowadzona modyfikacja długości ścieżek \emph{L1} przesuneła częstotliwość w oczekiwaną wartość \emph{F=2,3654 GHz}.   
 
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=16cm]{POM_Prz_Ko_SYM_Prz_Ko.jpg}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny przed korektą, porównany z wynikami symulacji}
+\end{figure}
+
+
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=16cm]{POM_Prz_Ko_POM_Po_Ko.jpg}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny przed korektą, porównany z wynikami anteny po korekcie}
+\end{figure}
+
+
+
+\newline
+Umieszczenie anteny na ramieniu człowieka spowodowało przesunięcie częstotliwości rezonansowej w "góre", która wynosi dla tego przypadku \emph{F=2,6349 GHz}. Winika to z faktu, iż parametry anten silnie zależą od włąściwości ośrodka stratnego.  
+
+
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=16cm]{POM_Po_Ko_POM_Ram.jpg}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny umieszczonej na ramieniu, porównany z wynikami anteny umieszczonej na ramieniu w symulacji}
+\end{figure}
+
+%Anteny tekstylne to anteny pracujące w pobliżu ciała ludzkiego, a co za tym idzie patrząc od strony technologicznej - w pobliżu dielektrycznego, dyspersyjnego ośrodka startnego. Fale o takiej samej częstotliwośći (w ośrodku dyspersyjnym), rozchodzą się różną prędkością. 
+%Ponaddto tkanka ludzka jest ośrodkiem stratnym o skończonej konduktywności.
 
 
 \begin{table}[h]
@@ -544,42 +573,14 @@ Pomiar parametru rozproszenia $s_{11}$ został przeprowadzony analizatorem widma
 \end{table}
 
 
-\begin{figure}[h!]
-\centering
-	\includegraphics[width=16cm]{POM_Prz_Ko_SYM_Prz_Ko.jpg}
-	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny przed korektą, porównany z wynikami symulacji}
-\end{figure}
 
 
 
-\begin{figure}[h!]
-\centering
-	\includegraphics[width=16cm]{POM_Prz_Ko_POM_Po_Ko.jpg}
-	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny przed korektą, porównany z wynikami anteny po korekcie}
-\end{figure}
 
-
-\begin{figure}[h!]
-\centering
-	\includegraphics[width=16cm]{POM_Po_Ko_POM_Ram.jpg}
-	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny umieszczonej na ramieniu, porównany z wynikami anteny umieszczonej na ramieniu w symulacji}
-\end{figure}
 
 
 \chapter{Podsumowanie}
-%Badania
-%Zmieniająć długość L - (długość ramion promiennika) możemy regulować częstotliwość pracy anteny.
-%Celem zmniejszenia impedancji skracaliśmy wartość L2.
-%
 
-%W trakcie pomarów Na kabel zasilający antenę zostały nałożone koraliki ferrytowe, aby zmniejszyć do minimum promieniowanie kabla i ewentualne zakłócenia z tym związane. 
-
-
-%Aby uzyskać pracę w rezonansie należy wówczas odpowiednio skrócić długość anteny. 
-
-
-% Na kabel zasilający antenę zostały nałożone koraliki ferrytowe, aby zmniejszyć do minimum promieniowanie kabla i ewentualne zakłócenia z tym związane. 
-   
 
 
 
@@ -601,8 +602,6 @@ Pomiar parametru rozproszenia $s_{11}$ został przeprowadzony analizatorem widma
 
 
 
-%Anteny tekstylne to anteny pracujące w pobliżu ciała ludzkiego, a co za tym idzie patrząc od strony technologicznej - w pobliżu dielektrycznego, dyspersyjnego ośrodka startnego. Fale o takiej samej częstotliwośći (w ośrodku dyspersyjnym), rozchodzą się różną prędkością. 
-%Ponaddto tkanka ludzka jest ośrodkiem stratnym o skończonej konduktywności.
 
 
 
