@@ -345,7 +345,7 @@ Możliwości zastosowania tego typu anten jest wiele. Dziedziny zastosowań wzaj
 
 \section{Anteny tekstylne}
 
-Tekstronika jest nową gałęzią nauki, zajmującą się projektowaniem i budową inteligentnej odzieży. Jest wynkiem połączenia kilku dziedzin nauki m.in. nauki o materiałach, włókiennictwa, elektroniki, radiokumunikacji, kompatybilności elektromagnetycznej jak również informatyki. Tekstronika stwarza możliwość wykorzystania różnych metod transmisji sygnałów w układach antenowych (patrz eys. 2.2). W ramach niniejszej pracy skoncentrowano się na transmisji bezprzewodowej w paśmie nielicencjonowanym 2.4 GHz - 2,4835 GHz.  
+Tekstronika jest nową gałęzią nauki, zajmującą się projektowaniem i budową inteligentnej odzieży. Jest wynkiem połączenia kilku dziedzin nauki m.in. nauki o materiałach, włókiennictwa, elektroniki, radiokumunikacji, kompatybilności elektromagnetycznej jak również informatyki. Tekstronika stwarza możliwość wykorzystania różnych metod transmisji sygnałów w układach antenowych (patrz Rys. 2.2). W ramach niniejszej pracy skoncentrowano się na transmisji bezprzewodowej w paśmie nielicencjonowanym 2.4 GHz - 2,4835 GHz.  
 Anteny do zastosowań tekstronicznych, czyli implementowane w odzieży, dzięki eleastycznej i giętkiej konstrukcji są łatwe do integracji z materiałami.
 
 
@@ -495,9 +495,10 @@ W programie \emph{CST Microwave Studio} zaprojektowano  model anteny tekstylnej 
 
 \chapter{Wyniki pomiarów}
 
-\section{Pomiar i porównanie parametru $s_{11}$ }
+\section{Pomiar i porównanie parametru $s_{11}$}
 
-Pomiar parametru rozproszenia $s_{11}$ został przeprowadzony analizatorem widma firmy Agilent typu N5230A. Następnie otrzymane wyniki zostały porównane z wynikami uzyskanymi na podstawie symulacji w programie \emph{CST Microwave Studio}. Jak widać na Rys. 5.1 uzyskany przebieg symulacji różnił się od pomiarów przeprowadzonych na fizycznej antenie. W trakcie pomarów na kabel zasilający antenę zostały nałożone koraliki ferrytowe, aby zmniejszyć do minimum promieniowanie kabla i ewentualne zakłócenia z tym związane. Dla celów symulacji pryzjęto przenikalność elektryczną podłoża jak dla papieru $\epsilon_{r}$ = 2.31. Celem poprawy częstotliwości pracy wykonanej anteny konieczne okazały się modyfikacje struktury. Wprowadozne zmiany polegały na skróceniu odpowiednio długości anteny, aby mogła ona pracować na częstotliwośći rezonansowej. Długość \emph{L1} jednego ramienia skrócono o 7 mm a długość drugiego ramienia o 4 mm. Zauwążyć można, żę dla wykonanej anteny częstotliwość rezonansowa nieco spadła w porównaniu z symulacją. Jednak przeprowadzona modyfikacja długości ścieżek \emph{L1} przesuneła częstotliwość w oczekiwaną wartość \emph{F=2,3654 GHz}.   
+Pomiar parametru rozproszenia $s_{11}$ został przeprowadzony analizatorem widma firmy Agilent typu N5230A. Następnie otrzymane wyniki zostały porównane z wynikami uzyskanymi na podstawie symulacji w programie \emph{CST Microwave Studio}. Jak widać na Rys. 5.1 uzyskany przebieg symulacji różnił się od pomiarów przeprowadzonych na fizycznej antenie. W trakcie pomarów na kabel zasilający antenę zostały nałożone koraliki ferrytowe, aby zmniejszyć do minimum promieniowanie kabla i ewentualne zakłócenia z tym związane. 
+
 
 \begin{figure}[h!]
 \centering
@@ -505,6 +506,9 @@ Pomiar parametru rozproszenia $s_{11}$ został przeprowadzony analizatorem widma
 	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny przed korektą, porównany z wynikami symulacji}
 \end{figure}
 
+
+\newpage
+Dla celów symulacji pryzjęto przenikalność elektryczną podłoża jak dla papieru $\epsilon_{r}$ = 2.31. Celem poprawy częstotliwości pracy wykonanej anteny konieczne okazały się modyfikacje struktury. Wprowadozne zmiany polegały na skróceniu odpowiednio długości anteny, aby mogła ona pracować na częstotliwośći rezonansowej. Długość \emph{L1} jednego ramienia skrócono o 7 mm a długość drugiego ramienia o 4 mm. Zauwążyć można, żę dla wykonanej anteny częstotliwość rezonansowa nieco spadła w porównaniu z symulacją. Jednak przeprowadzona modyfikacja długości ścieżek \emph{L1} przesuneła częstotliwość w oczekiwaną wartość \emph{F=2,3654 GHz}.   
 
 
 \begin{figure}[h!]
@@ -514,22 +518,27 @@ Pomiar parametru rozproszenia $s_{11}$ został przeprowadzony analizatorem widma
 \end{figure}
 
 
-
-\newline
-Umieszczenie anteny na ramieniu człowieka spowodowało przesunięcie częstotliwości rezonansowej w "góre", która wynosi dla tego przypadku \emph{F=2,6349 GHz}. Winika to z faktu, iż parametry anten silnie zależą od włąściwości ośrodka stratnego.  
-
+\noindent
+\newline Umieszczenie anteny na ramieniu człowieka spowodowało przesunięcie częstotliwości rezonansowej w "góre", która wynosi dla tego przypadku \emph{F=2,6349 GHz}(patrz Rys. 5.3). Winika to z faktu, iż parametry anten silnie zależą od właściwości ośrodka stratnego.  
+Tkanka ludzka jest dielektrycznym, dyspersyjnym ośrodkiem stratnym o skończonej konduktywności. Ponaddto fale o takiej samej częstotliwośći (w ośrodku dyspersyjnym), rozchodzą się różną prędkością. 
 
 
 \begin{figure}[h!]
 \centering
 	\includegraphics[width=16cm]{POM_Po_Ko_POM_Ram.jpg}
-	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny umieszczonej na ramieniu, porównany z wynikami anteny umieszczonej na ramieniu w symulacji}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny po korekcji, porównany z pomiarami anteny umieszczonej na ramieniu}
 \end{figure}
 
-%Anteny tekstylne to anteny pracujące w pobliżu ciała ludzkiego, a co za tym idzie patrząc od strony technologicznej - w pobliżu dielektrycznego, dyspersyjnego ośrodka startnego. Fale o takiej samej częstotliwośći (w ośrodku dyspersyjnym), rozchodzą się różną prędkością. 
-%Ponaddto tkanka ludzka jest ośrodkiem stratnym o skończonej konduktywności.
 
 
+%Wpływ człowieka na charakterystykę promieniowania
+
+
+
+%Obecność człowieka pogarsza charakterystykę promieniowania anteny. Zjawisko to spowodowane jest przewodzącymi właściwościami ciała człowieka, co powoduje tłumienie składowej elektrycznej pola. Na zakłócenia tego typu bardziej odporne są anteny pętlowe. Z tego powodu częściej znajdują one zastosowanie w urządzeniach przenośnych (np. pilotach zdalnego sterowania), na które mogłaby wpływać bezpośrednia bliskość człowieka.
+
+
+\newpage 
 \begin{table}[h]
 \begin{center}
     \begin{tabular}{|c|c|c|}
@@ -586,13 +595,7 @@ Umieszczenie anteny na ramieniu człowieka spowodowało przesunięcie częstotli
 
 
 
-%Wpływ człowieka na charakterystykę promieniowania
 
- 
-
-
-
-%Obecność człowieka pogarsza charakterystykę promieniowania anteny. Zjawisko to spowodowane jest przewodzącymi właściwościami ciała człowieka, co powoduje tłumienie składowej elektrycznej pola. Na zakłócenia tego typu bardziej odporne są anteny pętlowe. Z tego powodu częściej znajdują one zastosowanie w urządzeniach przenośnych (np. pilotach zdalnego sterowania), na które mogłaby wpływać bezpośrednia bliskość człowieka.
 
  
 %Tworzenie modelu symulacyjnego  Modelowanie      
