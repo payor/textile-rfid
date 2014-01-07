@@ -149,6 +149,9 @@ Wygląd i budowa znaczników \emph{LF} zależy ściśle od ich przeznaczenia. Zn
 	
 	Znaczniki LF zbudowane są z ferrytowego rdzenia, na którym nawinięte są zwoje cewki. Występują w formie plastikowych kart, krążków, biochipów, pastylek. Wadami systemu \emph{RFID-LF} są: mała szybkość transmisji danych (1-2 kb/sek), co znacznie ogranicza możliwą do zapisania / odczytania ilość danych, niewielki zasięg – około 0.5 metra, podatność na zakłócenia przez urządzenia elektryczne, co ogranicza zastosowanie w przemyśle, limit jednoczesnego odczytu nie więcej niż 20 transponderów – ogranicza to pojemność systemu i maksymalną liczbę odczytów jaką może obsłużyć jeden czytnik. 
 
+	\newpage
+
+
 	\item pasmo wysokich częstotliwości \emph{HF} (częstotliwości 6.78 MHz, 13.56 MHz, 27.125 MHz oraz 40.68 MHz). 
 Transpondery \emph{HF} pracujące w zakresie 13.553 MHz – 13.657 MHz to zazwyczaj znaczniki pasywne. Identyfikatory pracujące na wysokich częstotliwościach wykazują się większą wrażliwością na obecność w swoim otoczeniu metali i mniejszym wpływem na zakłócenia elektromagnetyczne pochodzące od innych urządzeń niż znaczniki \emph{LF}. Pamięć znaczników \emph{HF} ma kilka razy większę pojemność, a szybkość komunikacji sięga 20 kbit/s. Cewka transpondera \emph{HF} zbudowana jest zazwyczaj z 3-8 zwojów, nadrukowana jest za pomocą przewodzącego lakieru na podłoże i zaprasowana w etykiecie. Znaczniki te produkowane są w postaci samoprzylepnych etykiet (ang.\emph{smart label}). Zaletami transponderów \emph{HF} są znacząco mniejsze koszty wykonania w porównaniu z identyfikatorami \emph{LF}, co spowodowane jest niewielką grubością identyfikatora, która osiąga nawet 0,1 mm. System RFID-HF daje możliwość odczytu do 50 znaczników jednocześnie (dzięki wprowadzeniu mechanizmów antykolizyjnych) co pozwala zastosować je do automatycznej identyfikacji produktów i obiektów. System wymaga zachowania odległości co najmniej 2-3 centymetrów pomiędzy transponderami. 
 	
@@ -175,7 +178,6 @@ Transpondery \emph{HF} pracujące w zakresie 13.553 MHz – 13.657 MHz to zazwyc
 	\end{figure}
 	
 	 System znaczników pracujących na wysokich częstotliwościach znalazł zastosowanie w Europejskim Systemie Sterowania Pociągiem (ang. \emph{ETCS - European Train Control System}). System ten wyposażony w jest w urządzenie zwane Eurobalisą, które mocowane jest na torze pomiędzy szynami i może komunikować się z przejeżdżającymi nad nim pociągami.
-
 
 	\item pasmo ultra wysokich częstotliwości \emph{UHF} (częstotliwości 433.92 MHz i 860-960 MHz).
 Zakresy częstotliwości \emph{UHF} podzielono na kilka podzakresów np. Europa 860-868 MHz, Ameryka Północna 902-928 MHz, Japonia  950 MHz-956MHz. W związku z różnicami w częstotliwościach pracy urządzeń ustalono globalny standard ISO/IEC 18000-6 C. W celu objęcia globalnego łańcucha dostaw stworzono identyfikatory i czytniki, która mogą pracować na całym świecie. Znaczniki pasywne systemów \emph{RFID} pracujących w pasmie \emph{UHF} pozwalają na dużo większy zasięg niż znaczniki pasywne pozostałych pasm częstotliwości. Zaimplementowano lepsze protokoły antykolizyjne niż w systemach \emph{HF}. Wskutek tego zwiększyła się możliwość odczytu do 200 znacznikóa jednocześnie. Zasięg odczytu zawiera się w granicach od 3 do 6 metrów.Dodatkowo duża szybkość transmisji danych do 120 kbit/sek powoduje, że znajdują one zastosowanie w magazynach.
@@ -398,6 +400,8 @@ Wszystkie symulacje numeryczne przeprowadzone zostały w srodowisku \emph{CST Mi
 	\item polaryzacja anteny - określa ją polaryzacja wytwarzanej przez nią fali elektromagnetcznej 
 	Wyróżniamy polaryzację liniową (pionową, poziomą, nachyloną pod kątem), eliptyczną lub kołową ( lewoskrętną, prawoskrętną),
 
+	\item kierunkowość - jest to silna koncentracja energii anteny w jednym kierunku, kosztem innych kierunków. Kierunek, w którym promieniowanie anteny jest największe nazywamy kierunkiem maksymalnego promieniowania,
+
 	\item sprawność - to storunek mocy wypromieniowanej przez antenę do mocy dostarczonej do anteny,
 
 	\item dopasowasowanie - linia transmisyjna jest dopasowana gdy impedancja wejściowa linii równa jest impedancji wejsciowej anteny. 
@@ -409,6 +413,11 @@ Wszystkie symulacje numeryczne przeprowadzone zostały w srodowisku \emph{CST Mi
 
 Prototyp anteny tekstylnej RFID przesymulowano w środowisku \emph{CST Microwave Studio}. Inspiracją do stworzenia struktury wyjściowej był artykuł z 6th European Conference on Antennas and Propagation \cite{Artykul}. Strukturę bazową poddano modyfikacji celem dostosowania jej do założeń projektu. Optymalizacji parametrów symulacji, dokonano poprzez wybór opcji \emph{adaptive mesh refinement}, która ma na celu dostosowanie rozmiaru siatki, dzięki czemu otrzymane wyniki są dokładniejsze.
 
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=17cm]{S11_Passes_dB.jpg}
+	\caption{Wykres przedstawia analizę po kątem parametru $s_{11}$ doboru rozmiaru siatki}
+\end{figure}
 
 \begin{figure}[h!]
 	\centering
@@ -416,14 +425,22 @@ Prototyp anteny tekstylnej RFID przesymulowano w środowisku \emph{CST Microwave
 	    \caption{Model struktury anteny}
 \end{figure}
 
-
 \begin{figure}[h!]
 	\centering
 	    \includegraphics[width=15.5cm]{fizyczna_antena.jpg}
 	    \caption{Prototyp anteny}
 \end{figure}
 
-\begin{table}[h]
+\newpage
+ Celem uzyskania w trakcie symulacji parametrów zbliżonych do założeń projektu przeprowadzono parametryzację struktury. Stopień dyskretyzacji został ustalony po 6 iteracjach. Rezultaty procesu doboru wymiarów anteny, można było obserwować na wykresach. Najlepsze wyniki posłużyły do ustalenia rozmiaru projektowanej anten, a pózniej wykonania prototypu. W rezultacie impedancja wejściowa symulowanej anteny wynosi 38 \(\Omega\). Schemat struktury po parametryzacji i prototyp pokazano na Rys.4.2 i Rys. 4.3. Wymiary zaprojektowanej anteny przestawiono w Tab. 4.1. 
+
+\begin{figure}[h!]
+	\centering
+	    \includegraphics[width=16cm]{struktura_plaska.jpg}
+	    \caption{Model struktury anteny z programu \emph{CST Microwave Studio}}
+\end{figure}
+
+\begin{table}[h!]
 \begin{center}
     \begin{tabular}{|c|c|}
     \hline
@@ -469,22 +486,14 @@ Prototyp anteny tekstylnej RFID przesymulowano w środowisku \emph{CST Microwave
 \end{table}
 
 
-
-\begin{figure}[h!]
-	\centering
-	    \includegraphics[width=16cm]{struktura_plaska.jpg}
-	    \caption{Model struktury anteny z programu \emph{CST Microwave Studio}}
-\end{figure}
-
-
-Celem uzyskania w trakcie symulacji parametrów zbliżonych do założeń projektu przeprowadzono parametryzację struktury. Stopień dyskretyzacji został ustalony po 6 iteracjach. Rezultaty procesu doboru wymiarów anteny, można było obserwować na wykresach. Najlepsze wyniki posłużyły do ustalenia rozmiaru projektowanej anten, a pózniej wykonania prototypu. W rezultacie impedancja wejściowa symulowanej anteny wynosi 38 \(\Omega\). Schemat struktury po parametryzacji i prototyp pokazano na Rys.4.1 i Rys. 4.2. Wymiary zaprojektowanej anteny przestawiono w Tab. 4.1. 
-\noindent 
-\newline Wykonana antena ma strukturę dipola o polaryzacji poziomej z układem dopasowującym. 
-Podłoże wykonano z papieru (aby struktura anteny była elastyczna i giętka, a co za tym idzie możliwy był jej pomiar na ramieniu cżłowieka).Przenikalność elektryczną podłoża przyjęto jak dla papieru $\epsilon_{r}$ = 2.31.
+Wykonana antena ma strukturę dipola o polaryzacji poziomej z układem dopasowującym. 
+Podłoże wykonano z papieru (aby struktura anteny była elastyczna i giętka, a co za tym idzie możliwy był jej pomiar na ramieniu człowieka).Przenikalność elektryczną podłoża przyjęto jak dla papieru $\epsilon_{r}$ = 2.31.
 
 \noindent
 \newline
-\newline
+
+ 
+\newpage
 \section{Struktura anteny tekstylnej}
 
 W programie \emph{CST Microwave Studio} zaprojektowano  model anteny tekstylnej naramiennej. Do celów symulacji dla modelu ramienia przyjęto $\frac{2}{3}\epsilon_{r}$ i $\frac{2}{3}\sigma$ dla mięśni czyli w tym wypadku $\epsilon_{r}$ = 35,193 i $\sigma$ = 1,14.
@@ -511,7 +520,7 @@ Pomiar parametru rozproszenia $s_{11}$ został przeprowadzony analizatorem widma
 
 
 \newpage
-Dla celów symulacji pryzjęto przenikalność elektryczną podłoża jak dla papieru $\epsilon_{r}$ = 2.31. Celem poprawy częstotliwości pracy wykonanej anteny konieczne okazały się modyfikacje struktury. Wprowadozne zmiany polegały na skróceniu odpowiednio długości anteny, aby mogła ona pracować na częstotliwośći rezonansowej. Długość \emph{L1} jednego ramienia skrócono o 7 mm a długość drugiego ramienia o 4 mm. Zauwążyć można, żę dla wykonanej anteny częstotliwość rezonansowa nieco spadła w porównaniu z symulacją. Jednak przeprowadzona modyfikacja długości ścieżek \emph{L1} przesuneła częstotliwość w oczekiwaną wartość \emph{F=2,3654 GHz}.   
+Dla celów symulacji pryzjęto przenikalność elektryczną podłoża jak dla papieru $\epsilon_{r}$ = 2.31. Celem poprawy częstotliwości pracy wykonanej anteny konieczne okazały się modyfikacje struktury. Wprowadozne zmiany polegały na skróceniu odpowiednio długości anteny, aby mogła ona pracować na częstotliwośći rezonansowej. Długość \emph{L1} jednego ramienia skrócono o 7 mm a długość drugiego ramienia o 4 mm. Zauwążyć można, żę dla wykonanej anteny częstotliwość rezonansowa nieco spadła w porównaniu z symulacją. Jednak przeprowadzona modyfikacja długości ścieżek \emph{L1} przesuneła częstotliwość w oczekiwaną wartość \emph{F=2,3654 GHz} (patrz Rys.5.2 i Rys. 5.3).  
 
 \begin{figure}[h!]
 \centering
@@ -527,10 +536,9 @@ Dla celów symulacji pryzjęto przenikalność elektryczną podłoża jak dla pa
 \end{figure}
 
 
-
 \newpage
 \noindent
-\newline Umieszczenie anteny na ramieniu człowieka spowodowało przesunięcie częstotliwości rezonansowej w "góre", która wynosi dla tego przypadku \emph{F=2,6349 GHz}(patrz Rys. 5.3). Winika to z faktu, iż parametry anten silnie zależą od właściwości ośrodka stratnego.  
+\newline Umieszczenie anteny na ramieniu człowieka spowodowało przesunięcie częstotliwości rezonansowej w "góre", która wynosi dla tego przypadku \emph{F=2,6349 GHz}(patrz Rys. 5.4). Winika to z faktu, iż parametry anten silnie zależą od właściwości ośrodka stratnego.  
 Tkanka ludzka jest dielektrycznym, dyspersyjnym ośrodkiem stratnym o skończonej konduktywności. Ponaddto fale o takiej samej częstotliwośći (w ośrodku dyspersyjnym), rozchodzą się różną prędkością. 
 
 \begin{figure}[h!]
@@ -540,16 +548,59 @@ Tkanka ludzka jest dielektrycznym, dyspersyjnym ośrodkiem stratnym o skończone
 \end{figure}
 
 
+\newpage
+\section{Zysk energetyczny}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Charakterystyka promieniowania}
+Poniższe wykresy przedstawiają 
+
+Wykres przedstawiający trójwymiarową charakterystkę kierunkowości zamodelowanej anteny RFID dal częstotliwości 2.4 GHz.
+
+
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=15cm]{Gain_Abs_90.jpg}
+	\caption{Przebieg charakterystyki promieniowania anteny w płaszczyźnie $\phi = 90^{0}$}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=15cm]{Gain_Theta_90.jpg}
+	\caption{Przebieg charakterystyki promieniowania anteny w płaszczyźnie $\phi = 90^{0}$}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=16cm]{Abs.jpg}
+	\caption{Charakterystyka 3D promieniowania anteny dla częstotliwości 2,4 GHz}
+\end{figure}
+
+
+\section{Impedancja}
+
+
 
 %Wpływ człowieka na charakterystykę promieniowania
-
-
 
 %Obecność człowieka pogarsza charakterystykę promieniowania anteny. Zjawisko to spowodowane jest przewodzącymi właściwościami ciała człowieka, co powoduje tłumienie składowej elektrycznej pola. Na zakłócenia tego typu bardziej odporne są anteny pętlowe. Z tego powodu częściej znajdują one zastosowanie w urządzeniach przenośnych (np. pilotach zdalnego sterowania), na które mogłaby wpływać bezpośrednia bliskość człowieka.
 
 
 \newpage 
-\begin{table}[h]
+\begin{table}[h!]
 \begin{center}
     \begin{tabular}{|c|c|c|}
     \hline
@@ -570,7 +621,7 @@ Tkanka ludzka jest dielektrycznym, dyspersyjnym ośrodkiem stratnym o skończone
 
 
 
-\begin{table}[h]
+\begin{table}[h!]
 \begin{center}
     \begin{tabular}{|c|c|c|c|}
     \hline
