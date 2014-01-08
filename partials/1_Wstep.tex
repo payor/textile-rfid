@@ -410,7 +410,7 @@ Wszystkie symulacje numeryczne przeprowadzone zostały w srodowisku \emph{CST Mi
 \newpage
 \section{Struktura anteny}
 
-Prototyp anteny tekstylnej RFID przesymulowano w środowisku \emph{CST Microwave Studio}. Źródłem inspiracji była struktura zamieszczona w artykule z KKRRiT z 2013 roku \cite{Artykul}. Strukturę bazową poddano modyfikacji celem dostosowania do założeń projektu. Parametry symulacji optymalizowano poprzez wybór opcji \emph{adaptive mesh refinement}, która ma na celu dostosowanie rozmiaru siatki oraz parametryzację struktury dzięki czemu otrzymane wyniki są dokładniejsze.
+Prototyp anteny tekstylnej RFID przesymulowano w środowisku \emph{CST Microwave Studio}. Źródłem inspiracji była struktura zamieszczona w artykule z KKRRiT z 2013 roku \cite{Artykul_1}. Strukturę bazową poddano modyfikacji celem dostosowania do założeń projektu. Parametry symulacji optymalizowano poprzez wybór opcji \emph{adaptive mesh refinement}, która ma na celu dostosowanie rozmiaru siatki oraz parametryzację struktury dzięki czemu otrzymane wyniki są dokładniejsze.
 
 \begin{figure}[h!]
 \centering
@@ -495,7 +495,7 @@ Wykonana antena tekstylna ma strukturę dipola z układem dopasowującym. Podło
 \newpage
 \section{Struktura anteny tekstylnej}
 
-W programie \emph{CST Microwave Studio} zaprojektowano  model anteny tekstylnej naramiennej. Do celów symulacji dla modelu ramienia przyjęto zgodnie z artykułem KKRRiT z 2013 roku \cite{Artykul}  $\epsilon_{r}$ = 52 i $\sigma$ = 1,8.
+W programie \emph{CST Microwave Studio} zaprojektowano  model anteny tekstylnej naramiennej. Do celów symulacji dla modelu ramienia przyjęto zgodnie z artykułem KKRRiT z 2013 roku \cite{Artykul_1}  $\epsilon_{r}$ = 52 i $\sigma$ = 1,8.
 
 \begin{figure}[!ht]
 	\centering
@@ -651,7 +651,7 @@ G_{RFID}[dBi] = 10.24[dBi] - 39.2[dBm] + 34.5[dBm] = 5,54[dBi]
 
 
 
-W trakcie pomiarów założono, że obie anteny odbiorcze są dopasowene. Otrzymane w wyniku obliczeń wartości zysku energetycznego anteny RFID różnią się od wartości odczytanych z generatora. Wyniki obarczone są pewnymi błędami, co wynika z faktu nieidealności samej metody pomiarowej oraz warunków w jakich przeprowadzany był pomiar. Pomiary nie były przeprowadzone w wolnej przestrzeni, ale w budynku wydziału Automatyki, Elektroniki i Informatyki.
+W trakcie pomiarów założono, że obie anteny odbiorcze są dopasowene. Względna różnica poziomu mocy odebranej przez antenę badaną i abntenę wzorcową pozwala określić wartość zysku energetycznego anteny badanej. Wyniki obarczone są pewnymi błędami, co wynika z faktu nieidealności samej metody pomiarowej oraz warunków w jakich przeprowadzany był pomiar. Pomiary nie były przeprowadzone w wolnej przestrzeni, ale w budynku wydziału Automatyki, Elektroniki i Informatyki.
 
 \newpage
 \section{Charakterystyka promieniowania}
@@ -710,7 +710,7 @@ Wykresy przedstawiają zależność impedancji od częstotliwości.
 \chapter{Podsumowanie}
 
 Celem pracy inżynierskiej było zaprojektowanie anteny tekstylnej pracującej na częstotliwości 2,4 GHz. Anteny tekstylne należą do grupy anten konforemnych, trudnych technologicznie do wykonania ze względu na elastyczność podłoża, prace w trudnych warunkach, konieczność integracji z nośnikiem (kamizelką, rękawem, kaskiem) jednak mających coraz szersze zastosowanie. W ciągu ostatnich lat zwiększa się zapotrzebowanie na tego typu anteny przytwierdzone do fragmentów odzieży.
-Projekt anteny wykonano w środkowisku \emph{CST Microwave Studio}. W pierwszej fazie zamodelowano i przesymulowano zmodyfikiwoną strukturę anteny zaprezentowaną w artykule \cite{Artykul}. Celem poprawy parametrów anteny zmodyfikowano o kilka milimetrów wymiary struktury wzorcowej (patrz Rys. 4.2, 4.3 i Tab. 4.1). Wprowadzone modyfikacje dwukrotnie zwiększyły zysk, zmniejszyły impedancję wejściową prawie trzykrotnie i dostroiły częstotliwość anteny do nominalnej częstotliwości pracy.
+Projekt anteny wykonano w środkowisku \emph{CST Microwave Studio}. W pierwszej fazie zamodelowano i przesymulowano zmodyfikiwoną strukturę anteny zaprezentowaną w artykule \cite{Artykul_1}. Celem poprawy parametrów anteny zmodyfikowano o kilka milimetrów wymiary struktury wzorcowej (patrz Rys. 4.2, 4.3 i Tab. 4.1). Wprowadzone modyfikacje dwukrotnie zwiększyły zysk, zmniejszyły impedancję wejściową prawie trzykrotnie i dostroiły częstotliwość anteny do nominalnej częstotliwości pracy.
 Strukturę anteny początkowo zamodelowano na niezdeformowanym (płaskim) podłożu, a następnie je wygięto w tych w obydwu przypadkach antenę umieszczono w ośrodku o $\epsilon_{r}$ = 1 (powietrze), w kolejnej fazie symulacji antenę umieszczono na modelu ramienia o $\epsilon_{r}$ = 52 (ośrodek stratny).    
 Dla zaprojektowanej anteny zmierzono parametr $s_{11}$, poziom mocy sygnału odebranego i zysk energetyczny. Największe rozbieżności na wykresach można zaobserwować dla pomiaru zysku energetycznego dla anteny mierzonej w na płasko i anteny umieszczonej na ramieniu (patrz rys. 5.4). Zysku anteny spadł o około 8 dB dla anteny umieszczonej na ramieniu (dla częstotliwości 2,4 GHz), co jest niewątpliwie wynikiem deformacji całej struktury jak i zmiany ośrodka pracy. 
 Przeprowadzone pomiary podstawowych parametrów anteny tekstylnej w środowisku rzeczywistym pokazały w jaki sposób obecność ludzkiego ciała wpływa na charakterystykę promieniowania anteny i jej zysk.
