@@ -553,24 +553,18 @@ Tkanka ludzka jest dielektrycznym, dyspersyjnym ośrodkiem stratnym o skończone
 
 \section{Zysk energetyczny}
 
+Do pomiaru zysku energetycznego wybrano metodę porównawczą.
+
 \subsection {Metoda porównanwacza}
 
-Do pomiaru zysku energetycznego wybrano metodę porównawczę, którą zaczerpnięto ze skryptu wydanego przez Oficynę Wydawniczą Politechniki Śląskiej \emph{Pomiary parametrów anten} \cite{Pomiary_parametrów}. Układ pomiarowy składał się z anteny nadawczej  i anteny odbiorczej (anteny wzorcowej / badanej). Przyjęto założenie, że warunki pomiaru są niezmienne w czasie: zysk anteny nadawczej jest stały, poziom mocy sygnału emitowanego przez antenę nadawczą jest stały oraz odległość anteny nadawczej od anteny odbiorczej jest stała. Na podstawie zysk energetycznego anteny wzorcowej, który jest znany i dla częstotliwości 2,4 GHz wynosi 10.24 dB, zmierzyliśmy zysk anteny badanej. Antenę nadawczą podłączono do generetora funkcyjnego Rohde&Schwarz SMF 100A i ustawiono jego częstotliwość pracy na 2,4 GHz. W polu promieniowania anteny nadawczej umieszczono antenę odbiorczą (badaną), którą podłączono do analizatora widma Agilent N5230A i wybrano odpowiedni zakres pracy analizatora. W ten sposób dokonano pomiaru poziomu mocy odebranej przez antenę wzorcową           
+Do pomiaru zysku energetycznego wybrano metodę porównawczę, którą zaczerpnięto ze skryptu wydanego przez Oficynę Wydawniczą Politechniki Śląskiej \emph{Pomiary parametrów anten} \cite{Pomiary_parametrów}. Układ pomiarowy składał się z anteny nadawczej  i anteny odbiorczej (anteny wzorcowej / badanej). Przyjęto założenie, że warunki pomiaru są niezmienne w czasie: zysk anteny nadawczej jest stały, poziom mocy sygnału emitowanego przez antenę nadawczą jest stały oraz odległość anteny nadawczej od anteny odbiorczej jest stała. Na podstawie zysk energetycznego anteny wzorcowej, który jest znany i dla częstotliwości 2,4 GHz wynosi 10.24 dB, zmierzyliśmy zysk anteny badanej. Antenę nadawczą podłączono do generetora funkcyjnego 
+Rohde\&Schwarz SMF 100A i ustawiono jego częstotliwość pracy na 2,4 GHz. W polu promieniowania anteny nadawczej umieszczono antenę odbiorczą (badaną), którą podłączono do analizatora widma \& Agilent N5230A i wybrano odpowiedni zakres pracy analizatora. Po ustawieniu częstotliwości nadawania dokonano pomiaru poziomu mocy odebranej przez antenę wzorcową za pomocą analizatora widma. Następnie w miejscu anteny wzorcowej, na tej samej wysokości i w niezmienionej odległości od anteny nadawczej, umieszczono antenę RFID, podłączono do analizatora i zmierzono odebraną moc. 
 
 
-\section{Metoda porównawcza}
-
-Do pomiaru zysku energetycznego wykonanej anteny wykorzystano metodę porównawczą. W skład układu pomiarowego wchodzą antena nadawcza i antena odbiorcza (antena wzorcowa). Znając zysk energetyczny anteny wzorcowej, który dla częstotliwości 2, 4 GHz wynosi 10, 24 dB, wyznaczono zysk anteny badanej.
-Do generatora podłączono antenę nadawczą .
-W trakcie pomiarów wykorzystałam również generator funkcyjny Rohde&Schwarz SMF 100 A oraz analizator widmowy Agilent N5230A.
+\noindent
+\newline Uzyskane wyniki pomiarów poziomu mocy prezentuje tabela 5.1:
 
 
-
-\begin{align}
-a^2&=b^2+c^2
-\quad
-\end{align}
- 
 \begin{table}[h!]
 \begin{center}
     \begin{tabular}{|c|c|c|}
@@ -590,6 +584,10 @@ a^2&=b^2+c^2
 \end{table}
 
 
+\noindent
+\newline Uzyskane wyniki pomiarów zysku energetycznego prezentuje tabela 5.2:
+
+
 \begin{table}[h!]
 \begin{center}
     \begin{tabular}{|c|c|c|c|}
@@ -598,7 +596,7 @@ a^2&=b^2+c^2
     ~               & \multicolumn{3}{c|}{ANTENA MIERZONA TEKSTYLNA } \\
     ~               & \multicolumn{3}{c|}{~}     \\ \hline
     ~               & \multicolumn{2}{c|}{~}     & ~                                  \\
-    ANTENA WZORCOWA & \multicolumn{2}{c|}{BEZ OBECNOŚCI CZLOWIEKA} & W OBECNOŚCI CZLOWIEKA              \\
+    ANTENA WZORCOWA & \multicolumn{2}{c|}{BEZ OBECNOŚCI CZŁOWIEKA} & W OBECNOŚCI CZŁOWIEKA              \\
     ~               & \multicolumn{2}{c|}{~}     & ~                                  \\ \hline
     ~               & ~                          & ~                                  & ~                                  \\
     ~               & POŁOŻENIE ----             & POŁOŻENIE [     ]                  & POŁOŻENIE [    ]                   \\
@@ -612,7 +610,51 @@ a^2&=b^2+c^2
 \end{table}
 
 
+\noindent
+\newline Zysk anteny tekstylnej RFID $G_{RFID}[dBi]$  wyznaczono, koszytając z poniższego wzoru:
 
+\begin{align}
+G_{RFID}[dBi] = G_{W}[dBi] + P_{RFID}[dBm] - P_W[dBm]
+\quad
+\end{align}
+
+
+\noindent
+\newline gdzie: 
+
+\noindent
+\newline$G_{RFID}[dBi]$ - zysk anteny RFID w odniesieniu do anteny izotopowej, 
+
+
+\noindent
+\newline $G_{W}[dBi]$ - zysk anteny wzorcowej w odniesieniu do anteny izotopowej (podany przez producenta),
+
+\noindent
+\newline $P_{RFID}[dBm]$ - poziom mocy sygnału odebrany przez antenę RFID,
+
+
+\noindent
+\newline $P_W[dBm]$ - poziom mocy sygnału odebrany przez antenę wzorcową.
+
+\noindent
+\newline Zysk energetyczny dla częstotliwości 2,4 GHz dla polaryzacji poziomej:
+
+\begin{align}
+G_{RFID}[dBi] = -10.24[dBi] - 39.2[dBm] + 34.5[dBm] = -14,94[dBi]
+\quad
+\end{align}
+
+
+\noindent
+\newline Zysk energetyczny dla częstotliwości 2,4 GHz dla polryzacji poziomej:
+
+\begin{align}
+G_{RFID}[dBi] = -10.24[dBi] - 59.9[dBm] + 59.7[dBm] = -10.44[dBi]
+\quad
+\end{align}
+
+Otrzymane w wyniku obliczeń wyniki zysku energetycznego anteny RFID, różnią się od wartości odczytanych z generatora. 
+Porównując wyniki otrzymane w wyniku obliczeń z wartościami zmierzonymi
 
 \newpage
 \section{Charakterystyka promieniowania}
