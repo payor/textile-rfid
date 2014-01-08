@@ -495,7 +495,7 @@ Wykonana antena tekstylna ma strukturę dipola z układem dopasowującym. Podło
 \newpage
 \section{Struktura anteny tekstylnej}
 
-W programie \emph{CST Microwave Studio} zaprojektowano  model anteny tekstylnej naramiennej. Do celów symulacji dla modelu ramienia przyjęto zgodnie z artykułem KKRRiT z 2013 roku \cite{Artykul} dla mięśni czyli w tym wypadku $\epsilon_{r}$ = 52 i $\sigma$ = 1,8.
+W programie \emph{CST Microwave Studio} zaprojektowano  model anteny tekstylnej naramiennej. Do celów symulacji dla modelu ramienia przyjęto zgodnie z artykułem KKRRiT z 2013 roku \cite{Artykul}  $\epsilon_{r}$ = 52 i $\sigma$ = 1,8.
 
 \begin{figure}[!ht]
 	\centering
@@ -562,11 +562,11 @@ Do pomiaru zysku energetycznego wybrano metodę porównawczą.
 \subsection {Metoda porównanwacza}
 
 Do pomiaru zysku energetycznego wybrano metodę porównawczę, którą zaczerpnięto ze skryptu wydanego przez Oficynę Wydawniczą Politechniki Śląskiej \emph{Pomiary parametrów anten} \cite{Pomiary_parametrów}. Układ pomiarowy składał się z anteny nadawczej  i anteny odbiorczej (anteny wzorcowej / badanej). Przyjęto założenie, że warunki pomiaru są niezmienne w czasie: zysk anteny nadawczej jest stały, poziom mocy sygnału emitowanego przez antenę nadawczą jest stały oraz odległość anteny nadawczej od anteny odbiorczej jest stała. Na podstawie zysk energetycznego anteny wzorcowej, który jest znany i dla częstotliwości 2,4 GHz wynosi 10.24 dB, zmierzyliśmy zysk anteny badanej. Antenę nadawczą podłączono do generetora funkcyjnego 
-Rohde\&Schwarz SMF 100A i ustawiono jego częstotliwość pracy na 2,4 GHz. W polu promieniowania anteny nadawczej umieszczono antenę odbiorczą (badaną), którą podłączono do analizatora widma \& Agilent N5230A i wybrano odpowiedni zakres pracy analizatora. Po ustawieniu częstotliwości nadawania dokonano pomiaru poziomu mocy odebranej przez antenę wzorcową za pomocą analizatora widma. Następnie w miejscu anteny wzorcowej, na tej samej wysokości i w niezmienionej odległości od anteny nadawczej, umieszczono antenę RFID, podłączono do analizatora i zmierzono odebraną moc. 
+Rohde\&Schwarz SMF 100A i ustawiono jego częstotliwość pracy na 2,4 GHz. W polu promieniowania anteny nadawczej umieszczono antenę odbiorczą (badaną), którą podłączono do analizatora widma \& Agilent N5230A i wybrano odpowiedni zakres pracy analizatora. Po ustawieniu częstotliwości nadawania dokonano pomiaru poziomu mocy odebranej przez antenę wzorcową za pomocą analizatora widma. Następnie w miejscu anteny wzorcowej, na tej samej wysokości i w niezmienionej odległości od anteny nadawczej, umieszczono antenę RFID, dla której zmierzono poziom mocy odbieranej. 
 
 
 \noindent
-\newline Uzyskane wyniki pomiarów poziomu mocy prezentuje tabela 5.1:
+\newline Uzyskane wyniki pomiarów poziomu mocy zestawiono w tabeli 5.1:
 
 
 \begin{table}[h!]
@@ -589,7 +589,7 @@ Rohde\&Schwarz SMF 100A i ustawiono jego częstotliwość pracy na 2,4 GHz. W po
 
 
 \noindent
-\newline Uzyskane wyniki pomiarów zysku energetycznego prezentuje tabela 5.2:
+\newline Uzyskane wyniki pomiarów zysku energetycznego zestawiono w tabeli 5.2:
 
 
 \begin{table}[h!]
@@ -644,24 +644,18 @@ G_{RFID}[dBi] = G_{W}[dBi] + P_{RFID}[dBm] - P_W[dBm]
 \newline Zysk energetyczny dla częstotliwości 2,4 GHz dla polaryzacji poziomej:
 
 \begin{align}
-G_{RFID}[dBi] = -10.24[dBi] - 39.2[dBm] + 34.5[dBm] = -14,94[dBi]
+G_{RFID}[dBi] = 10.24[dBi] - 39.2[dBm] + 34.5[dBm] = 5,54[dBi]
 \quad
 \end{align}
 
 
-\noindent
-\newline Zysk energetyczny dla częstotliwości 2,4 GHz dla polryzacji poziomej:
 
-\begin{align}
-G_{RFID}[dBi] = -10.24[dBi] - 59.9[dBm] + 59.7[dBm] = -10.44[dBi]
-\quad
-\end{align}
 
-W trakcie pomiarów założono, że obie anteny odbiorcze są dopasowene. Otrzymane w wyniku obliczeń wartości zysku energetycznego anteny RFID, różnią się od wartości odczytanych z generatora. Wyniki obarczone są pewnymi błędami, co wynika z faktu nieidealności samej metody pomiarowej oraz warunkó w jakich przeprowadzany był pomiar. Pomiary przeprowadzone były w budynku wydziału, a w wolnej przestrzeni.
+W trakcie pomiarów założono, że obie anteny odbiorcze są dopasowene. Otrzymane w wyniku obliczeń wartości zysku energetycznego anteny RFID różnią się od wartości odczytanych z generatora. Wyniki obarczone są pewnymi błędami, co wynika z faktu nieidealności samej metody pomiarowej oraz warunków w jakich przeprowadzany był pomiar. Pomiary nie były przeprowadzone w wolnej przestrzeni, ale w budynku wydziału Automatyki, Elektroniki i Informatyki.
 
 \newpage
 \section{Charakterystyka promieniowania}
-Wykresy Rys. 5.5 i Rys. 5.6 przedstawiają charakterystyki promieniowania anteny na płaszczyźnie $\phi = 90^{0}$ natomiast wykres na Rys. 5.7 pokazuje trójwymiarową charakterystkę kierunkowości zamodelowanej anteny RFID dla częstotliwości 2.4 GHz.
+Wykresy pokazane na Rys. 5.5 i Rys. 5.6 przedstawiają charakterystyki promieniowania anteny w biegunowym układzie współrzędnych w płaszczyźnie $\phi = 90^{0}$ natomiast wykres na Rys. 5.7 pokazuje trójwymiarową charakterystkę promieniowania zamodelowanej anteny RFID dla częstotliwości 2.4 GHz.
 
 
 \begin{figure}[h!]
@@ -715,9 +709,9 @@ Wykresy przedstawiają zależność impedancji od częstotliwości.
 
 \chapter{Podsumowanie}
 
-Celem pracy dyplomowej było zaprojektowanie anteny tekstylnej pracującej na częstotliwości 2,4 GHz. Anteny tekstylne są typ anten konforemnych, trudnych technologicznie do wykonania ze względu na elastyczność podłoża, prace w trudnych warunkach, konieczność integracji z nośnikiem (kamizelką, rękawem, kaskiem) jednak mających coraz szersze zastosowanie. W ciągu ostatnich lat zwiększa się zapotrzebowanie na anteny o podłożach konforemnych. 
-Projekt anteny wykonano w środkowisku \emph{CST Microwave Studio}. W pierwszej fazie projektu zamodelowano i przesymulowano zmodyfikiwoną strukturę anteny zaprezentowaną w artykule \cite{Artykul}. Celem poprawy wyników symulacji, a co za tym idzie parametrów późniejszego prototypu, dobrano rozmiar siatki i zmodyfikowano o kilka milimetrów wymiary początkowo zaprojektowanej struktury (patrz Rys. 4.2, 4.3 i Tab. 4.1). Wprowadozne modyfikacje modelu symulacyjnego i później prototypu anteny, dwukrotnie zwiększyły zysk, zmniejszyły impedancję wejściową prawie trzykrotnie i dostosowały częstotliwość pracy anteny do założeń projektu. Wnioski wyniesione z przeprowadzonego projektu, symulacji i badań struktury ateny pozwalają na właściwą ocenę wpływu poszczególnych parametrów anteny na wynik końcowy. Ich dobór jest uzależniony od założeń projektu, oczekiwiań i ewentualnych warunków pracy wykonanej anteny. 
-Strukturę anteny początkowo zamodelowano na płaskim podłożu, następnie wygięto podłoże w tych dwóch przypadkach ośrodkiem pracy było powietrze, aż w końcu model struktury umieszczono na modelu ramienia ośrodku stratnym była tkanka ludzka.    
-Dla zaprojektowanej anteny zmierzony został współczynnik rozpraszania $s_{11}$, poziom mocy sygnału anteny i zysk energetyczny. Największe rozbieżności na wykresach można zaobserwować dla pomiaru zysku energetycznego dla anteny mierzonej na płasko i anteny umieszczonej na ramieniu (patrz rys. 5.4). Zysku anteny spadł o około 8 dB dla anteny umieszczonej na ramieniu (dla częstotliwości 2,4 GHz).Co jest niewątpliwie wynikiem dewormacji całej struktury jak i zmiany ośrodka pracy. 
-Przeprowadzone pomiary podstawowych parametrów anteny tekstylnej miały na celu wykazać różnicę w uzyskanych wynikach w procesie symulacji i po zralizowaniu fizycznej anteny. Zoobrazować wpływ lokalizacja w stosunku do ciała człowieka oraz deformacji na parametry wykonanej anteny. Obecność człowieka pogarsza również charakterystykę promieniowania anteny. Zjawisko to spowodowane jest przewodzącymi właściwościami ciała człowieka, co powoduje tłumienie składowej elektrycznej pola.Na zakłócenia tego typu bardziej odporne są anteny pętlowe. Z tego powodu częściej znajdują one zastosowanie w urządzeniach przenośnych (np. pilotach zdalnego sterowania), na które mogłaby wpływać bezpośrednia bliskość człowieka. 
+Celem pracy inżynierskiej było zaprojektowanie anteny tekstylnej pracującej na częstotliwości 2,4 GHz. Anteny tekstylne należą do grupy anten konforemnych, trudnych technologicznie do wykonania ze względu na elastyczność podłoża, prace w trudnych warunkach, konieczność integracji z nośnikiem (kamizelką, rękawem, kaskiem) jednak mających coraz szersze zastosowanie. W ciągu ostatnich lat zwiększa się zapotrzebowanie na tego typu anteny przytwierdzone do fragmentów odzieży.
+Projekt anteny wykonano w środkowisku \emph{CST Microwave Studio}. W pierwszej fazie zamodelowano i przesymulowano zmodyfikiwoną strukturę anteny zaprezentowaną w artykule \cite{Artykul}. Celem poprawy parametrów anteny zmodyfikowano o kilka milimetrów wymiary struktury wzorcowej (patrz Rys. 4.2, 4.3 i Tab. 4.1). Wprowadzone modyfikacje dwukrotnie zwiększyły zysk, zmniejszyły impedancję wejściową prawie trzykrotnie i dostroiły częstotliwość anteny do nominalnej częstotliwości pracy.
+Strukturę anteny początkowo zamodelowano na niezdeformowanym (płaskim) podłożu, a następnie je wygięto w tych w obydwu przypadkach antenę umieszczono w ośrodku o $\epsilon_{r}$ = 1 (powietrze), w kolejnej fazie symulacji antenę umieszczono na modelu ramienia o $\epsilon_{r}$ = 52 (ośrodek stratny).    
+Dla zaprojektowanej anteny zmierzono parametr $s_{11}$, poziom mocy sygnału odebranego i zysk energetyczny. Największe rozbieżności na wykresach można zaobserwować dla pomiaru zysku energetycznego dla anteny mierzonej w na płasko i anteny umieszczonej na ramieniu (patrz rys. 5.4). Zysku anteny spadł o około 8 dB dla anteny umieszczonej na ramieniu (dla częstotliwości 2,4 GHz), co jest niewątpliwie wynikiem deformacji całej struktury jak i zmiany ośrodka pracy. 
+Przeprowadzone pomiary podstawowych parametrów anteny tekstylnej w środowisku rzeczywistym pokazały w jaki sposób obecność ludzkiego ciała wpływa na charakterystykę promieniowania anteny i jej zysk.
 Strukturę anteny można poddać dalszym modyfikacją, aby jej parametry polowe jeszcze się poprawiły. Papierowe podłożę można zastąpić podłożem z materiału, a miedzianą strukturę, nićmi z przewodzącymi włóknami wtedy z powoedzeniem powdzeniem możnaby umieścić wykonaną antenę RFID wewnątrz odzieży, gdyż nie ogranicza swobody ruchu człowieka i nie wywołuje uczucia dyskomfortu ze względu na elastyczne podłoże.
