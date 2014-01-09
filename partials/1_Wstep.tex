@@ -513,13 +513,6 @@ W pierwszym etapie zamodelowane strukturę anteny na "wygiętym" podłożu, ante
 	    \caption{Model struktury anteny tekstylnej naramiennej z programu \emph{CST Microwave Studio}}
 \end{figure}
 
-\newpage
-\begin{figure}[h!]
-	\centering
-	    \includegraphics[width=16cm]{POM_Ram_SYM_Pow.jpg}
-	    \caption{Przebieg zależności parametru $s_{11}$ od częstotliwośći dla pomiaru anteny na ramieniu, porównany z wynikami symulacji anteny wygiętej w wolnej przestrzeni}   
-\end{figure}
-
 
 \chapter{Wyniki pomiarów}
 
@@ -536,16 +529,17 @@ Pomiar parametru rozproszenia $s_{11}$ został przeprowadzony analizatorem widma
 
 
 \newpage
-Dla celów symulacji przyjęto przenikalność elektryczną podłoża równą $\epsilon_{r}$ = 2.31. Strukturę podano modyfikacji, aby poprawić jej częstotliwości pracy. Wprowadzone zmiany polegały na skróceniu długości ramion dipola, o około 5 mm tak aby mogła ona pracować na częstotliwośći 2,4 GHz. Zauważyć można, że przed modyfikacją ramion dipola częstotliwosć pracy anteny wynosiła \emph{F=2,364 GHz}, natomiast po modyfikacji \emph{F=2,3654 GHz} (patrz Rys.5.2 i Rys. 5.3).  
+\noindent
+\newline Dla celów symulacji przyjęto przenikalność elektryczną podłoża równą $\epsilon_{r}$ = 2.31. Strukturę podano modyfikacji, aby poprawić jej częstotliwości pracy. Wprowadzone zmiany polegały na skróceniu długości ramion dipola, o około 5 mm tak aby mogła ona pracować na częstotliwośći 2,4 GHz. Zauważyć można, że przed modyfikacją ramion dipola częstotliwosć pracy anteny wynosiła \emph{F=2,364 GHz}, natomiast po modyfikacji \emph{F=2,3654 GHz} (patrz Rys.5.2 i Rys. 5.3).  
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 	\includegraphics[width=16cm]{SYM_Prz_Ko_SYM_Po_Ko.jpg}
 	\caption{Przebieg zależności parametru $s_{11}$ od czestotliwości dla symulacji przed korekcją porównany z symulacją anteny po korekcji}
 \end{figure}
 
-
-\begin{figure}[h!]
+\newpage
+\begin{figure}[H]
 \centering
 	\includegraphics[width=16cm]{POM_Prz_Ko_POM_Po_Ko.jpg}
 	\caption{Przebieg zależności parametru $s_{11}$ od czestotliwości dla anteny przed korektą porównany z wynikami anteny po korekcie}
@@ -557,15 +551,43 @@ Dla celów symulacji przyjęto przenikalność elektryczną podłoża równą $\
 \newline Umieszczenie anteny na ramieniu człowieka spowodowało przesunięcie częstotliwości rezonansowej w "góre", która wynosi dla tego przypadku \emph{F=2,6349 GHz} (patrz Rys. 5.4). Wynika to z faktu, iż parametry anten silnie zależą od właściwości ośrodka stratnego.  
 Tkanka ludzka jest dielektrycznym, dyspersyjnym ośrodkiem stratnym o skończonej konduktywności. Ponaddto fale o takiej samej częstotliwośći (w ośrodku dyspersyjnym), rozchodzą się z różną prędkością. 
 
-\begin{figure}[h!]
+
+
+
+\begin{figure}[H]
 \centering
-	\includegraphics[width=16cm]{POM_Po_Ko_POM_Ram.jpg}
-	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla anteny po korekcji, porównany z pomiarami anteny umieszczonej na ramieniu}
+	\includegraphics[width=16cm]{SYM_AN_PL_SYM_W_P.jpg}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla symulacji anteny na "płasko", porównany z symulacją anteny "wygiętej" umieszczonej w wolnej przestrzeni}
 \end{figure}
 
 
 \newpage
+\begin{figure}[H]
+\centering 
+	\includegraphics[width=16cm]{POM_Ram_SYM_POW.jpg}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla pomiaru anteny umieszczonej na ramieniu, porównany z symulacją "wygiętej" anteny w wolnej przestrzeni}
+\end{figure}
 
+\newpage
+\begin{figure}[H]
+\centering
+	\includegraphics[width=16cm]{SYM_RAM_SYM_POW.jpg}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla symulacji anteny umieszczonej na ramieniu, porównany z symulacją "wygiętej" anteny w wolnej przestrzeni}
+\end{figure}
+
+
+\newpage
+\begin{figure}[H]
+\centering
+	\includegraphics[width=16cm]{POM_RAM_SYM_RAM.jpg}
+	\caption{Wykres zależności parametru $s_{11}$ od czestotliwości dla pomiaru anteny umieszczonej na ramieniu, porównany z symulacją anteny umieszczonej na modelu ramienia}
+\end{figure}
+
+
+
+
+
+\newpage
 \section{Zysk energetyczny}
 
 Do pomiaru zysku energetycznego wybrano metodę porównawczą.
